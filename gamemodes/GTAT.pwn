@@ -1,11 +1,11 @@
-//DmgLabel 추가하기
-
-
 #include <a_samp>
 #include <Color>
 #include <dudb>
 #include <Authentication>
 #include <mapandreas>
+#include <uf>
+#include <Gundrop>
+#include <3DTryg>
 
 #pragma unused ret_memcpy
 
@@ -23,8 +23,6 @@
 #define User_File	"GTAT/User/%s.txt"
 #define Zone_File	"GTAT/Zone/%d.txt"
 #define Team_File	"GTAT/Team/%d.txt"
-
-new ConnectedPlayer = 0;
 
 new Text:TD_GTAT[5];
 new Text:TD_Setting[4];
@@ -69,26 +67,6 @@ enum wInfo
 	wAmount
 }
 
-new WeaponPickup[] =
-{
-    341,
-    -1,-1,-1,-1,-1,-1,
-    342,
-    -1,
-    344,
-	-1,-1,-1,-1,
-	347,
-	348,
-	349,
-	-1,
-	351,
-	-1,
-	353,
-	355,
-	356,
-	-1,-1,
-	358
-};
 new WeaponInfo[][wInfo] =
 {
     {"Fist", 0, 1},
@@ -133,7 +111,6 @@ new Kills[M_P];
 new KillStat[M_P];
 
 new Float:SpawnPos[20][4];
-new DroppedWeapon[M_P][15][4];
 
 new bool:ToggleWar[M_P];
 new ProtectTimer[M_P];
@@ -144,15 +121,13 @@ new SpecTarget[M_P];
 new TeamColor[MAX_TEAM];
 new TeamKill[MAX_TEAM];
 
-new bool:SpawnType[M_P] = false;
-
-new lobby;
+new bool:SpawnType[M_P];
 
 new Text3D:PingLabels[M_P]; // Diagnostics label
 new Text:DamageTexts[M_P];
 new dmg_update_timer[M_P];
 
-new bool:Protection[M_P] = false;
+new bool:Protection[M_P];
 
 enum SAZONE_MAIN
 {
@@ -390,6 +365,18 @@ static const gSANZones[][SAZONE_MAIN] = { // 이것은 자신의위치를 나타내는 것입니
 	{"Willowfield, Los Santos",                 	{2541.70,-2059.20,2703.50,-1941.40}}
 };
 
+enum config
+{
+	bool:ZoneTextdraw,
+	bool:DamageTextdraw,
+	bool:MaplogoTextdraw,
+	bool:HitSound,
+	SpawnProtectionTime
+};
+new PlayerVariable[M_P][config];
+
+
+
 forward SaveZoneInfo(Zoneid,owner);
 forward BasicTimer();
 forward SetPlayerSpawn(playerid);
@@ -409,7 +396,30 @@ forward HideDamage(playerid, hits);
 forward ResetPlayerHits(playerid, hits);
 forward ResetDmgLabel(playerid);
 forward DestroyObjectEx(objectid);
+forward ShowPlayerConfigDialog(playerid);
 
+stock RandomSpawn(playerid)
+{
+    new diffX;
+    new diffY;
+    new Float:randX, Float:randY, Float:randZ;
+	diffX = floatround(gSANZones[ZoneID][SAZONE_AREA][2] - gSANZones[ZoneID][SAZONE_AREA][0], floatround_floor);
+	diffY = floatround(gSANZones[ZoneID][SAZONE_AREA][3] - gSANZones[ZoneID][SAZONE_AREA][1], floatround_floor);
+
+	randX = gSANZones[ZoneID][SAZONE_AREA][0] + random(diffX);
+	randY = gSANZones[ZoneID][SAZONE_AREA][1] + random(diffY);
+	MapAndreas_FindZ_For2DCoord(randX, randY, randZ);
+	SetPlayerPos(playerid, randX, randY, randZ+0.5);
+}
+
+stock GetBattlePlayer(playerid)
+{
+	new number = 0;
+	for(new j,t=GetMaxPlayers(); j<t; j++)
+	    if(j != playerid && ToggleWar[j] == true)
+			number ++;
+	return number;
+}
 stock strcpy(dest[],src[])
 {
 	new i = 0;
@@ -540,7 +550,7 @@ stock FIX_valstr(dest[], value, bool:pack = false)
 }
 #define valstr FIX_valstr
 
-stock ShowStats(playerid)
+stock ShowStats(showid, playerid)
 {
 	new Hour, Minute, Second;
 	gettime(Hour, Minute, Second);
@@ -550,22 +560,22 @@ stock ShowStats(playerid)
 	if(PlayerInfo[playerid][pDeath] == 0) Ratio = 0;
 	else Ratio = PlayerInfo[playerid][pKill]/PlayerInfo[playerid][pDeath];
 	format(string, sizeof(string), "[ %s(%d) 님의 정보 ]", PlayerName(playerid), playerid);
-	SCM(playerid, 0xADFF2FAA, string);
+	SCM(showid, 0xADFF2FAA, string);
 	format(string, sizeof(string), "[ Money: "#C_WHITE"%d "#C_STAT"]", GetPlayerMoney(playerid));
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	format(string, sizeof(string), "[ Point: "#C_WHITE"%d "#C_STAT"]", PlayerInfo[playerid][pPoint]);
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	format(string, sizeof(string), "[ Kill: "#C_WHITE"%d "#C_STAT"]", PlayerInfo[playerid][pKill]);
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	format(string, sizeof(string), "%s",GetMostWeaponStr(playerid));
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	format(string, sizeof(string), "[ Death: "#C_WHITE"%d "#C_STAT"]", PlayerInfo[playerid][pDeath]);
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	
 	format(string, sizeof(string), "[ Ratio: "#C_WHITE"%0.3f "#C_STAT"]", Ratio);
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	format(string, sizeof(string), "[ Current Time: "#C_WHITE"%02d시 %02d분 %02d초"#C_STAT"]", Hour, Minute, Second);
-	SCM(playerid, 0x6FA7FB96, string);
+	SCM(showid, 0x6FA7FB96, string);
 	return 1;
 }
 
@@ -617,6 +627,8 @@ main()
 
 public OnGameModeInit()
 {
+    ConnectNPC("npctest","npctest");
+    
 	SetGameModeText("GTAT:Korea");
 	MapAndreas_Init(MAP_ANDREAS_MODE_MINIMAL);
 	
@@ -627,6 +639,7 @@ public OnGameModeInit()
 	DisableInteriorEnterExits();
 	LoadZoneInfo(0);
 	CreatePingLabels();
+	OnWeaponDropInit();
 	
 	for(new i=0; i<MAX_ZONE; i++)
 	{
@@ -639,7 +652,7 @@ public OnGameModeInit()
 	}
 	
 	SetTimer("BasicTimer",1000,1);
-	ChangeTimer = SetTimer("ChangeZone",60000*10,0);
+	ChangeTimer = SetTimer("ChangeZone",60000*20,0);
 	
 	AddPlayerClass(54, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
 	AddPlayerClass(55, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
@@ -649,7 +662,7 @@ public OnGameModeInit()
 
 	CreateObject(19074, 1903.18604, 698.42468, 1005.52058,   0.00000, 0.00000, 0.00000);
 	
-	lobby = CreatePickup(1239, 1, -785.0139, 500.2697, 1371.7422, -1);
+	AddStaticPickup(1239, 1, -785.0139, 500.2697, 1371.7422, -1);
 	
 	TD_GTAT[0] = TextDrawCreate(142.628540, 397.653198, "Grand");
 	TextDrawLetterSize(TD_GTAT[0], 0.300000, 1.500000);
@@ -697,13 +710,13 @@ public OnGameModeInit()
 	TextDrawSetProportional(TD_GTAT[4], 1);
 
 	TD_Setting[0] = TextDrawCreate(356.666687, 349.233337, "usebox");
-	TextDrawLetterSize(TD_Setting[0], 0.000000, 3.618147);
+	TextDrawLetterSize(TD_Setting[0], 0.000000, 5.018147);
 	TextDrawTextSize(TD_Setting[0], 260.857147, 0.000000);
 	TextDrawAlignment(TD_Setting[0], 1);
 	TextDrawUseBox(TD_Setting[0], true);
 	TextDrawBoxColor(TD_Setting[0], 102);
 	
-	TD_Setting[1] = TextDrawCreate(308.514373, 350.720031, "Set Spawn Position");
+	TD_Setting[1] = TextDrawCreate(308.514373, 350.720031, "Set SpawnPosition");
 	TextDrawTextSize(TD_Setting[1],10.000000, 100.000000);
  	TextDrawLetterSize(TD_Setting[1], 0.250000, 1.250000);
 	TextDrawAlignment(TD_Setting[1], 2);
@@ -714,7 +727,7 @@ public OnGameModeInit()
 	TextDrawSetProportional(TD_Setting[1], 1);
 	TextDrawSetSelectable(TD_Setting[1], 1);
 
-	TD_Setting[2] = TextDrawCreate(308.114227, 368.640014, "Set Spawn Weapon");
+	TD_Setting[2] = TextDrawCreate(308.114227, 365.640014, "Set SpawnWeapon");
 	TextDrawTextSize(TD_Setting[2],10.000000, 100.000000);
  	TextDrawLetterSize(TD_Setting[2], 0.250000, 1.250000);
 	TextDrawAlignment(TD_Setting[2], 2);
@@ -725,7 +738,7 @@ public OnGameModeInit()
 	TextDrawSetProportional(TD_Setting[2], 1);
 	TextDrawSetSelectable(TD_Setting[2], 1);
 
-	TD_Setting[3] = TextDrawCreate(308.114227, 386.640014, "Set Player Configuration");
+	TD_Setting[3] = TextDrawCreate(308.114227, 380.559997, "Set Configurations");
 	TextDrawTextSize(TD_Setting[3],10.000000, 100.000000);
  	TextDrawLetterSize(TD_Setting[3], 0.250000, 1.250000);
 	TextDrawAlignment(TD_Setting[3], 2);
@@ -801,11 +814,20 @@ public OnGameModeExit()
 {
 	for(new i=0; i<MAX_TEAM; i++)
     	OnTeamSave(i);
+    	
+ 	OnWeaponDropExit();
 	return 1;
 }
 
 public OnPlayerRequestClass(playerid, classid)
 {
+	if(IsPlayerNPC(playerid)) // 만약 엔피시일 경우
+	{
+		OnPlayerSpawn(playerid); // 리스폰을 시킨다.
+		return 1;
+	}
+	gPlayerSpanwed[playerid] = false;
+	
 	SetPlayerPos(playerid, -2384.8484,-584.4088,132.1172);
 	SetPlayerFacingAngle(playerid, 272.7505);
 	SetPlayerCameraPos(playerid, -2379.0386,-581.3090,133.6117);
@@ -813,6 +835,11 @@ public OnPlayerRequestClass(playerid, classid)
 	for(new i=0; i<4; i++)
 		TextDrawShowForPlayer(playerid, TD_Setting[i]);
     SelectTextDraw(playerid, 0x00FF00FF);
+
+	for(new i=0; i<2; i++)
+		TextDrawHideForPlayer(playerid, TD_Zone[i]);
+	for(new i=0; i<5; i++)
+		TextDrawHideForPlayer(playerid, TD_GTAT[i]);
 	return 1;
 }
 
@@ -833,40 +860,13 @@ public OnPlayerConnect(playerid)
 	for(new i=0; i<MAX_ZONE; i++)
     	GangZoneShowForPlayer(playerid, GangZone[i], TeamColor[ZoneOwner[i]]);
     	
-	for(new i=0; i<5; i++)
-		TextDrawShowForPlayer(playerid, TD_GTAT[i]);
 	for(new i=0; i<4; i++)
 		TextDrawShowForPlayer(playerid, TD_Setting[i]);
     TextDrawShowForPlayer(playerid, TD_SiteURL);
 	SelectTextDraw(playerid, 0x00FF00FF);
 	
 	EnableStuntBonusForPlayer(playerid, 0);
-    for(new i=0; i<4; i++)
-    {
-		PlayerInfo[playerid][pWeapons][i] = 0;
-		PlayerInfo[playerid][pWeaponID][i] = 0;
-		PlayerInfo[playerid][pAmmo][i] = 0;
-	}
-	PlayerInfo[playerid][pWeapons][0] = WeaponInfo[6][wID];
-	PlayerInfo[playerid][pAmmo][0] = WeaponInfo[6][wAmount];
-	
-    for(new i=0; i<12; i++)
-		PlayerInfo[playerid][pWeaponKill][i] = 0;
-
-	PlayerInfo[playerid][pKill] = 0;
-	PlayerInfo[playerid][pDeath] = 0;
-	PlayerInfo[playerid][pKill] = 0;
-	PlayerInfo[playerid][pHP] = 0;
-	PlayerInfo[playerid][pInterior] = 0;
-	PlayerInfo[playerid][pVirtualWorld] = 0;
-	PlayerInfo[playerid][pTeam] = 0;
-	PlayerInfo[playerid][pLeader] = 0;
-	PlayerInfo[playerid][pPoint] = 0;
-	PlayerInfo[playerid][FPS2] = 0;
-	PlayerInfo[playerid][DLlast] = 0;
-	PlayerInfo[playerid][pHits] = 0;
-	PlayerInfo[playerid][LastDamage] = 0;
-	PlayerInfo[playerid][IJustLost] = 0;
+ 	SpawnType[playerid] = true;
 	return 1;
 }
 
@@ -874,7 +874,7 @@ public OnPlayerDisconnect(playerid, reason)
 {
     OnPlayerSave(playerid);
     
-	new string[128], Temp[pInfo];
+	new string[128],  Temp[pInfo];
 	switch(reason)
 	{
 	    case 0:	format(string, sizeof(string), "[!] %s(%d) 비정상 종료", PlayerName(playerid), playerid);
@@ -882,19 +882,42 @@ public OnPlayerDisconnect(playerid, reason)
 	    case 2:	format(string, sizeof(string), "[!] %s(%d) 킥/밴", PlayerName(playerid), playerid);
 	}
 	SCMToAll(COLOR_GREY, string);
+	
+    PlayerInfo[playerid] = Temp;
+	PlayerInfo[playerid][pWeapons][0] = WeaponInfo[6][wID];
+	PlayerInfo[playerid][pAmmo][0] = WeaponInfo[6][wAmount];
 
-	PlayerInfo[playerid] = Temp;
 	gPlayerLogged[playerid] = false;
 	gPlayerSpanwed[playerid] = false;
 	Kills[playerid] = 0;
 	KillStat[playerid] = 0;
-	ToggleWar[playerid] = false;
+ 	SpawnType[playerid] = true;
+ 	ToggleWar[playerid] = false;
 	Spectate[playerid] = false;
+    Protection[playerid] = false;
+
+	PlayerVariable[playerid][ZoneTextdraw] = true;
+	PlayerVariable[playerid][DamageTextdraw] = true;
+	PlayerVariable[playerid][MaplogoTextdraw] = true;
+	PlayerVariable[playerid][HitSound] = true;
+	PlayerVariable[playerid][SpawnProtectionTime] = 3;
 	return 1;
 }
 
 public OnPlayerSpawn(playerid)
 {
+	if(IsPlayerNPC(playerid)) // 엔피시일 경우
+	{
+		new npc[MAX_PLAYER_NAME];
+		GetPlayerName(playerid, npc, sizeof(npc));
+		if(!strcmp(npc, "test", true))
+		{
+			SetPlayerPos(playerid, -342.9893,1509.2260,75.5625); // 엔피시가 서있을자리 입니다.
+			SetPlayerSkin(playerid, 104); // 엔피시의 스킨을 지정하는겁니다.
+		}
+		return 1;
+	}
+ 
 	SetPlayerSpawn(playerid);
 	return 1;
 }
@@ -902,16 +925,9 @@ public OnPlayerSpawn(playerid)
 public OnPlayerDeath(playerid, killerid, reason)
 {
 	new string[256];
-	new
-		Float:DeathPos[3],
-		weapons[15][2]
-	;
-	
-	for(new i=0; i<2; i++)
-		TextDrawHideForPlayer(playerid, TD_Zone[i]);
-		
 	SendDeathMessage(killerid, playerid, reason);
-	gPlayerSpanwed[playerid] = false;
+	
+	OnWeaponDrop(playerid);
 	
 	PlayerInfo[killerid][pKill] ++;
 	PlayerInfo[killerid][pPoint] ++;
@@ -943,89 +959,27 @@ public OnPlayerDeath(playerid, killerid, reason)
 	    }
 	    
 	}
-	
-	for (new i = 0; i <= 14; i++)
-		DestroyPickup(DroppedWeapon[playerid][i][2]);
-		
-	GetPlayerPos(playerid, DeathPos[0], DeathPos[1], DeathPos[2]);
-	DroppedWeapon[playerid][14][2] = CreatePickup(1240, 8, DeathPos[0], DeathPos[1], DeathPos[2], 0);
-	for (new i = 0; i <= 13; i++)
+	switch(GetPlayerWeapon(killerid))
 	{
-	    GetPlayerWeaponData(playerid, i, weapons[i][0], weapons[i][1]);
-	    if(weapons[i][0] != 0)
-	    {
-		    DroppedWeapon[playerid][i][0] = weapons[i][0];
-		    DroppedWeapon[playerid][i][1] = weapons[i][1]/5;
-		    switch(i)
-		    {
-		        case 1: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]+0.8, DeathPos[1], DeathPos[2], 0);
-		        case 2: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]+0.8, DeathPos[1]+0.8, DeathPos[2], 0);
-		        case 3: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]-0.8, DeathPos[1]-0.8, DeathPos[2], 0);
-		        case 4: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]+1.3, DeathPos[1]+1.3, DeathPos[2], 0);
-		        case 5: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]-1.3, DeathPos[1]-1.3, DeathPos[2], 0);
-                case 6: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]+1.8, DeathPos[1]-0.8, DeathPos[2], 0);
-		        case 8: DroppedWeapon[playerid][i][2] = CreatePickup(WeaponPickup[weapons[i][0]-9], 8, DeathPos[0]-0.8, DeathPos[1], DeathPos[2], 0);
-			}
-
-		    DroppedWeapon[playerid][i][3] = SetTimerEx("DestroyPickuped", 20000, 0, "i", playerid);
-		}
-	}
-	
-	switch(GetPlayerWeapon(playerid))
-	{
-	    case 0: PlayerInfo[playerid][pWeaponKill][0] ++;
-	    case 9: PlayerInfo[playerid][pWeaponKill][1] ++; 
-	    case 16: PlayerInfo[playerid][pWeaponKill][2] ++;
-	    case 18: PlayerInfo[playerid][pWeaponKill][3] ++; 
-	    case 23: PlayerInfo[playerid][pWeaponKill][4] ++;
-	    case 24: PlayerInfo[playerid][pWeaponKill][5] ++;
-	    case 25: PlayerInfo[playerid][pWeaponKill][6] ++;
-	    case 27: PlayerInfo[playerid][pWeaponKill][7] ++;
-	    case 29: PlayerInfo[playerid][pWeaponKill][8] ++;
-	    case 30: PlayerInfo[playerid][pWeaponKill][9] ++;
-	    case 31: PlayerInfo[playerid][pWeaponKill][10] ++;
-	    case 34: PlayerInfo[playerid][pWeaponKill][11] ++;
+	    case 0: PlayerInfo[killerid][pWeaponKill][0] ++;
+	    case 9: PlayerInfo[killerid][pWeaponKill][1] ++;
+	    case 16: PlayerInfo[killerid][pWeaponKill][2] ++;
+	    case 18: PlayerInfo[killerid][pWeaponKill][3] ++;
+	    case 23: PlayerInfo[killerid][pWeaponKill][4] ++;
+	    case 24: PlayerInfo[killerid][pWeaponKill][5] ++;
+	    case 25: PlayerInfo[killerid][pWeaponKill][6] ++;
+	    case 27: PlayerInfo[killerid][pWeaponKill][7] ++;
+	    case 29: PlayerInfo[killerid][pWeaponKill][8] ++;
+	    case 30: PlayerInfo[killerid][pWeaponKill][9] ++;
+	    case 31: PlayerInfo[killerid][pWeaponKill][10] ++;
+	    case 34: PlayerInfo[killerid][pWeaponKill][11] ++;
 	}
 	return 1;
 }
 
-public DestroyPickuped(playerid)
-{
-	for (new i = 0; i <= 14; i++)
-		DestroyPickup(DroppedWeapon[playerid][i][2]);
-}
-
-
 public OnPlayerPickUpPickup(playerid, pickupid)
 {
-	if(pickupid == lobby)
-	{
-		ShowPlayerDialog(playerid, DialogID_Lobby(0), DIALOG_STYLE_LIST, ""#C_ORANGE"설정할 항목을 선택하세요.", ""#C_WHITE"스폰 장소\n무기\n로비 나가기", "다음", "취소");
-		SetPlayerPos(playerid, -782.3690, 501.3023, 1371.7490);
-		return 1;
-	}
-	
-	for(new j,t=GetMaxPlayers(); j<t; j++)
-	{
-		for (new i = 0; i <= 13; i++)
-		{
-			if(pickupid == DroppedWeapon[j][i][2])
-			{
-			    GivePlayerWeapon(playerid, DroppedWeapon[j][i][0], DroppedWeapon[j][i][1]);
-				DestroyPickup(DroppedWeapon[j][i][2]);
-			    break;
-			}
-		}
-		if(pickupid == DroppedWeapon[j][14][2])
-		{
-		    SetPlayerHealth(playerid, PlayerInfo[j][pHP] + 30);
-		    DestroyPickup(DroppedWeapon[j][14][2]);
-		    break;
-		}
-	}
-	
-
-	
+    OnWeaponDropPickup(playerid, pickupid);
 	return 1;
 }
 
@@ -1122,19 +1076,32 @@ public OnPlayerCommandText(playerid, cmdtext[])
  	
 		if(strcmp("/test",cmd,true) == 0)
 		{
-			format(string,sizeof(string),"team:%d leader:%d",PlayerInfo[playerid][pTeam],PlayerInfo[playerid][pLeader]);
-			SCM(playerid, COLOR_SYSTEM, string);
-			
-			format(string,sizeof(string),"color: %d",TeamColor[1]);
-			SCM(playerid, COLOR_SYSTEM, string);
-
-			TeamKill[1] = 4;
+	        SetPlayerPos(0, -342.9893,1509.2260,75.5625);
+	        ToggleWar[0] = true;
+			gPlayerSpanwed[0] = true;
 		    return 1;
 		}
 		
-		if(strcmp("/test2",cmd,true) == 0)
+		if(strcmp("/testt",cmd,true) == 0)
 		{
-		    GangZoneShowForPlayer(playerid, GangZone[0], TeamColor[1]);
+	        SetPlayerPos(0, -342.9893,1509.2260,75.5625);
+	        ToggleWar[0] = false;
+		    return 1;
+		}
+
+		if(strcmp("/test2",cmd,true) == 0)  // 로비
+		{
+			format(string,sizeof(string)," %d",GetBattlePlayer(playerid));
+			SCM(playerid,COLOR_SYSTEM,string);
+	        
+	        if(SpawnType[playerid] == true) SCM(playerid,COLOR_SYSTEM,"spawn");
+	        if(ToggleWar[playerid] == true) SCM(playerid,COLOR_SYSTEM,"ToggleWar");
+		    return 1;
+		}
+
+		if(strcmp("/test4",cmd,true) == 0)
+		{
+		    OnWeaponDrop(playerid);
 		    return 1;
 		}
 	}
@@ -1142,8 +1109,14 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	//-----
 	if(strcmp(cmd, "/help", true)==0)
 	{
-	    SCM(playerid, COLOR_IVORY,"* /dual  /lounge  /stats  /spectate  /pm *");
-	    SCM(playerid, COLOR_IVORY,"* /t /팀초대 /팀추방 /팀접속 *");
+	    SCM(playerid, COLOR_WHITE,"* /dual  /lounge  /stats  /spectate  /pm /respawn /kill *");
+	    SCM(playerid, COLOR_WHITE,"* /t /팀초대 /팀추방 /팀원목록 *");
+	    return 1;
+	}
+	
+	if(strcmp(cmd, "/kill", true)==0 || strcmp(cmd, "/자살", true)==0)
+	{
+	    SetPlayerHealth(playerid,-999);
 	    return 1;
 	}
 	
@@ -1162,9 +1135,10 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		return 1;
  	}
  	
-	if(strcmp("/팀접속",cmd,true) == 0)
+	if(strcmp("/팀접속",cmd,true) == 0 || strcmp("/팀목록",cmd,true) == 0 || strcmp("/팀원",cmd,true) == 0 || strcmp("/팀원목록",cmd,true) == 0)
 	{
-		SCM(playerid,COLOR_SYSTEM,"* 현재 접속한 당신의 팀원 목록 *");
+	    format(string,sizeof(string),"* 현재 접속한 당신의 팀원 목록 (%d 팀)",PlayerInfo[playerid][pTeam]);
+		SCM(playerid,COLOR_SYSTEM,string);
 		for(new i=0; i<MAX_PLAYERS; i++)
 		{
 			if(IsPlayerConnected(i))
@@ -1237,20 +1211,20 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	    tmp = strtok(cmdtext, idx);
 	    new targetid;
 		if(!strlen(tmp))
-			return ShowStats(targetid);
+			return ShowStats(playerid,playerid);
 		else
 		{
 		    targetid = strval(tmp);
 			if(!IsPlayerConnected(targetid))
 			    return SCM(playerid, COLOR_GREY, "[!] 접속하지 않은 플레이어 입니다.");
 		}
-		ShowStats(targetid);
+		ShowStats(playerid, targetid);
 	    return 1;
 	}
 
 	if(strcmp(cmd, "/리스폰", true)==0 || strcmp(cmd, "/re", true)==0 || strcmp(cmd, "/리폰", true)==0)
 	{
-		if(ToggleWar[playerid] == true)
+		if(ToggleWar[playerid] == false)
 			return SCM(playerid, COLOR_GREY,"[!] 체력이 80 이상이어야 사용할 수 있습니다.");
 		KillTimer(ProtectTimer[playerid]);
 		Protection[playerid] = false;
@@ -1258,26 +1232,25 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	    return 1;
 	}
 	
-	if(strcmp(cmd, "/lounge", true)==0 || strcmp(cmd, "/lobby", true)==0 || strcmp(cmd, "/로비", true)==0)
+	if(strcmp(cmd, "/lounge", true)==0 || strcmp(cmd, "/lobby", true)==0 || strcmp(cmd, "/로비", true)==0 || strcmp(cmd, "/l", true)==0)
 	{
-		if(ToggleWar[playerid] == false)
+		if(ToggleWar[playerid] == true)
 		{
 			if(PlayerInfo[playerid][pHP] < 80)
 				return SCM(playerid, COLOR_GREY,"[!] 체력이 80 이상이어야 사용할 수 있습니다.");
 			KillTimer(ProtectTimer[playerid]);
 			Protection[playerid] = false;
-            ToggleWar[playerid] = true;
+            ToggleWar[playerid] = false;
             SetPlayerPos(playerid, -795.0203,490.3264,1376.1953);
             SetPlayerInterior(playerid, 1);
             SetPlayerVirtualWorld(playerid, 0);
 			SetPlayerHealth(playerid, 100);
 			ResetPlayerWeapons(playerid);
 			SCM(playerid,COLOR_ORANGE,"[!] 로비에 입장하였습니다.");
-			ConnectedPlayer --;
 		}
 		else
 		{
-		    ToggleWar[playerid] = false;
+		    ToggleWar[playerid] = true;
 		    SetPlayerSpawn(playerid);
 		}
 	    return 1;
@@ -1285,7 +1258,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	if(strcmp("/dual",cmd,true) == 0)
 	{
-		if(gPlayerSpanwed[playerid] == false)
+		if(PlayerInfo[playerid][pHP] < 80)
 		    return SCM(playerid, COLOR_GREY, "[!] 체력이 80 이상이어야 사용할 수 있습니다.");
 		tmp = strtok(cmdtext, idx);
 		if(!strlen(tmp))
@@ -1376,7 +1349,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 {
 	if(newkeys == KEY_FIRE)
 	{
-		if(ToggleWar[playerid] == true)
+		if(ToggleWar[playerid] == false)
 		{
 		    TogglePlayerControllable(playerid,0);
 		    TogglePlayerControllable(playerid,1);
@@ -1384,7 +1357,15 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			SCM(playerid, COLOR_RED,"[!] 로비에서는 공격할 수 없습니다!");
 		}
 	}
-	
+
+	if(newkeys == KEY_SECONDARY_ATTACK)
+	{
+		if(GetPlayerDistanceToPoint(playerid,-785.0139,500.2697) <= 0.5)
+		{
+			ShowPlayerDialog(playerid, DialogID_Lobby(0), DIALOG_STYLE_LIST, ""#C_ORANGE"설정할 항목을 선택하세요.", ""#C_WHITE"스폰 장소\n무기\n개인 설정\n로비 나가기", "확인", "취소");
+		}
+	}
+
 	if(Spectate[playerid] == true)
 	{
 		if(newkeys == KEY_ANALOG_LEFT) // PREV
@@ -1393,7 +1374,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			{
 		        SpecTarget[playerid] -=1;
 		        if(SpecTarget[playerid]<0) SpecTarget[playerid] = GetMaxPlayers();
-		    } while(IsPlayerConnected(SpecTarget[playerid]) && ToggleWar[playerid] == false && SpecTarget[playerid] != playerid);
+		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[playerid] == true || SpecTarget[playerid] == playerid);
             Spectating(playerid, SpecTarget[playerid], false);
 		}
 		
@@ -1403,7 +1384,7 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			{
 		        SpecTarget[playerid] +=1;
 		        if(SpecTarget[playerid]>GetMaxPlayers()) SpecTarget[playerid] = 0;
-		    } while(IsPlayerConnected(SpecTarget[playerid]) && ToggleWar[playerid] == false && SpecTarget[playerid] != playerid);
+		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[playerid] == true || SpecTarget[playerid] == playerid);
             Spectating(playerid, SpecTarget[playerid], false);
 		}
 	}
@@ -1456,7 +1437,9 @@ public OnPlayerUpdate(playerid)
 		    format(string,256,"~w~%d Hits ~n~~r~%d dmg", PlayerInfo[playerid][pHits],PlayerInfo[playerid][LastDamage]);
 
 	    TextDrawSetString(DamageTexts[playerid], string);
-	    TextDrawShowForPlayer(playerid,DamageTexts[playerid]);
+	    
+	    if(PlayerVariable[playerid][DamageTextdraw] == true)
+	    	TextDrawShowForPlayer(playerid,DamageTexts[playerid]);
 
     	new diff_hpmsg[70];
 
@@ -1483,31 +1466,22 @@ public OnPlayerUpdate(playerid)
 public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 {
 	new WeaponList[256], WeaponUsed[sizeof(WeaponList)];
-	
-	
-	
-	if(dialogid == DialogID_Config(0))
-	{
-	    if(response)
-	    {
-	    
-	    }
-	}
-	
-	else if(dialogid == DialogID_Lobby(0))
+	if(dialogid == DialogID_Lobby(0))
 	{
 	    if(response)
 	    {
 	        switch(listitem)
 	        {
 	            case 0:
-	                ShowPlayerDialog(playerid, DialogID_Position(0), DIALOG_STYLE_LIST, ""#C_ORANGE"스폰 장소를 선택하세요.", ""#C_WHITE"임의의 좌표\n플레이어 근처\n로비", "다음", "취소");
+	                ShowPlayerDialog(playerid, DialogID_Position(0), DIALOG_STYLE_LIST, ""#C_ORANGE"스폰 장소를 선택하세요.", ""#C_WHITE"플레이어 근처(기본)\n임의의 좌표\n로비", "확인", "취소");
 				case 1:
 				    ShowPlayerDialog(playerid, DialogID_Weapon(0), DIALOG_STYLE_LIST, ""#C_ORANGE"슬롯을 선택하세요.", ""#C_WHITE"1번 슬롯\n2번 슬롯\n3번 슬롯\n4번 슬롯", "다음", "취소");
 				case 2:
+				    ShowPlayerConfigDialog(playerid);
+				case 3:
 				{
-				    ToggleWar[playerid] = false;
-					SpawnType[playerid] = false;
+				    ToggleWar[playerid] = true;
+					SpawnType[playerid] = true;
 					SetPlayerSpawn(playerid);
 				}
 			}
@@ -1522,27 +1496,21 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 	        {
 	            case 0:
 	            {
-					SCM(playerid,COLOR_SYSTEM,"[!] 이제부터 전장의 임의의 좌표에서 스폰됩니다.");
-					SpawnType[playerid] = false;
-					ToggleWar[playerid] = false;
+					SCM(playerid,COLOR_SYSTEM,"[!] 이제부터 플레이어 근처에서 스폰됩니다.");
+					SpawnType[playerid] = true;  // 스폰타입
+					ToggleWar[playerid] = true; // 로비
 	            }
 	            case 1:
 	            {
-	                if(ConnectedPlayer == 0)
-	                {
-	                    ShowPlayerDialog(playerid, DialogID_Position(0), DIALOG_STYLE_LIST, ""#C_ORANGE"스폰 장소를 선택하세요.", ""#C_WHITE"임의의 좌표\n플레이어 근처\n로비", "다음", "취소");
-						SCM(playerid, COLOR_GREY, "[!] 전장에서 싸우고 있는 플레이어가 없습니다.");
-						return 1;
-					}
-					SCM(playerid,COLOR_SYSTEM,"[!] 이제부터 플레이어 근처에서 스폰됩니다.");
-					SpawnType[playerid] = true;
-					ToggleWar[playerid] = false;
+					SCM(playerid,COLOR_SYSTEM,"[!] 이제부터 전장의 임의의 좌표에서 스폰됩니다.");
+					SpawnType[playerid] = false;
+					ToggleWar[playerid] = true;
 	            }
 	            case 2:
 	            {
 					SCM(playerid,COLOR_SYSTEM,"[!] 이제부터 로비에서 스폰됩니다.");
 					SpawnType[playerid] = false;
-					ToggleWar[playerid] = true;
+					ToggleWar[playerid] = false;
 	            }
 	        }
 	    }
@@ -1611,44 +1579,94 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		    Kick(playerid);
 		}
     }
-    
+
+
+	else if(dialogid == DialogID_Config(0))
+	{
+	    if(response)
+	    {
+			switch(listitem)
+			{
+			    case 1:
+			    {
+			        if(PlayerVariable[playerid][ZoneTextdraw] == true)
+			            PlayerVariable[playerid][ZoneTextdraw] = false;
+					else
+					    PlayerVariable[playerid][ZoneTextdraw] = true;
+			    }
+			    case 2:
+			    {
+			        if(PlayerVariable[playerid][DamageTextdraw] == true)
+			            PlayerVariable[playerid][DamageTextdraw] = false;
+					else
+					    PlayerVariable[playerid][DamageTextdraw] = true;
+			    }
+			    case 3:
+			    {
+			        if(PlayerVariable[playerid][MaplogoTextdraw] == true)
+			            PlayerVariable[playerid][MaplogoTextdraw] = false;
+					else
+					    PlayerVariable[playerid][MaplogoTextdraw] = true;
+			    }
+			    case 5:
+			    {
+			        if(PlayerVariable[playerid][HitSound] == true)
+			            PlayerVariable[playerid][HitSound] = false;
+					else
+					    PlayerVariable[playerid][HitSound] = true;
+			    }
+			    case 6:
+			    {
+                    ShowPlayerDialog(playerid, DialogID_Config(1), DIALOG_STYLE_INPUT, ""#C_ORANGE"스폰보호 시간 설정", ""#C_IVORY"설정하고싶은 스폰보호 시간을 초 단위로 입력하세요."#C_RED"(1~10 사이)", "확인", "취소");
+			    }
+			}
+			if(listitem != 6)
+				ShowPlayerConfigDialog(playerid);
+	    }
+	}
+	
+	else if(dialogid == DialogID_Config(1))
+	{
+	    if(response)
+	    {
+	        new value = strval(inputtext);
+	        if(value < 1 || value > 10)
+	        {
+				SCM(playerid, COLOR_GREY,"[!] 1에서 10 사이의 값을 입력해주세요!");
+	            ShowPlayerDialog(playerid, DialogID_Config(1), DIALOG_STYLE_INPUT, ""#C_ORANGE"스폰보호 시간 설정", ""#C_IVORY"설정하고싶은 스폰보호 시간을 초 단위로 입력하세요.  "#C_RED"(1~10 사이)", "확인", "취소");
+				return 1;
+			}
+			PlayerVariable[playerid][SpawnProtectionTime] = value;
+			ShowPlayerConfigDialog(playerid);
+		}
+	    else
+	    	ShowPlayerConfigDialog(playerid);
+	}
+
 	return 1;
 }
 
 public OnPlayerClickTextDraw(playerid, Text:clickedid)
 {
-	new string[512];
 	if(clickedid == TD_Setting[1]) // 포지션
 	{
-		ShowPlayerDialog(playerid, DialogID_Position(0), DIALOG_STYLE_LIST, ""#C_ORANGE"스폰 장소를 선택하세요.", ""#C_WHITE"임의의 좌표\n플레이어 근처\n로비", "다음", "취소");
+		ShowPlayerDialog(playerid, DialogID_Position(0), DIALOG_STYLE_LIST, ""#C_ORANGE"스폰 장소를 선택하세요.", ""#C_WHITE"플레이어 근처(기본)\n임의의 좌표\n로비", "확인", "취소");
 	}
 	
 	else if(clickedid == TD_Setting[2]) // 무기
 	{
 	    ShowPlayerDialog(playerid, DialogID_Weapon(0), DIALOG_STYLE_LIST, ""#C_ORANGE"슬롯을 선택하세요.", ""#C_WHITE"1번 슬롯\n2번 슬롯\n3번 슬롯\n4번 슬롯", "다음", "취소");
 	}
-	
-		        			   
+
 	else if(clickedid == TD_Setting[3]) // config
-	{
-	    format(string, sizeof(string), " "#C_IVORY"  Option\t\t\t\t\t  Status\
-										 Textdraws\n\
-										 "#C_WHITE"Zone Textdraw\n\
-										 Damage Textdraw\n\
-										 Map Logo Textdraw\n\
-										 "#C_IVORY"Features\n\
-										 "#C_WHITE"Hit Sound\n\
-										 Spawn Protection Time\n\
-										 ");
-	    ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "다음", "취소");
-	}
+		ShowPlayerConfigDialog(playerid);
 	return 1;
 }
 
 public OnPlayerTakeDamage(playerid, issuerid, Float: amount, weaponid)
 {
-    PlayerPlaySound(playerid, 1131, 0, 0, 0);
-    if(IsPlayerConnected(issuerid)) PlayerPlaySound(issuerid, 17802, 0.0, 0.0, 0.0);
+    if(PlayerVariable[issuerid][HitSound] == true)
+		PlayerPlaySound(issuerid, 17802, 0.0, 0.0, 0.0);
     	
 	return 1;
 }
@@ -1664,33 +1682,50 @@ public SetPlayerSpawn(playerid)
 
 	for(new i=0; i<4; i++)
 		TextDrawHideForPlayer(playerid, TD_Setting[i]);
-	for(new i=0; i<2; i++)
-		TextDrawShowForPlayer(playerid, TD_Zone[i]);
+		
+	if(PlayerVariable[playerid][ZoneTextdraw] == true)
+		for(new i=0; i<2; i++)
+			TextDrawShowForPlayer(playerid, TD_Zone[i]);
+	else
+		for(new i=0; i<2; i++)
+			TextDrawHideForPlayer(playerid, TD_Zone[i]);
+			
+	if(PlayerVariable[playerid][MaplogoTextdraw] == true)
+		for(new i=0; i<5; i++)
+			TextDrawShowForPlayer(playerid, TD_GTAT[i]);
+	else
+		for(new i=0; i<5; i++)
+			TextDrawHideForPlayer(playerid, TD_GTAT[i]);
+			
 	CancelSelectTextDraw(playerid);
 
-	if(ToggleWar[playerid] == false)
+	if(ToggleWar[playerid] == true)
 	{
-	    new diffX;
-	    new diffY;
-	    new Float:randX, Float:randY, Float:randZ;
-	    if(SpawnType[playerid] == false)
+	    if(SpawnType[playerid] == false || GetBattlePlayer(playerid) == 0)
 	    {
-			diffX = floatround(gSANZones[ZoneID][SAZONE_AREA][2] - gSANZones[ZoneID][SAZONE_AREA][0], floatround_floor);
-			diffY = floatround(gSANZones[ZoneID][SAZONE_AREA][3] - gSANZones[ZoneID][SAZONE_AREA][1], floatround_floor);
-			
-			randX = gSANZones[ZoneID][SAZONE_AREA][0] + random(diffX);
-			randY = gSANZones[ZoneID][SAZONE_AREA][1] + random(diffY);
-	        MapAndreas_FindZ_For2DCoord(randX, randY, randZ);
-	        SetPlayerPos(playerid, randX, randY, randZ+0.5);
+	        RandomSpawn(playerid);
 		}
 		else
 		{
-			new randP;
-			do randP = random(GetMaxPlayers());
-			while(!IsPlayerConnected(randP));
-			GetPlayerPos(randP, randX, randY, randZ);
-			randX += random(10) + 5;
-			randY += random(10) + 5;
+		    new Float:randX,Float:randY,Float:randZ;
+		    new Float:CurX,Float:CurY;
+			new randP = -1, Bad_Count = -1;
+			new randRadius = random(20) + 5;
+			new randAngle = random(360);
+			do
+			{
+				randP = random(GetMaxPlayers());
+				if(++Bad_Count > 200)
+				{
+				    RandomSpawn(playerid);
+				    gPlayerSpanwed[playerid] = true;
+			        return 1;
+				}
+			}
+			while(!IsPlayerConnected(randP) || !ToggleWar[randP] || randP == playerid || !gPlayerSpanwed[randP]);
+
+			GetPlayerPos(randP, CurX, CurY, randZ);
+			GetPointInFront2D(CurX, CurY, randAngle, randRadius, randX, randY);
 	        MapAndreas_FindZ_For2DCoord(randX, randY, randZ);
 	        SetPlayerPos(playerid, randX, randY, randZ+0.5);
 		}
@@ -1698,8 +1733,6 @@ public SetPlayerSpawn(playerid)
 		SetPlayerVirtualWorld(playerid, 0);
 		SpawnPlayerProtection(playerid, 1);
 		Protection[playerid] = true;
-		gPlayerSpanwed[playerid] = true;
-		ConnectedPlayer ++;
 	}
 	else
 	{
@@ -1708,8 +1741,8 @@ public SetPlayerSpawn(playerid)
         SetPlayerVirtualWorld(playerid, 0);
 		SetPlayerHealth(playerid, 100);
 		ResetPlayerWeapons(playerid);
-		ConnectedPlayer --;
 	}
+	gPlayerSpanwed[playerid] = true;
 	return 1;
 }
 
@@ -1801,6 +1834,7 @@ public OnPlayerLogin(playerid,password[])
 			gPlayerLogged[playerid] = true;
 			PlayerPlaySound(playerid,1057,0.0,0.0,0.0);
 			PlayAudioStreamForPlayer(playerid, "https://www.dropbox.com/s/v6d1sp4hgvj4yww/GTAT-KOREA-INTRO.mp3?dl=1");
+			ToggleWar[playerid] = true;
 			GetPlayerIp(playerid,PlayerIP,sizeof(PlayerIP));
 			printf("[System] %s(id:%d) 로그인 [IP:%s]",PlayerName(playerid),playerid,PlayerIP);
 			fclose(UserFile);
@@ -1920,7 +1954,7 @@ public ChangeZone()
 	new BestTeam = 0;
 	
 	KillTimer(ChangeTimer);
-	ChangeTimer = SetTimer("ChangeZone",60000*5,0);
+	ChangeTimer = SetTimer("ChangeZone",60000*20,0);
 
     for(new i = 1; i<MAX_TEAM; i++)
         if(TeamKill[BestTeam] < TeamKill[i])
@@ -1935,16 +1969,21 @@ public ChangeZone()
     	if(PlayerInfo[i][pTeam] == BestTeam)
     	    PlayerInfo[i][pPoint] += 5;
 	}
-
-	format(string,sizeof(string),"bestteam: %d, ZoneID: %d",BestTeam,ZoneID);
-	SCMToAll(COLOR_WHITE,string);
-		
+	
 	ZoneOwner[ZoneID] = BestTeam;
 	SaveZoneInfo(ZoneID,BestTeam);
 	
-	format(string,sizeof(string), "[!] 이번 구역 전쟁의 승리팀은 [%d 팀] 입니다!",BestTeam);
-	SCMToAll(COLOR_LIGHTBLUE,string);
-	SCMToAll(COLOR_LIGHTBLUE, "[!] 승리한 팀원에게는 5 포인트가 지급되었습니다.\n");
+	if(BestTeam != 0)
+	{
+		format(string,sizeof(string), "[!] 이번 구역 전쟁의 승리팀은 [%d 팀] 입니다!",BestTeam);
+		SCMToAll(COLOR_LIGHTBLUE,string);
+		SCMToAll(COLOR_LIGHTBLUE, "[!] 승리한 팀원에게는 5 포인트가 지급되었습니다.\n");
+	}
+	else
+	{
+	    SCMToAll(COLOR_LIGHTBLUE,"[!] 이번 구역 전쟁의 승리팀은 중립팀입니다!");
+	    SCMToAll(COLOR_LIGHTBLUE,"[!] 중립팀에게는 승리 포인트가 지급되지 않습니다.");
+	}
 	
 	// 새로운 맵 불러오기
     ZoneID = random(MAX_ZONE);
@@ -2022,8 +2061,8 @@ public CreatePingLabels()
 {
 	for(new i = 0; i < GetMaxPlayers(); i++)
 	{
-		PingLabels[i] = Create3DTextLabel("-", COLOR_RED, 0.0, 0.0, 0.0, 50.0, 0, true);
-		PlayerInfo[i][DmgLabel] = Create3DTextLabel("-", COLOR_ORANGE, 0.0, 0.0, 0.0, 50.0, 0, true);
+		PingLabels[i] = Create3DTextLabel("-", COLOR_RED, 0.0, 0.0, 0.0, 30.0, 0, true);
+		PlayerInfo[i][DmgLabel] = Create3DTextLabel("-", COLOR_ORANGE, 0.0, 0.0, 0.0, 30.0, 0, true);
 	}
 }
 
@@ -2049,4 +2088,40 @@ public DestroyObjectEx(objectid)
 {
     DestroyObject(objectid);
     return 1;
+}
+
+public ShowPlayerConfigDialog(playerid)
+{
+	new string[1000];
+	new str[32];
+	strcat(string,""#C_IVORY"  옵션\t\t\t"#C_IVORY"상태\n"#C_IVORY"텍스트드로우\t\t\t\n");
+
+	if(PlayerVariable[playerid][ZoneTextdraw] == true)
+	    strcat(string,"> 구역 텍스트드로우\t\t\t"#C_PASTEL_GREEN"ON\n");
+	else
+	    strcat(string,"> 구역 텍스트드로우\t\t\t"#C_PASTEL_RED"OFF\n");
+
+	if(PlayerVariable[playerid][DamageTextdraw] == true)
+	    strcat(string,"> 데미지 텍스트드로우\t\t\t"#C_PASTEL_GREEN"ON\n");
+	else
+	    strcat(string,"> 데미지 텍스트드로우\t\t\t"#C_PASTEL_RED"OFF\n");
+
+	if(PlayerVariable[playerid][MaplogoTextdraw] == true)
+	    strcat(string,"> GTA:T 로고 텍스트드로우\t\t\t"#C_PASTEL_GREEN"ON\n");
+	else
+	    strcat(string,"> GTA:T 로고 텍스트드로우\t\t\t"#C_PASTEL_RED"OFF\n");
+
+	strcat(string,""#C_IVORY"Features\n");
+
+	if(PlayerVariable[playerid][HitSound] == true)
+	    strcat(string,"> 히트 사운드\t\t\t"#C_PASTEL_GREEN"ON\n");
+	else
+	    strcat(string,"> 히트 사운드\t\t\t"#C_PASTEL_RED"OFF\n");
+
+
+	strcat(string,"> 스폰보호 시간\t\t\t"#C_YELLOW"");
+	format(str,sizeof(str),"%d",PlayerVariable[playerid][SpawnProtectionTime]);
+	strcat(string,str);
+
+	ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "확인", "취소");
 }

@@ -8027,3 +8027,1535 @@ Console input: gmx
 
 [15:40:58] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
 [15:43:55] [part] Cada has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:25:04] 
+[20:25:04] Server Plugins
+[20:25:04] --------------
+[20:25:04]  Loading plugin: MapAndreas
+[20:25:04]   Loaded.
+[20:25:04]  Loaded 1 plugins.
+
+[20:25:04] 
+[20:25:04] Filterscripts
+[20:25:04] ---------------
+[20:25:04]   Loading filterscript 'fsdebug.amx'...
+[20:25:04] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[20:25:04]   * By Simon Campbell *
+  *********************
+[20:25:04]   * Version: 0.5d      *
+  *********************
+[20:25:04]   * -- LOADED         *
+  *********************
+
+[20:25:04]   Loaded 1 filterscripts.
+
+[20:25:05] 
+--------------------------------------------------------------------
+[20:25:05]  		GTA:T Korea Mode On
+[20:25:05]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:25:05] --------------------------------------------------------------------
+
+[20:25:05] Number of vehicle models: 0
+[20:25:05] 
+인증에 성공하였습니다.
+
+[20:25:27] [connection] 127.0.0.1:55008 requests connection cookie.
+[20:25:28] [connection] incoming connection: 127.0.0.1:55008 id: 0
+[20:25:29] [join] Cada has joined the server (0:127.0.0.1)
+[20:25:35] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:28:57] 
+--------------------------------------------------------------------
+[20:28:57]  		GTA:T Korea Mode On
+[20:28:57]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:28:57] --------------------------------------------------------------------
+
+[20:28:57] Number of vehicle models: 0
+[20:28:57] 
+인증에 성공하였습니다.
+
+[20:29:07] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:30:20] 
+--------------------------------------------------------------------
+[20:30:20]  		GTA:T Korea Mode On
+[20:30:20]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:30:20] --------------------------------------------------------------------
+
+[20:30:20] Number of vehicle models: 0
+[20:30:20] 
+인증에 성공하였습니다.
+
+[20:30:23] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:31:22] 
+--------------------------------------------------------------------
+[20:31:22]  		GTA:T Korea Mode On
+[20:31:22]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:31:22] --------------------------------------------------------------------
+
+[20:31:22] Number of vehicle models: 0
+[20:31:22] 
+인증에 성공하였습니다.
+
+[20:31:23] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:32:14] 
+--------------------------------------------------------------------
+[20:32:14]  		GTA:T Korea Mode On
+[20:32:14]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:32:14] --------------------------------------------------------------------
+
+[20:32:14] Number of vehicle models: 0
+[20:32:14] 
+인증에 성공하였습니다.
+
+[20:32:15] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:32:53] 
+--------------------------------------------------------------------
+[20:32:53]  		GTA:T Korea Mode On
+[20:32:53]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:32:53] --------------------------------------------------------------------
+
+[20:32:53] Number of vehicle models: 0
+[20:32:53] 
+인증에 성공하였습니다.
+
+[20:32:56] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:33:35] 
+--------------------------------------------------------------------
+[20:33:35]  		GTA:T Korea Mode On
+[20:33:35]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:33:35] --------------------------------------------------------------------
+
+[20:33:35] Number of vehicle models: 0
+[20:33:35] 
+인증에 성공하였습니다.
+
+[20:33:36] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:36:53] 
+--------------------------------------------------------------------
+[20:36:53]  		GTA:T Korea Mode On
+[20:36:53]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:36:53] --------------------------------------------------------------------
+
+[20:36:53] Number of vehicle models: 0
+[20:36:55] 
+인증에 성공하였습니다.
+
+[20:38:16] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:39:32] 
+--------------------------------------------------------------------
+[20:39:32]  		GTA:T Korea Mode On
+[20:39:32]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:39:32] --------------------------------------------------------------------
+
+[20:39:32] Number of vehicle models: 0
+[20:39:32] 
+인증에 성공하였습니다.
+
+[20:39:42] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:41:05] 
+--------------------------------------------------------------------
+[20:41:05]  		GTA:T Korea Mode On
+[20:41:05]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:41:05] --------------------------------------------------------------------
+
+[20:41:05] Number of vehicle models: 0
+[20:41:05] 
+인증에 성공하였습니다.
+
+[20:42:13] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[20:43:38] 
+--------------------------------------------------------------------
+[20:43:38]  		GTA:T Korea Mode On
+[20:43:38]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:43:38] --------------------------------------------------------------------
+
+[20:43:38] Number of vehicle models: 0
+[20:43:38] 
+인증에 성공하였습니다.
+
+[20:43:39] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[20:44:02] RCON (In-Game): Player #0 (Cada) has logged in.
+[20:44:03] RCON (In-Game): Player [Cada] sent command: gmx
+[20:44:15] 
+--------------------------------------------------------------------
+[20:44:15]  		GTA:T Korea Mode On
+[20:44:15]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:44:15] --------------------------------------------------------------------
+
+[20:44:15] Number of vehicle models: 0
+[20:44:15] 
+인증에 성공하였습니다.
+
+[20:45:35] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[20:47:07] RCON (In-Game): Player [Cada] sent command: gmx
+[20:47:19] 
+--------------------------------------------------------------------
+[20:47:19]  		GTA:T Korea Mode On
+[20:47:19]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:47:19] --------------------------------------------------------------------
+
+[20:47:19] Number of vehicle models: 0
+[20:47:19] 
+인증에 성공하였습니다.
+
+[20:48:49] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[20:57:32] [part] Cada has left the server (0:1)
+Console input: gmx
+[21:05:02] 
+--------------------------------------------------------------------
+[21:05:02]  		GTA:T Korea Mode On
+[21:05:02]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:05:02] --------------------------------------------------------------------
+
+[21:05:02] Number of vehicle models: 0
+[21:05:02] 
+인증에 성공하였습니다.
+
+[21:05:07] [connection] 127.0.0.1:61342 requests connection cookie.
+[21:05:08] [connection] incoming connection: 127.0.0.1:61342 id: 0
+[21:05:08] [join] Cada has joined the server (0:127.0.0.1)
+[21:05:14] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[21:06:28] 
+--------------------------------------------------------------------
+[21:06:28]  		GTA:T Korea Mode On
+[21:06:28]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:06:28] --------------------------------------------------------------------
+
+[21:06:28] Number of vehicle models: 0
+[21:06:28] 
+인증에 성공하였습니다.
+
+[21:06:30] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[21:07:17] 
+--------------------------------------------------------------------
+[21:07:17]  		GTA:T Korea Mode On
+[21:07:17]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:07:17] --------------------------------------------------------------------
+
+[21:07:17] Number of vehicle models: 0
+[21:07:18] 
+인증에 성공하였습니다.
+
+[21:07:34] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[21:19:48] 
+--------------------------------------------------------------------
+[21:19:48]  		GTA:T Korea Mode On
+[21:19:48]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:19:48] --------------------------------------------------------------------
+
+[21:19:48] Number of vehicle models: 0
+[21:19:48] 
+인증에 성공하였습니다.
+
+[21:20:35] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[21:26:18] [connection] 59.1.229.214:52379 requests connection cookie.
+[21:26:19] [connection] incoming connection: 59.1.229.214:52379 id: 1
+[21:26:19] [join] supergod has joined the server (1:59.1.229.214)
+[21:26:40] [System] supergod(id:1) 계정 생성 [IP:59.1.229.214]
+[21:26:40] [System] supergod(id:1) 로그인 [IP:59.1.229.214]
+[21:28:06] RCON (In-Game): Player #0 (Cada) has logged in.
+[21:29:07] [Team Chat] Cada: a
+[21:30:00] [part] supergod has left the server (1:1)
+[21:30:24] [connection] 59.1.229.214:61102 requests connection cookie.
+[21:30:25] [connection] incoming connection: 59.1.229.214:61102 id: 1
+[21:30:25] [join] supergod has joined the server (1:59.1.229.214)
+[21:30:29] [System] supergod(id:1) 로그인 [IP:59.1.229.214]
+[21:36:12] [part] supergod has left the server (1:1)
+[21:36:46] [connection] 59.1.229.214:60073 requests connection cookie.
+[21:36:47] [connection] incoming connection: 59.1.229.214:60073 id: 1
+[21:36:48] [join] supergod has joined the server (1:59.1.229.214)
+[21:37:02] [System] supergod(id:1) 로그인 [IP:59.1.229.214]
+[21:37:09] RCON (In-Game): Player [Cada] sent command: gmx
+[21:37:21] 
+--------------------------------------------------------------------
+[21:37:21]  		GTA:T Korea Mode On
+[21:37:21]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:37:21] --------------------------------------------------------------------
+
+[21:37:21] Number of vehicle models: 0
+[21:37:21] 
+인증에 성공하였습니다.
+
+[21:37:22] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[21:37:22] [System] supergod(id:1) 로그인 [IP:59.1.229.214]
+[21:45:48] [part] supergod has left the server (1:1)
+[21:50:07] [connection] 121.173.48.86:50261 requests connection cookie.
+[21:50:07] [connection] incoming connection: 121.173.48.86:50261 id: 1
+[21:50:08] [join] at.kravchenko has joined the server (1:121.173.48.86)
+[21:50:11] [System] at.kravchenko(id:1) 계정 생성 [IP:121.173.48.86]
+[21:50:11] [System] at.kravchenko(id:1) 로그인 [IP:121.173.48.86]
+[21:50:57] [part] at.kravchenko has left the server (1:1)
+[21:52:35] [connection] 121.173.48.86:65193 requests connection cookie.
+[21:52:36] [connection] incoming connection: 121.173.48.86:65193 id: 1
+[21:52:37] [join] at.kravchenko has joined the server (1:121.173.48.86)
+[21:52:40] [System] at.kravchenko(id:1) 로그인 [IP:121.173.48.86]
+[22:07:29] [part] at.kravchenko has left the server (1:1)
+Console input: gmx
+[22:29:51] 
+--------------------------------------------------------------------
+[22:29:51]  		GTA:T Korea Mode On
+[22:29:51]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:29:51] --------------------------------------------------------------------
+
+[22:29:51] Number of vehicle models: 0
+[22:29:51] 
+인증에 성공하였습니다.
+
+[22:29:53] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:50:22] RCON (In-Game): Player [Cada] sent command: gmx
+[22:50:34] 
+--------------------------------------
+[22:50:34] [INC] WeaponDrop v1.1 by Jeffry loaded!
+[22:50:34] --------------------------------------
+
+[22:50:34] 
+--------------------------------------------------------------------
+[22:50:34]  		GTA:T Korea Mode On
+[22:50:34]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:50:34] --------------------------------------------------------------------
+
+[22:50:34] Number of vehicle models: 0
+[22:50:35] 
+인증에 성공하였습니다.
+
+[22:50:52] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:52:51] RCON (In-Game): Player [Cada] sent command: gmx
+[22:52:51] 
+----------------------------------------
+[22:52:51] [INC] WeaponDrop v1.1 by Jeffry unloaded!
+[22:52:51] ----------------------------------------
+
+[22:53:03] 
+--------------------------------------
+[22:53:03] [INC] WeaponDrop v1.1 by Jeffry loaded!
+[22:53:03] --------------------------------------
+
+[22:53:03] 
+--------------------------------------------------------------------
+[22:53:03]  		GTA:T Korea Mode On
+[22:53:03]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:53:03] --------------------------------------------------------------------
+
+[22:53:03] Number of vehicle models: 0
+[22:53:03] 
+인증에 성공하였습니다.
+
+[22:53:04] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[23:17:54] RCON (In-Game): Player [Cada] sent command: gmx
+[23:17:54] 
+----------------------------------------
+[23:17:54] [INC] WeaponDrop v1.1 by Jeffry unloaded!
+[23:17:54] ----------------------------------------
+
+[23:18:06] 
+--------------------------------------
+[23:18:06] [INC] WeaponDrop v1.1 by Jeffry loaded!
+[23:18:06] --------------------------------------
+
+[23:18:06] 
+--------------------------------------------------------------------
+[23:18:06]  		GTA:T Korea Mode On
+[23:18:06]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:18:06] --------------------------------------------------------------------
+
+[23:18:06] Number of vehicle models: 0
+[23:18:06] 
+인증에 성공하였습니다.
+
+[23:19:46] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[23:19:55] [part] Cada has left the server (0:1)
+Console input: gmx
+[23:20:33] 
+----------------------------------------
+[23:20:33] [INC] WeaponDrop v1.1 by Jeffry unloaded!
+[23:20:33] ----------------------------------------
+
+[23:20:45] 
+--------------------------------------------------------------------
+[23:20:45]  		GTA:T Korea Mode On
+[23:20:45]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:20:45] --------------------------------------------------------------------
+
+[23:20:45] Number of vehicle models: 0
+[23:20:45] 
+인증에 성공하였습니다.
+
+[23:21:51] [connection] 127.0.0.1:64268 requests connection cookie.
+[23:21:52] [connection] incoming connection: 127.0.0.1:64268 id: 0
+[23:21:53] [join] Cada has joined the server (0:127.0.0.1)
+[23:22:03] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[23:22:11] [part] Cada has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:24:35] 
+[23:24:35] Server Plugins
+[23:24:35] --------------
+[23:24:35]  Loading plugin: MapAndreas
+[23:24:35]   Loaded.
+[23:24:35]  Loaded 1 plugins.
+
+[23:24:35] 
+[23:24:35] Filterscripts
+[23:24:35] ---------------
+[23:24:35]   Loading filterscript 'fsdebug.amx'...
+[23:24:35] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:24:35]   * By Simon Campbell *
+  *********************
+[23:24:35]   * Version: 0.5d      *
+  *********************
+[23:24:35]   * -- LOADED         *
+  *********************
+
+[23:24:35]   Loaded 1 filterscripts.
+
+[23:24:35] 
+--------------------------------------------------------------------
+[23:24:35]  		GTA:T Korea Mode On
+[23:24:35]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:24:35] --------------------------------------------------------------------
+
+[23:24:35] Number of vehicle models: 0
+[23:24:35] 
+인증에 성공하였습니다.
+
+[23:24:52] [connection] 127.0.0.1:60089 requests connection cookie.
+[23:24:53] [connection] incoming connection: 127.0.0.1:60089 id: 0
+[23:24:53] [join] Cada has joined the server (0:127.0.0.1)
+[23:24:56] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:28:49] 
+--------------------------------------------------------------------
+[23:28:49]  		GTA:T Korea Mode On
+[23:28:49]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:28:49] --------------------------------------------------------------------
+
+[23:28:49] Number of vehicle models: 0
+[23:28:50] 
+인증에 성공하였습니다.
+
+[23:28:50] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[23:29:03] [part] Cada has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:29:08] 
+[23:29:08] Server Plugins
+[23:29:08] --------------
+[23:29:08]  Loading plugin: MapAndreas
+[23:29:08]   Loaded.
+[23:29:08]  Loaded 1 plugins.
+
+[23:29:08] 
+[23:29:08] Filterscripts
+[23:29:08] ---------------
+[23:29:08]   Loading filterscript 'fsdebug.amx'...
+[23:29:08] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:29:08]   * By Simon Campbell *
+  *********************
+[23:29:08]   * Version: 0.5d      *
+  *********************
+[23:29:08]   * -- LOADED         *
+  *********************
+
+[23:29:08]   Loaded 1 filterscripts.
+
+[23:29:08] 
+--------------------------------------------------------------------
+[23:29:08]  		GTA:T Korea Mode On
+[23:29:08]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:29:08] --------------------------------------------------------------------
+
+[23:29:08] Number of vehicle models: 0
+[23:29:08] 
+인증에 성공하였습니다.
+
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:30:15] 
+[23:30:15] Server Plugins
+[23:30:15] --------------
+[23:30:15]  Loading plugin: MapAndreas
+[23:30:15]   Loaded.
+[23:30:15]  Loaded 1 plugins.
+
+[23:30:16] 
+[23:30:16] Filterscripts
+[23:30:16] ---------------
+[23:30:16]   Loading filterscript 'fsdebug.amx'...
+[23:30:16] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:30:16]   * By Simon Campbell *
+  *********************
+[23:30:16]   * Version: 0.5d      *
+  *********************
+[23:30:16]   * -- LOADED         *
+  *********************
+
+[23:30:16]   Loaded 1 filterscripts.
+
+[23:30:16] [connection] 127.0.0.1:51290 requests connection cookie.
+[23:30:16] 
+--------------------------------------------------------------------
+[23:30:16]  		GTA:T Korea Mode On
+[23:30:16]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:30:16] --------------------------------------------------------------------
+
+[23:30:16] Number of vehicle models: 0
+[23:30:16] 
+인증에 성공하였습니다.
+
+[23:30:17] [connection] incoming connection: 127.0.0.1:51290 id: 0
+[23:30:17] [npc:join] npcidle has joined the server (0:127.0.0.1)
+[23:30:38] [connection] 127.0.0.1:50206 requests connection cookie.
+[23:30:39] [connection] incoming connection: 127.0.0.1:50206 id: 1
+[23:30:39] [join] Cada has joined the server (1:127.0.0.1)
+[23:30:40] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:32:21] 
+--------------------------------------------------------------------
+[23:32:21]  		GTA:T Korea Mode On
+[23:32:21]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:32:21] --------------------------------------------------------------------
+
+[23:32:21] Number of vehicle models: 0
+[23:32:21] [connection] 127.0.0.1:64619 requests connection cookie.
+[23:32:21] 
+인증에 성공하였습니다.
+
+[23:32:22] [connection] incoming connection: 127.0.0.1:64619 id: 2
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:32:42] 
+[23:32:42] Server Plugins
+[23:32:42] --------------
+[23:32:42]  Loading plugin: MapAndreas
+[23:32:42]   Loaded.
+[23:32:42]  Loaded 1 plugins.
+
+[23:32:43] 
+[23:32:43] Filterscripts
+[23:32:43] ---------------
+[23:32:43]   Loading filterscript 'fsdebug.amx'...
+[23:32:43] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:32:43]   * By Simon Campbell *
+  *********************
+[23:32:43]   * Version: 0.5d      *
+  *********************
+[23:32:43]   * -- LOADED         *
+  *********************
+
+[23:32:43]   Loaded 1 filterscripts.
+
+[23:32:43] [connection] 127.0.0.1:56562 requests connection cookie.
+[23:32:43] 
+--------------------------------------------------------------------
+[23:32:43]  		GTA:T Korea Mode On
+[23:32:43]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:32:43] --------------------------------------------------------------------
+
+[23:32:43] Number of vehicle models: 0
+[23:32:43] 
+인증에 성공하였습니다.
+
+[23:32:44] [connection] incoming connection: 127.0.0.1:56562 id: 0
+[23:32:44] [npc:join] npctest has joined the server (0:127.0.0.1)
+[23:33:03] [connection] 127.0.0.1:52941 requests connection cookie.
+[23:33:04] [connection] incoming connection: 127.0.0.1:52941 id: 1
+[23:33:04] [join] Cada has joined the server (1:127.0.0.1)
+[23:33:06] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:35:58] 
+--------------------------------------------------------------------
+[23:35:58]  		GTA:T Korea Mode On
+[23:35:58]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:35:58] --------------------------------------------------------------------
+
+[23:35:58] Number of vehicle models: 0
+[23:35:58] [connection] 127.0.0.1:64737 requests connection cookie.
+[23:35:58] 
+인증에 성공하였습니다.
+
+[23:35:59] [connection] incoming connection: 127.0.0.1:64737 id: 2
+[23:35:59] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:36:15] RCON (In-Game): Player #1 (Cada) has logged in.
+[23:37:07] RCON (In-Game): Player [Cada] sent command: gmx
+[23:37:19] 
+--------------------------------------------------------------------
+[23:37:19]  		GTA:T Korea Mode On
+[23:37:19]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:37:19] --------------------------------------------------------------------
+
+[23:37:19] Number of vehicle models: 0
+[23:37:20] 
+인증에 성공하였습니다.
+
+[23:37:20] [connection] 127.0.0.1:59245 requests connection cookie.
+[23:37:21] [connection] incoming connection: 127.0.0.1:59245 id: 2
+[23:37:32] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:38:11] [part] Cada has left the server (1:1)
+[23:39:13] [connection] 127.0.0.1:53495 requests connection cookie.
+[23:39:14] [connection] incoming connection: 127.0.0.1:53495 id: 1
+[23:39:15] [join] Cada has joined the server (1:127.0.0.1)
+[23:39:17] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:39:24] RCON (In-Game): Player #1 (Cada) has logged in.
+[23:39:25] RCON (In-Game): Player [Cada] sent command: gmx
+[23:39:37] 
+--------------------------------------------------------------------
+[23:39:37]  		GTA:T Korea Mode On
+[23:39:37]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:39:37] --------------------------------------------------------------------
+
+[23:39:37] Number of vehicle models: 0
+[23:39:37] [connection] 127.0.0.1:55140 requests connection cookie.
+[23:39:37] 
+인증에 성공하였습니다.
+
+[23:39:38] [connection] incoming connection: 127.0.0.1:55140 id: 2
+[23:40:00] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:41:25] [part] Cada has left the server (1:1)
+Console input: gmx
+[23:42:24] 
+--------------------------------------------------------------------
+[23:42:24]  		GTA:T Korea Mode On
+[23:42:24]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:42:24] --------------------------------------------------------------------
+
+[23:42:24] Number of vehicle models: 0
+[23:42:24] [connection] 127.0.0.1:62022 requests connection cookie.
+[23:42:24] 
+인증에 성공하였습니다.
+
+[23:42:25] [connection] incoming connection: 127.0.0.1:62022 id: 1
+[23:43:00] [connection] 127.0.0.1:62025 requests connection cookie.
+[23:43:01] [connection] incoming connection: 127.0.0.1:62025 id: 1
+[23:43:01] [join] Cada has joined the server (1:127.0.0.1)
+[23:43:02] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:43:14] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[23:44:29] 
+--------------------------------------------------------------------
+[23:44:29]  		GTA:T Korea Mode On
+[23:44:29]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:44:29] --------------------------------------------------------------------
+
+[23:44:29] Number of vehicle models: 0
+[23:44:29] [connection] 127.0.0.1:64354 requests connection cookie.
+[23:44:29] 
+인증에 성공하였습니다.
+
+[23:44:30] [connection] incoming connection: 127.0.0.1:64354 id: 2
+[23:44:36] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:44:42] RCON (In-Game): Player [Cada] sent command: login 1
+[23:44:43] RCON (In-Game): Player [Cada] sent command: gmx
+[23:44:55] 
+--------------------------------------------------------------------
+[23:44:55]  		GTA:T Korea Mode On
+[23:44:55]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:44:55] --------------------------------------------------------------------
+
+[23:44:55] Number of vehicle models: 0
+[23:44:56] [connection] 127.0.0.1:61339 requests connection cookie.
+[23:44:56] 
+인증에 성공하였습니다.
+
+[23:44:57] [connection] incoming connection: 127.0.0.1:61339 id: 2
+[23:45:15] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: say d
+Console input: gmx
+[23:50:56] [connection] 127.0.0.1:64017 requests connection cookie.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:51:25] 
+[23:51:25] Server Plugins
+[23:51:25] --------------
+[23:51:25]  Loading plugin: MapAndreas
+[23:51:25]   Loaded.
+[23:51:25]  Loaded 1 plugins.
+
+[23:51:25] 
+[23:51:25] Filterscripts
+[23:51:25] ---------------
+[23:51:25]   Loading filterscript 'fsdebug.amx'...
+[23:51:25] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:51:25]   * By Simon Campbell *
+  *********************
+[23:51:25]   * Version: 0.5d      *
+  *********************
+[23:51:25]   * -- LOADED         *
+  *********************
+
+[23:51:25]   Loaded 1 filterscripts.
+
+[23:51:25] [connection] 127.0.0.1:60311 requests connection cookie.
+[23:51:25] 
+--------------------------------------------------------------------
+[23:51:25]  		GTA:T Korea Mode On
+[23:51:25]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:51:25] --------------------------------------------------------------------
+
+[23:51:25] Number of vehicle models: 0
+[23:51:25] 
+인증에 성공하였습니다.
+
+[23:51:26] [connection] incoming connection: 127.0.0.1:60311 id: 0
+[23:51:26] [npc:join] npctest has joined the server (0:127.0.0.1)
+[23:51:44] [connection] 127.0.0.1:61585 requests connection cookie.
+[23:51:45] [connection] incoming connection: 127.0.0.1:61585 id: 1
+[23:51:45] [join] Cada has joined the server (1:127.0.0.1)
+[23:51:46] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:51:57] RCON (In-Game): Player #1 (Cada) has logged in.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:57:49] 
+[23:57:49] Server Plugins
+[23:57:49] --------------
+[23:57:49]  Loading plugin: MapAndreas
+[23:57:49]   Loaded.
+[23:57:49]  Loaded 1 plugins.
+
+[23:57:49] 
+[23:57:49] Filterscripts
+[23:57:49] ---------------
+[23:57:49]   Loading filterscript 'fsdebug.amx'...
+[23:57:49] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:57:49]   * By Simon Campbell *
+  *********************
+[23:57:49]   * Version: 0.5d      *
+  *********************
+[23:57:49]   * -- LOADED         *
+  *********************
+
+[23:57:49]   Loaded 1 filterscripts.
+
+[23:57:49] [connection] 127.0.0.1:61808 requests connection cookie.
+[23:57:50] 
+--------------------------------------------------------------------
+[23:57:50]  		GTA:T Korea Mode On
+[23:57:50]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:57:50] --------------------------------------------------------------------
+
+[23:57:50] Number of vehicle models: 0
+[23:57:50] 
+인증에 성공하였습니다.
+
+[23:57:50] [connection] incoming connection: 127.0.0.1:61808 id: 0
+[23:57:51] [npc:join] npctest has joined the server (0:127.0.0.1)
+[23:58:07] [connection] 127.0.0.1:49535 requests connection cookie.
+[23:58:08] [connection] incoming connection: 127.0.0.1:49535 id: 1
+[23:58:09] [join] Cada has joined the server (1:127.0.0.1)
+[23:58:10] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[23:58:18] RCON (In-Game): Player #1 (Cada) has logged in.
+[23:59:11] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:59:40] 
+[23:59:40] Server Plugins
+[23:59:40] --------------
+[23:59:40]  Loading plugin: MapAndreas
+[23:59:40]   Loaded.
+[23:59:40]  Loaded 1 plugins.
+
+[23:59:40] 
+[23:59:40] Filterscripts
+[23:59:40] ---------------
+[23:59:40]   Loading filterscript 'fsdebug.amx'...
+[23:59:40] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:59:40]   * By Simon Campbell *
+  *********************
+[23:59:40]   * Version: 0.5d      *
+  *********************
+[23:59:40]   * -- LOADED         *
+  *********************
+
+[23:59:40]   Loaded 1 filterscripts.
+
+[23:59:41] [connection] 127.0.0.1:52980 requests connection cookie.
+[23:59:41] 
+--------------------------------------------------------------------
+[23:59:41]  		GTA:T Korea Mode On
+[23:59:41]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:59:41] --------------------------------------------------------------------
+
+[23:59:41] Number of vehicle models: 0
+[23:59:41] 
+인증에 성공하였습니다.
+
+[23:59:42] [connection] incoming connection: 127.0.0.1:52980 id: 0
+[23:59:42] [npc:join] npctest has joined the server (0:127.0.0.1)
+[23:59:59] [connection] 127.0.0.1:50276 requests connection cookie.
+[00:00:00] [connection] incoming connection: 127.0.0.1:50276 id: 1
+[00:00:01] [join] Cada has joined the server (1:127.0.0.1)
+[00:00:02] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:00:08] RCON (In-Game): Player #1 (Cada) has logged in.
+[00:00:31] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:01:20] 
+[00:01:20] Server Plugins
+[00:01:20] --------------
+[00:01:20]  Loading plugin: MapAndreas
+[00:01:20]   Loaded.
+[00:01:20]  Loaded 1 plugins.
+
+[00:01:20] 
+[00:01:20] Filterscripts
+[00:01:20] ---------------
+[00:01:20]   Loading filterscript 'fsdebug.amx'...
+[00:01:20] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:01:20]   * By Simon Campbell *
+  *********************
+[00:01:20]   * Version: 0.5d      *
+  *********************
+[00:01:20]   * -- LOADED         *
+  *********************
+
+[00:01:20]   Loaded 1 filterscripts.
+
+[00:01:20] [connection] 127.0.0.1:52683 requests connection cookie.
+[00:01:21] 
+--------------------------------------------------------------------
+[00:01:21]  		GTA:T Korea Mode On
+[00:01:21]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:01:21] --------------------------------------------------------------------
+
+[00:01:21] Number of vehicle models: 0
+[00:01:21] 
+인증에 성공하였습니다.
+
+[00:01:21] [connection] incoming connection: 127.0.0.1:52683 id: 0
+[00:01:22] [npc:join] npctest has joined the server (0:127.0.0.1)
+[00:01:37] [connection] 127.0.0.1:55511 requests connection cookie.
+[00:01:38] [connection] incoming connection: 127.0.0.1:55511 id: 1
+[00:01:39] [join] Cada has joined the server (1:127.0.0.1)
+[00:01:43] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:01:52] RCON (In-Game): Player #1 (Cada) has logged in.
+[00:02:14] [part] Cada has left the server (1:1)
+Console input: gmx
+[00:02:54] 
+--------------------------------------------------------------------
+[00:02:54]  		GTA:T Korea Mode On
+[00:02:54]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:02:54] --------------------------------------------------------------------
+
+[00:02:54] Number of vehicle models: 0
+[00:02:55] [connection] 127.0.0.1:52986 requests connection cookie.
+[00:02:55] 
+인증에 성공하였습니다.
+
+[00:02:56] [connection] incoming connection: 127.0.0.1:52986 id: 1
+[00:03:04] [connection] 127.0.0.1:62643 requests connection cookie.
+[00:03:05] [connection] incoming connection: 127.0.0.1:62643 id: 1
+[00:03:05] [join] Cada has joined the server (1:127.0.0.1)
+[00:03:18] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:03:22] RCON (In-Game): Player #1 (Cada) has logged in.
+[00:03:37] [part] Cada has left the server (1:1)
+Console input: gmx
+[00:04:55] 
+--------------------------------------------------------------------
+[00:04:55]  		GTA:T Korea Mode On
+[00:04:55]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:04:55] --------------------------------------------------------------------
+
+[00:04:55] Number of vehicle models: 0
+[00:04:55] [connection] 127.0.0.1:51182 requests connection cookie.
+[00:04:55] 
+인증에 성공하였습니다.
+
+[00:04:56] [connection] incoming connection: 127.0.0.1:51182 id: 1
+[00:05:00] [connection] 127.0.0.1:63076 requests connection cookie.
+[00:05:01] [connection] incoming connection: 127.0.0.1:63076 id: 1
+[00:05:01] [join] Cada has joined the server (1:127.0.0.1)
+[00:05:03] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:05:11] RCON (In-Game): Player #1 (Cada) has logged in.
+[00:05:25] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:05:49] 
+[00:05:49] Server Plugins
+[00:05:49] --------------
+[00:05:49]  Loading plugin: MapAndreas
+[00:05:49]   Loaded.
+[00:05:49]  Loaded 1 plugins.
+
+[00:05:49] 
+[00:05:49] Filterscripts
+[00:05:49] ---------------
+[00:05:49]   Loading filterscript 'fsdebug.amx'...
+[00:05:49] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:05:49]   * By Simon Campbell *
+  *********************
+[00:05:49]   * Version: 0.5d      *
+  *********************
+[00:05:49]   * -- LOADED         *
+  *********************
+
+[00:05:49]   Loaded 1 filterscripts.
+
+[00:05:49] [connection] 127.0.0.1:56936 requests connection cookie.
+[00:05:49] 
+--------------------------------------------------------------------
+[00:05:49]  		GTA:T Korea Mode On
+[00:05:49]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:05:49] --------------------------------------------------------------------
+
+[00:05:49] Number of vehicle models: 0
+[00:05:49] 
+인증에 성공하였습니다.
+
+[00:05:50] [connection] incoming connection: 127.0.0.1:56936 id: 0
+[00:05:50] [npc:join] npctest has joined the server (0:127.0.0.1)
+[00:06:10] [connection] 127.0.0.1:54101 requests connection cookie.
+[00:06:11] [connection] incoming connection: 127.0.0.1:54101 id: 1
+[00:06:12] [join] Cada has joined the server (1:127.0.0.1)
+[00:06:19] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:06:41] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[00:07:35] 
+--------------------------------------------------------------------
+[00:07:35]  		GTA:T Korea Mode On
+[00:07:35]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:07:35] --------------------------------------------------------------------
+
+[00:07:35] Number of vehicle models: 0
+[00:07:35] [connection] 127.0.0.1:64216 requests connection cookie.
+[00:07:35] 
+인증에 성공하였습니다.
+
+[00:07:36] [connection] incoming connection: 127.0.0.1:64216 id: 2
+[00:07:41] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:07:50] [part] Cada has left the server (1:1)
+Console input: GMX
+[00:09:09] 
+--------------------------------------------------------------------
+[00:09:09]  		GTA:T Korea Mode On
+[00:09:09]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:09:09] --------------------------------------------------------------------
+
+[00:09:09] Number of vehicle models: 0
+[00:09:09] [connection] 127.0.0.1:57369 requests connection cookie.
+[00:09:09] 
+인증에 성공하였습니다.
+
+[00:09:10] [connection] incoming connection: 127.0.0.1:57369 id: 1
+[00:09:20] [connection] 127.0.0.1:51003 requests connection cookie.
+[00:09:21] [connection] incoming connection: 127.0.0.1:51003 id: 1
+[00:09:22] [join] Cada has joined the server (1:127.0.0.1)
+[00:09:23] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:09:38] RCON (In-Game): Player #1 (Cada) has logged in.
+[00:09:47] [part] Cada has left the server (1:1)
+Console input: gmx
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:10:47] 
+[00:10:47] Server Plugins
+[00:10:47] --------------
+[00:10:47]  Loading plugin: MapAndreas
+[00:10:47]   Loaded.
+[00:10:47]  Loaded 1 plugins.
+
+[00:10:47] 
+[00:10:47] Filterscripts
+[00:10:47] ---------------
+[00:10:47]   Loading filterscript 'fsdebug.amx'...
+[00:10:47] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:10:47]   * By Simon Campbell *
+  *********************
+[00:10:47]   * Version: 0.5d      *
+  *********************
+[00:10:47]   * -- LOADED         *
+  *********************
+
+[00:10:47]   Loaded 1 filterscripts.
+
+[00:10:47] [connection] 127.0.0.1:54572 requests connection cookie.
+[00:10:47] 
+--------------------------------------------------------------------
+[00:10:47]  		GTA:T Korea Mode On
+[00:10:47]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:10:47] --------------------------------------------------------------------
+
+[00:10:47] Number of vehicle models: 0
+[00:10:47] 
+인증에 성공하였습니다.
+
+[00:10:48] [connection] incoming connection: 127.0.0.1:54572 id: 0
+[00:10:48] [npc:join] npctest has joined the server (0:127.0.0.1)
+[00:11:04] [connection] 127.0.0.1:56727 requests connection cookie.
+[00:11:05] [connection] incoming connection: 127.0.0.1:56727 id: 1
+[00:11:05] [join] Cada has joined the server (1:127.0.0.1)
+[00:11:09] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:11:32] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[00:13:09] 
+--------------------------------------------------------------------
+[00:13:09]  		GTA:T Korea Mode On
+[00:13:09]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:13:09] --------------------------------------------------------------------
+
+[00:13:09] Number of vehicle models: 0
+[00:13:09] [connection] 127.0.0.1:56076 requests connection cookie.
+[00:13:09] 
+인증에 성공하였습니다.
+
+[00:13:10] [connection] incoming connection: 127.0.0.1:56076 id: 2
+[00:13:35] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:13:47] RCON (In-Game): Player [Cada] sent command: login 1
+Console input: gmx
+[00:14:26] 
+--------------------------------------------------------------------
+[00:14:26]  		GTA:T Korea Mode On
+[00:14:26]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:14:26] --------------------------------------------------------------------
+
+[00:14:26] Number of vehicle models: 0
+[00:14:26] 
+인증에 성공하였습니다.
+
+[00:14:26] [connection] 127.0.0.1:50236 requests connection cookie.
+[00:14:27] [connection] incoming connection: 127.0.0.1:50236 id: 2
+[00:14:38] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:15:30] RCON (In-Game): Player [Cada] sent command: gmx
+[00:15:42] 
+--------------------------------------------------------------------
+[00:15:42]  		GTA:T Korea Mode On
+[00:15:42]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:15:42] --------------------------------------------------------------------
+
+[00:15:42] Number of vehicle models: 0
+[00:15:42] [connection] 127.0.0.1:54392 requests connection cookie.
+[00:15:42] 
+인증에 성공하였습니다.
+
+[00:15:43] [connection] incoming connection: 127.0.0.1:54392 id: 2
+[00:15:48] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:23:37] 
+--------------------------------------------------------------------
+[00:23:37]  		GTA:T Korea Mode On
+[00:23:37]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:23:37] --------------------------------------------------------------------
+
+[00:23:37] Number of vehicle models: 0
+[00:23:37] [connection] 127.0.0.1:54070 requests connection cookie.
+[00:23:37] 
+인증에 성공하였습니다.
+
+[00:23:38] [connection] incoming connection: 127.0.0.1:54070 id: 2
+[00:23:39] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:29:12] 
+--------------------------------------------------------------------
+[00:29:12]  		GTA:T Korea Mode On
+[00:29:12]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:29:12] --------------------------------------------------------------------
+
+[00:29:12] Number of vehicle models: 0
+[00:29:12] [connection] 127.0.0.1:57747 requests connection cookie.
+[00:29:12] 
+인증에 성공하였습니다.
+
+[00:29:13] [connection] incoming connection: 127.0.0.1:57747 id: 2
+[00:29:19] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:31:22] 
+--------------------------------------------------------------------
+[00:31:22]  		GTA:T Korea Mode On
+[00:31:22]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:31:22] --------------------------------------------------------------------
+
+[00:31:22] Number of vehicle models: 0
+[00:31:22] [connection] 127.0.0.1:61823 requests connection cookie.
+[00:31:22] 
+인증에 성공하였습니다.
+
+[00:31:23] [connection] incoming connection: 127.0.0.1:61823 id: 2
+[00:31:24] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:33:43] 
+--------------------------------------------------------------------
+[00:33:43]  		GTA:T Korea Mode On
+[00:33:43]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:33:43] --------------------------------------------------------------------
+
+[00:33:43] Number of vehicle models: 0
+[00:33:43] [connection] 127.0.0.1:52233 requests connection cookie.
+[00:33:43] 
+인증에 성공하였습니다.
+
+[00:33:44] [connection] incoming connection: 127.0.0.1:52233 id: 2
+[00:33:46] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:37:14] RCON (In-Game): Player [Cada] sent command: gmx
+[00:37:26] 
+--------------------------------------------------------------------
+[00:37:26]  		GTA:T Korea Mode On
+[00:37:26]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:37:26] --------------------------------------------------------------------
+
+[00:37:26] Number of vehicle models: 0
+[00:37:26] 
+인증에 성공하였습니다.
+
+[00:37:26] [connection] 127.0.0.1:63618 requests connection cookie.
+[00:37:27] [connection] incoming connection: 127.0.0.1:63618 id: 2
+[00:37:42] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:37:52] RCON (In-Game): Player [Cada] sent command: login 1
+Console input: gmx
+[00:38:35] 
+--------------------------------------------------------------------
+[00:38:35]  		GTA:T Korea Mode On
+[00:38:35]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:38:35] --------------------------------------------------------------------
+
+[00:38:35] Number of vehicle models: 0
+[00:38:35] 
+인증에 성공하였습니다.
+
+[00:38:35] [connection] 127.0.0.1:63336 requests connection cookie.
+[00:38:36] [connection] incoming connection: 127.0.0.1:63336 id: 2
+[00:38:36] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:39:18] 
+--------------------------------------------------------------------
+[00:39:18]  		GTA:T Korea Mode On
+[00:39:18]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:39:18] --------------------------------------------------------------------
+
+[00:39:18] Number of vehicle models: 0
+[00:39:18] [connection] 127.0.0.1:58394 requests connection cookie.
+[00:39:18] 
+인증에 성공하였습니다.
+
+[00:39:19] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:39:19] [connection] incoming connection: 127.0.0.1:58394 id: 2
+[00:39:56] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:39:59] 
+[00:39:59] Server Plugins
+[00:39:59] --------------
+[00:39:59]  Loading plugin: MapAndreas
+[00:39:59]   Loaded.
+[00:39:59]  Loaded 1 plugins.
+
+[00:39:59] 
+[00:39:59] Filterscripts
+[00:39:59] ---------------
+[00:39:59]   Loading filterscript 'fsdebug.amx'...
+[00:39:59] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:39:59]   * By Simon Campbell *
+  *********************
+[00:39:59]   * Version: 0.5d      *
+  *********************
+[00:39:59]   * -- LOADED         *
+  *********************
+
+[00:39:59]   Loaded 1 filterscripts.
+
+[00:39:59] [connection] 127.0.0.1:57970 requests connection cookie.
+[00:40:00] 
+--------------------------------------------------------------------
+[00:40:00]  		GTA:T Korea Mode On
+[00:40:00]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:40:00] --------------------------------------------------------------------
+
+[00:40:00] Number of vehicle models: 0
+[00:40:00] 
+인증에 성공하였습니다.
+
+[00:40:00] [connection] incoming connection: 127.0.0.1:57970 id: 0
+[00:40:01] [npc:join] npctest has joined the server (0:127.0.0.1)
+[00:40:16] [connection] 127.0.0.1:60325 requests connection cookie.
+[00:40:17] [connection] incoming connection: 127.0.0.1:60325 id: 1
+[00:40:17] [join] Cada has joined the server (1:127.0.0.1)
+[00:40:33] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:40:38] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[00:44:42] 
+--------------------------------------------------------------------
+[00:44:42]  		GTA:T Korea Mode On
+[00:44:42]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:44:42] --------------------------------------------------------------------
+
+[00:44:42] Number of vehicle models: 0
+[00:44:42] [connection] 127.0.0.1:65251 requests connection cookie.
+[00:44:42] 
+인증에 성공하였습니다.
+
+[00:44:43] [connection] incoming connection: 127.0.0.1:65251 id: 2
+[00:44:43] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:46:02] 
+--------------------------------------------------------------------
+[00:46:02]  		GTA:T Korea Mode On
+[00:46:02]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:46:02] --------------------------------------------------------------------
+
+[00:46:02] Number of vehicle models: 0
+[00:46:02] 
+인증에 성공하였습니다.
+
+[00:46:02] [connection] 127.0.0.1:50673 requests connection cookie.
+[00:46:03] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:46:03] [connection] incoming connection: 127.0.0.1:50673 id: 2
+Console input: gmx
+[00:48:43] 
+--------------------------------------------------------------------
+[00:48:43]  		GTA:T Korea Mode On
+[00:48:43]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:48:43] --------------------------------------------------------------------
+
+[00:48:43] Number of vehicle models: 0
+[00:48:43] [connection] 127.0.0.1:59904 requests connection cookie.
+[00:48:43] 
+인증에 성공하였습니다.
+
+[00:48:44] [connection] incoming connection: 127.0.0.1:59904 id: 2
+[00:49:15] [part] Cada has left the server (1:0)
+[00:49:32] [connection] 127.0.0.1:62429 requests connection cookie.
+[00:49:33] [connection] incoming connection: 127.0.0.1:62429 id: 1
+[00:49:33] [join] Cada has joined the server (1:127.0.0.1)
+[00:49:34] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:49:40] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[00:50:37] 
+--------------------------------------------------------------------
+[00:50:37]  		GTA:T Korea Mode On
+[00:50:37]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:50:37] --------------------------------------------------------------------
+
+[00:50:37] Number of vehicle models: 0
+[00:50:37] [connection] 127.0.0.1:59986 requests connection cookie.
+[00:50:37] 
+인증에 성공하였습니다.
+
+[00:50:38] [connection] incoming connection: 127.0.0.1:59986 id: 2
+[00:50:41] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:52:53] 
+--------------------------------------------------------------------
+[00:52:53]  		GTA:T Korea Mode On
+[00:52:53]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:52:53] --------------------------------------------------------------------
+
+[00:52:53] Number of vehicle models: 0
+[00:52:53] [connection] 127.0.0.1:54793 requests connection cookie.
+[00:52:53] 
+인증에 성공하였습니다.
+
+[00:52:54] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:52:54] [connection] incoming connection: 127.0.0.1:54793 id: 2
+[00:52:56] RCON (In-Game): Player [Cada] sent command: login 1
+[00:53:48] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[00:53:52] 
+[00:53:52] Server Plugins
+[00:53:52] --------------
+[00:53:52]  Loading plugin: MapAndreas
+[00:53:52]   Loaded.
+[00:53:52]  Loaded 1 plugins.
+
+[00:53:52] 
+[00:53:52] Filterscripts
+[00:53:52] ---------------
+[00:53:52]   Loading filterscript 'fsdebug.amx'...
+[00:53:52] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[00:53:52]   * By Simon Campbell *
+  *********************
+[00:53:52]   * Version: 0.5d      *
+  *********************
+[00:53:52]   * -- LOADED         *
+  *********************
+
+[00:53:52]   Loaded 1 filterscripts.
+
+[00:53:52] [connection] 127.0.0.1:53179 requests connection cookie.
+[00:53:52] 
+--------------------------------------------------------------------
+[00:53:52]  		GTA:T Korea Mode On
+[00:53:52]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:53:52] --------------------------------------------------------------------
+
+[00:53:52] Number of vehicle models: 0
+[00:53:53] 
+인증에 성공하였습니다.
+
+[00:53:53] [connection] incoming connection: 127.0.0.1:53179 id: 0
+[00:53:53] [npc:join] npctest has joined the server (0:127.0.0.1)
+[00:54:09] [connection] 127.0.0.1:58254 requests connection cookie.
+[00:54:10] [connection] incoming connection: 127.0.0.1:58254 id: 1
+[00:54:11] [join] Cada has joined the server (1:127.0.0.1)
+[00:54:25] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[00:54:28] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[00:55:38] 
+--------------------------------------------------------------------
+[00:55:38]  		GTA:T Korea Mode On
+[00:55:38]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:55:38] --------------------------------------------------------------------
+
+[00:55:38] Number of vehicle models: 0
+[00:55:38] [connection] 127.0.0.1:61568 requests connection cookie.
+[00:55:38] 
+인증에 성공하였습니다.
+
+[00:55:39] [connection] incoming connection: 127.0.0.1:61568 id: 2
+[00:57:23] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: g,x
+Console input: gmx
+[00:58:23] 
+--------------------------------------------------------------------
+[00:58:23]  		GTA:T Korea Mode On
+[00:58:23]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:58:23] --------------------------------------------------------------------
+
+[00:58:23] Number of vehicle models: 0
+[00:58:23] [connection] 127.0.0.1:52644 requests connection cookie.
+[00:58:23] 
+인증에 성공하였습니다.
+
+[00:58:24] [connection] incoming connection: 127.0.0.1:52644 id: 2
+[00:58:24] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:59:04] 
+--------------------------------------------------------------------
+[00:59:04]  		GTA:T Korea Mode On
+[00:59:04]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:59:04] --------------------------------------------------------------------
+
+[00:59:04] Number of vehicle models: 0
+[00:59:04] [connection] 127.0.0.1:58632 requests connection cookie.
+[00:59:04] 
+인증에 성공하였습니다.
+
+[00:59:05] [connection] incoming connection: 127.0.0.1:58632 id: 2
+[00:59:17] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[00:59:53] 
+--------------------------------------------------------------------
+[00:59:53]  		GTA:T Korea Mode On
+[00:59:53]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[00:59:53] --------------------------------------------------------------------
+
+[00:59:53] Number of vehicle models: 0
+[00:59:53] [connection] 127.0.0.1:51434 requests connection cookie.
+[00:59:53] 
+인증에 성공하였습니다.
+
+[00:59:54] [connection] incoming connection: 127.0.0.1:51434 id: 2
+[01:00:23] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[01:00:26] RCON (In-Game): Player [Cada] sent command: gmx
+[01:00:38] 
+--------------------------------------------------------------------
+[01:00:38]  		GTA:T Korea Mode On
+[01:00:38]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[01:00:38] --------------------------------------------------------------------
+
+[01:00:38] Number of vehicle models: 0
+[01:00:38] 
+인증에 성공하였습니다.
+
+[01:00:38] [connection] 127.0.0.1:65252 requests connection cookie.
+[01:00:39] [connection] incoming connection: 127.0.0.1:65252 id: 2
+[01:00:40] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[01:01:33] RCON (In-Game): Player [Cada] sent command: gmx
+[01:01:45] 
+--------------------------------------------------------------------
+[01:01:45]  		GTA:T Korea Mode On
+[01:01:45]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[01:01:45] --------------------------------------------------------------------
+
+[01:01:45] Number of vehicle models: 0
+[01:01:45] 
+인증에 성공하였습니다.
+
+[01:01:45] [connection] 127.0.0.1:62035 requests connection cookie.
+[01:01:46] [connection] incoming connection: 127.0.0.1:62035 id: 2
+[01:01:47] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[01:12:29] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[01:15:40] 
+[01:15:40] Server Plugins
+[01:15:40] --------------
+[01:15:40]  Loading plugin: MapAndreas
+[01:15:40]   Loaded.
+[01:15:40]  Loaded 1 plugins.
+
+[01:15:40] 
+[01:15:40] Filterscripts
+[01:15:40] ---------------
+[01:15:40]   Loading filterscript 'fsdebug.amx'...
+[01:15:40] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[01:15:40]   * By Simon Campbell *
+  *********************
+[01:15:40]   * Version: 0.5d      *
+  *********************
+[01:15:40]   * -- LOADED         *
+  *********************
+
+[01:15:40]   Loaded 1 filterscripts.
+
+[01:15:40] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[01:15:40] [ADM] Info: MapAndreas successfully init.
+[01:15:40] 
+--------------------------------------------------------------------
+[01:15:40]  		GTA:T Korea Mode On
+[01:15:40]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[01:15:40] --------------------------------------------------------------------
+
+[01:15:40] Number of vehicle models: 0
+[01:15:40] 
+인증에 성공하였습니다.
+
+[01:15:40] [connection] 127.0.0.1:55083 requests connection cookie.
+[01:15:42] [connection] incoming connection: 127.0.0.1:55083 id: 0
+[01:15:42] [npc:join] npctest has joined the server (0:127.0.0.1)
+[01:15:58] [connection] 127.0.0.1:65409 requests connection cookie.
+[01:15:59] [connection] incoming connection: 127.0.0.1:65409 id: 1
+[01:15:59] [join] Cada has joined the server (1:127.0.0.1)
+[01:16:01] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[01:16:06] RCON (In-Game): Player #1 (Cada) has logged in.
+[01:16:26] [part] Cada has left the server (1:1)
+[01:16:48] [connection] 127.0.0.1:50736 requests connection cookie.
+[01:16:49] [connection] incoming connection: 127.0.0.1:50736 id: 1
+[01:16:50] [join] Cada has joined the server (1:127.0.0.1)
+[01:16:51] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[01:17:22] [part] Cada has left the server (1:1)
