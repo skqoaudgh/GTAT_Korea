@@ -18,6 +18,7 @@
 #define DialogID_Weapon(%1)				1050 + %1
 #define DialogID_Userdata(%1)			1100 + %1
 #define DialogID_Lobby(%1)				1150 + %1
+#define DialogID_Config(%1)				1200 + %1
 
 #define User_File	"GTAT/User/%s.txt"
 #define Zone_File	"GTAT/Zone/%d.txt"
@@ -26,7 +27,7 @@
 new ConnectedPlayer = 0;
 
 new Text:TD_GTAT[5];
-new Text:TD_Setting[3];
+new Text:TD_Setting[4];
 new Text:TD_SiteURL;
 new Text:TD_Zone[2];
 new Text:TD_Spec[2];
@@ -724,6 +725,17 @@ public OnGameModeInit()
 	TextDrawSetProportional(TD_Setting[2], 1);
 	TextDrawSetSelectable(TD_Setting[2], 1);
 
+	TD_Setting[3] = TextDrawCreate(308.114227, 386.640014, "Set Player Configuration");
+	TextDrawTextSize(TD_Setting[3],10.000000, 100.000000);
+ 	TextDrawLetterSize(TD_Setting[3], 0.250000, 1.250000);
+	TextDrawAlignment(TD_Setting[3], 2);
+	TextDrawColor(TD_Setting[3], -5963521);
+	TextDrawSetOutline(TD_Setting[3], 1);
+	TextDrawBackgroundColor(TD_Setting[3], 51);
+	TextDrawFont(TD_Setting[3], 1);
+	TextDrawSetProportional(TD_Setting[3], 1);
+	TextDrawSetSelectable(TD_Setting[3], 1);
+	
 	TD_SiteURL = TextDrawCreate(8.333349, 428.006530, "cafe.daum.net/sampkor");
 	TextDrawLetterSize(TD_SiteURL, 0.300000, 1.500000);
 	TextDrawAlignment(TD_SiteURL, 1);
@@ -798,7 +810,7 @@ public OnPlayerRequestClass(playerid, classid)
 	SetPlayerFacingAngle(playerid, 272.7505);
 	SetPlayerCameraPos(playerid, -2379.0386,-581.3090,133.6117);
 	SetPlayerCameraLookAt(playerid, -2384.8484,-584.4088,132.1172);
-	for(new i=0; i<3; i++)
+	for(new i=0; i<4; i++)
 		TextDrawShowForPlayer(playerid, TD_Setting[i]);
     SelectTextDraw(playerid, 0x00FF00FF);
 	return 1;
@@ -823,7 +835,7 @@ public OnPlayerConnect(playerid)
     	
 	for(new i=0; i<5; i++)
 		TextDrawShowForPlayer(playerid, TD_GTAT[i]);
-	for(new i=0; i<3; i++)
+	for(new i=0; i<4; i++)
 		TextDrawShowForPlayer(playerid, TD_Setting[i]);
     TextDrawShowForPlayer(playerid, TD_SiteURL);
 	SelectTextDraw(playerid, 0x00FF00FF);
@@ -1471,7 +1483,18 @@ public OnPlayerUpdate(playerid)
 public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 {
 	new WeaponList[256], WeaponUsed[sizeof(WeaponList)];
-	if(dialogid == DialogID_Lobby(0))
+	
+	
+	
+	if(dialogid == DialogID_Config(0))
+	{
+	    if(response)
+	    {
+	    
+	    }
+	}
+	
+	else if(dialogid == DialogID_Lobby(0))
 	{
 	    if(response)
 	    {
@@ -1594,17 +1617,31 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 
 public OnPlayerClickTextDraw(playerid, Text:clickedid)
 {
+	new string[512];
 	if(clickedid == TD_Setting[1]) // 포지션
 	{
 		ShowPlayerDialog(playerid, DialogID_Position(0), DIALOG_STYLE_LIST, ""#C_ORANGE"스폰 장소를 선택하세요.", ""#C_WHITE"임의의 좌표\n플레이어 근처\n로비", "다음", "취소");
 	}
 	
-	if(clickedid == TD_Setting[2]) // 무기
+	else if(clickedid == TD_Setting[2]) // 무기
 	{
 	    ShowPlayerDialog(playerid, DialogID_Weapon(0), DIALOG_STYLE_LIST, ""#C_ORANGE"슬롯을 선택하세요.", ""#C_WHITE"1번 슬롯\n2번 슬롯\n3번 슬롯\n4번 슬롯", "다음", "취소");
 	}
-
-    
+	
+		        			   
+	else if(clickedid == TD_Setting[3]) // config
+	{
+	    format(string, sizeof(string), " "#C_IVORY"  Option\t\t\t\t\t  Status\
+										 Textdraws\n\
+										 "#C_WHITE"Zone Textdraw\n\
+										 Damage Textdraw\n\
+										 Map Logo Textdraw\n\
+										 "#C_IVORY"Features\n\
+										 "#C_WHITE"Hit Sound\n\
+										 Spawn Protection Time\n\
+										 ");
+	    ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "다음", "취소");
+	}
 	return 1;
 }
 
@@ -1625,7 +1662,7 @@ public SetPlayerSpawn(playerid)
 	else
 	   SetPlayerColor(playerid, TeamColor[PlayerInfo[playerid][pTeam]]);
 
-	for(new i=0; i<3; i++)
+	for(new i=0; i<4; i++)
 		TextDrawHideForPlayer(playerid, TD_Setting[i]);
 	for(new i=0; i<2; i++)
 		TextDrawShowForPlayer(playerid, TD_Zone[i]);

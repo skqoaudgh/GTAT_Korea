@@ -56,6 +56,7 @@
 #define COLOR_SKYBLUE			0x9CEAFBFF
 #define COLOR_LIGHTBLUE	  		0x33CCFFFF
 #define COLOR_LIGHTPINK			0xFF8282FF
+#define C_IVORY					"{FFFF82}"
 #define C_STAT					"{6FA7FB}"
 #define C_WHITE					"{FFFFFF}"
 #define C_GREY 					"{AAAAAA}"
