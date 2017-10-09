@@ -9559,3 +9559,623 @@ v0.3.7-R2, (C)2005-2015 SA-MP Team
 [01:16:50] [join] Cada has joined the server (1:127.0.0.1)
 [01:16:51] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
 [01:17:22] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:17:41] 
+[21:17:41] Server Plugins
+[21:17:41] --------------
+[21:17:41]  Loading plugin: MapAndreas
+[21:17:41]   Loaded.
+[21:17:41]  Loading plugin: sscanf
+[21:17:41] 
+
+[21:17:41]  ===============================
+
+[21:17:41]       sscanf plugin loaded.     
+
+[21:17:41]    (c) 2009 Alex "Y_Less" Cole
+
+[21:17:41]    0.3d-R2 500 Players "dnee"
+
+[21:17:41]  ===============================
+
+[21:17:41]   Loaded.
+[21:17:41]  Loading plugin: TDE
+[21:17:41]   Failed.
+[21:17:41]  Loaded 2 plugins.
+
+[21:17:41] 
+[21:17:41] Filterscripts
+[21:17:41] ---------------
+[21:17:41]   Loading filterscript 'fsdebug.amx'...
+[21:17:41] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[21:17:41]   * By Simon Campbell *
+  *********************
+[21:17:41]   * Version: 0.5d      *
+  *********************
+[21:17:41]   * -- LOADED         *
+  *********************
+
+[21:17:41]   Loading filterscript 'TDE.amx'...
+[21:17:41]   Loaded 2 filterscripts.
+
+[21:17:41] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:17:41] [ADM] Info: MapAndreas successfully init.
+[21:17:41] 
+--------------------------------------------------------------------
+[21:17:41]  		GTA:T Korea Mode On
+[21:17:41]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:17:41] --------------------------------------------------------------------
+
+[21:17:41] Number of vehicle models: 0
+[21:17:41] [connection] 127.0.0.1:54468 requests connection cookie.
+[21:17:41] 
+인증에 성공하였습니다.
+
+[21:17:42] [connection] incoming connection: 127.0.0.1:54468 id: 0
+[21:17:43] [npc:join] npctest has joined the server (0:127.0.0.1)
+[21:18:21] [connection] 127.0.0.1:65384 requests connection cookie.
+[21:18:22] [connection] incoming connection: 127.0.0.1:65384 id: 1
+[21:18:22] [join] Cada has joined the server (1:127.0.0.1)
+[21:18:23] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[21:18:34] RCON (In-Game): Player #1 (Cada) has logged in.
+[21:20:07] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[21:20:45] 
+[21:20:45] Server Plugins
+[21:20:45] --------------
+[21:20:45]  Loading plugin: MapAndreas
+[21:20:45]   Loaded.
+[21:20:45]  Loading plugin: sscanf
+[21:20:45] 
+
+[21:20:45]  ===============================
+
+[21:20:45]       sscanf plugin loaded.     
+
+[21:20:45]    (c) 2009 Alex "Y_Less" Cole
+
+[21:20:45]    0.3d-R2 500 Players "dnee"
+
+[21:20:45]  ===============================
+
+[21:20:45]   Loaded.
+[21:20:45]  Loading plugin: TDE
+[21:20:45] 
+TDEditor Plugin loaded, thank you for using.
+
+[21:20:45]   Loaded.
+[21:20:45]  Loaded 3 plugins.
+
+[21:20:45] 
+[21:20:45] Filterscripts
+[21:20:45] ---------------
+[21:20:45]   Loading filterscript 'fsdebug.amx'...
+[21:20:45] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[21:20:45]   * By Simon Campbell *
+  *********************
+[21:20:45]   * Version: 0.5d      *
+  *********************
+[21:20:45]   * -- LOADED         *
+  *********************
+
+[21:20:45]   Loading filterscript 'TDE.amx'...
+[21:20:45]  
+[21:20:45]  
+[21:20:45]  
+[21:20:45]  
+[21:20:45] ___ __  __
+[21:20:45]  | |  \|_  _|.|_ _  _		
+[21:20:45]  | |__/|__(_|||_(_)|			
+[21:20:45]  
+[21:20:45] TDEditor V1.17 by adri1
+[21:20:45] TDEditor loaded
+[21:20:45]  
+[21:20:45]   Loaded 2 filterscripts.
+
+[21:20:45] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:20:45] [ADM] Info: MapAndreas successfully init.
+[21:20:45] 
+--------------------------------------------------------------------
+[21:20:45]  		GTA:T Korea Mode On
+[21:20:45]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:20:45] --------------------------------------------------------------------
+
+[21:20:45] Number of vehicle models: 0
+[21:20:46] [connection] 127.0.0.1:60526 requests connection cookie.
+[21:20:46] 
+인증에 성공하였습니다.
+
+[21:20:47] [connection] incoming connection: 127.0.0.1:60526 id: 0
+[21:20:47] [npc:join] npctest has joined the server (0:127.0.0.1)
+[21:21:05] [connection] 127.0.0.1:58139 requests connection cookie.
+[21:21:06] [connection] incoming connection: 127.0.0.1:58139 id: 1
+[21:21:07] [join] Cada has joined the server (1:127.0.0.1)
+[21:21:11] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[21:21:21] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[21:51:43] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:51:55] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:51:55] 
+--------------------------------------------------------------------
+[21:51:55]  		GTA:T Korea Mode On
+[21:51:55]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:51:55] --------------------------------------------------------------------
+
+[21:51:55] Number of vehicle models: 0
+[21:51:55] [connection] 127.0.0.1:61736 requests connection cookie.
+[21:51:55] 
+인증에 성공하였습니다.
+
+[21:51:56] [connection] incoming connection: 127.0.0.1:61736 id: 2
+[21:52:01] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[21:53:00] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:53:12] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:53:12] 
+--------------------------------------------------------------------
+[21:53:12]  		GTA:T Korea Mode On
+[21:53:12]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:53:12] --------------------------------------------------------------------
+
+[21:53:12] Number of vehicle models: 0
+[21:53:12] 
+인증에 성공하였습니다.
+
+[21:53:12] [connection] 127.0.0.1:61134 requests connection cookie.
+[21:53:13] [connection] incoming connection: 127.0.0.1:61134 id: 2
+[21:53:14] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[21:55:14] RCON (In-Game): Player [Cada] sent command: gmx
+[21:55:14] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:55:26] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:55:26] 
+--------------------------------------------------------------------
+[21:55:26]  		GTA:T Korea Mode On
+[21:55:26]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:55:26] --------------------------------------------------------------------
+
+[21:55:26] Number of vehicle models: 0
+[21:55:26] [connection] 127.0.0.1:58763 requests connection cookie.
+[21:55:26] 
+인증에 성공하였습니다.
+
+[21:55:27] [connection] incoming connection: 127.0.0.1:58763 id: 2
+[21:55:31] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[21:57:04] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:57:16] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:57:16] 
+--------------------------------------------------------------------
+[21:57:16]  		GTA:T Korea Mode On
+[21:57:16]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:57:16] --------------------------------------------------------------------
+
+[21:57:16] Number of vehicle models: 0
+[21:57:16] [connection] 127.0.0.1:60266 requests connection cookie.
+[21:57:16] 
+인증에 성공하였습니다.
+
+[21:57:17] [connection] incoming connection: 127.0.0.1:60266 id: 2
+[21:57:36] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[21:57:54] RCON (In-Game): Player [Cada] sent command: gmx
+[21:57:54] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:58:06] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[21:58:06] 
+--------------------------------------------------------------------
+[21:58:06]  		GTA:T Korea Mode On
+[21:58:06]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[21:58:06] --------------------------------------------------------------------
+
+[21:58:06] Number of vehicle models: 0
+[21:58:06] [connection] 127.0.0.1:53563 requests connection cookie.
+[21:58:06] 
+인증에 성공하였습니다.
+
+[21:58:07] [connection] incoming connection: 127.0.0.1:53563 id: 2
+[21:59:22] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[22:00:11] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:00:23] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:00:23] 
+--------------------------------------------------------------------
+[22:00:23]  		GTA:T Korea Mode On
+[22:00:23]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:00:23] --------------------------------------------------------------------
+
+[22:00:23] Number of vehicle models: 0
+[22:00:23] [connection] 127.0.0.1:56046 requests connection cookie.
+[22:00:23] 
+인증에 성공하였습니다.
+
+[22:00:24] [connection] incoming connection: 127.0.0.1:56046 id: 2
+[22:00:31] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[22:03:17] RCON (In-Game): Player [Cada] sent command: gmx
+[22:03:17] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:03:29] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:03:29] 
+--------------------------------------------------------------------
+[22:03:29]  		GTA:T Korea Mode On
+[22:03:29]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:03:29] --------------------------------------------------------------------
+
+[22:03:29] Number of vehicle models: 0
+[22:03:30] [connection] 127.0.0.1:57294 requests connection cookie.
+[22:03:30] 
+인증에 성공하였습니다.
+
+[22:03:31] [connection] incoming connection: 127.0.0.1:57294 id: 2
+[22:03:31] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[22:04:03] RCON (In-Game): Player [Cada] sent command: gmx
+[22:04:03] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:04:15] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:04:15] 
+--------------------------------------------------------------------
+[22:04:15]  		GTA:T Korea Mode On
+[22:04:15]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:04:15] --------------------------------------------------------------------
+
+[22:04:15] Number of vehicle models: 0
+[22:04:15] [connection] 127.0.0.1:52973 requests connection cookie.
+[22:04:15] 
+인증에 성공하였습니다.
+
+[22:04:16] [connection] incoming connection: 127.0.0.1:52973 id: 2
+[22:04:21] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+Console input: gmx
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:14:20] 
+[22:14:20] Server Plugins
+[22:14:20] --------------
+[22:14:20]  Loading plugin: MapAndreas
+[22:14:20]   Loaded.
+[22:14:20]  Loading plugin: sscanf
+[22:14:20] 
+
+[22:14:20]  ===============================
+
+[22:14:20]       sscanf plugin loaded.     
+
+[22:14:20]    (c) 2009 Alex "Y_Less" Cole
+
+[22:14:20]    0.3d-R2 500 Players "dnee"
+
+[22:14:20]  ===============================
+
+[22:14:20]   Loaded.
+[22:14:20]  Loading plugin: TDE
+[22:14:20] 
+TDEditor Plugin loaded, thank you for using.
+
+[22:14:20]   Loaded.
+[22:14:20]  Loaded 3 plugins.
+
+[22:14:20] 
+[22:14:20] Filterscripts
+[22:14:20] ---------------
+[22:14:20]   Loading filterscript 'fsdebug.amx'...
+[22:14:20] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[22:14:20]   * By Simon Campbell *
+  *********************
+[22:14:20]   * Version: 0.5d      *
+  *********************
+[22:14:20]   * -- LOADED         *
+  *********************
+
+[22:14:20]   Loading filterscript 'TDE.amx'...
+[22:14:20]  
+[22:14:20]  
+[22:14:20]  
+[22:14:20]  
+[22:14:20] ___ __  __
+[22:14:20]  | |  \|_  _|.|_ _  _		
+[22:14:20]  | |__/|__(_|||_(_)|			
+[22:14:20]  
+[22:14:20] TDEditor V1.17 by adri1
+[22:14:20] TDEditor loaded
+[22:14:20]  
+[22:14:20]   Loaded 2 filterscripts.
+
+[22:14:20] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:14:20] [ADM] Info: MapAndreas successfully init.
+[22:14:20] 
+--------------------------------------------------------------------
+[22:14:20]  		GTA:T Korea Mode On
+[22:14:20]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:14:20] --------------------------------------------------------------------
+
+[22:14:20] Number of vehicle models: 0
+[22:14:20] 
+인증에 성공하였습니다.
+
+[22:14:20] [connection] 127.0.0.1:55987 requests connection cookie.
+[22:14:21] [connection] incoming connection: 127.0.0.1:55987 id: 0
+[22:14:21] [npc:join] npctest has joined the server (0:127.0.0.1)
+[22:14:42] [connection] 127.0.0.1:49780 requests connection cookie.
+[22:14:43] [connection] incoming connection: 127.0.0.1:49780 id: 1
+[22:14:43] [join] Cada has joined the server (1:127.0.0.1)
+[22:14:48] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[22:14:54] RCON (In-Game): Player #1 (Cada) has logged in.
+Console input: gmx
+[22:17:49] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:18:01] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:18:01] 
+--------------------------------------------------------------------
+[22:18:01]  		GTA:T Korea Mode On
+[22:18:01]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:18:01] --------------------------------------------------------------------
+
+[22:18:01] Number of vehicle models: 0
+[22:18:02] 
+인증에 성공하였습니다.
+
+[22:18:02] [connection] 127.0.0.1:64527 requests connection cookie.
+[22:18:03] [connection] incoming connection: 127.0.0.1:64527 id: 2
+[22:18:03] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[22:19:44] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:19:56] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:19:56] 
+--------------------------------------------------------------------
+[22:19:56]  		GTA:T Korea Mode On
+[22:19:56]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:19:56] --------------------------------------------------------------------
+
+[22:19:56] Number of vehicle models: 0
+[22:19:56] [connection] 127.0.0.1:58815 requests connection cookie.
+[22:19:56] 
+인증에 성공하였습니다.
+
+[22:19:57] [connection] incoming connection: 127.0.0.1:58815 id: 2
+[22:20:39] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[22:21:12] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:21:24] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:21:24] 
+--------------------------------------------------------------------
+[22:21:24]  		GTA:T Korea Mode On
+[22:21:24]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:21:24] --------------------------------------------------------------------
+
+[22:21:24] Number of vehicle models: 0
+[22:21:24] [connection] 127.0.0.1:56214 requests connection cookie.
+[22:21:24] 
+인증에 성공하였습니다.
+
+[22:21:24] [connection] 127.0.0.1:60162 requests connection cookie.
+[22:21:24] [System] Cada(id:1) 로그인 [IP:127.0.0.1]
+[22:21:25] [connection] incoming connection: 127.0.0.1:56214 id: 2
+[22:21:25] [connection] incoming connection: 127.0.0.1:60162 id: 3
+[22:21:42] [part] Cada has left the server (1:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:22:12] 
+[22:22:12] Server Plugins
+[22:22:12] --------------
+[22:22:12]  Loading plugin: MapAndreas
+[22:22:12]   Loaded.
+[22:22:12]  Loading plugin: sscanf
+[22:22:12] 
+
+[22:22:12]  ===============================
+
+[22:22:12]       sscanf plugin loaded.     
+
+[22:22:12]    (c) 2009 Alex "Y_Less" Cole
+
+[22:22:12]    0.3d-R2 500 Players "dnee"
+
+[22:22:12]  ===============================
+
+[22:22:12]   Loaded.
+[22:22:12]  Loading plugin: TDE
+[22:22:12] 
+TDEditor Plugin loaded, thank you for using.
+
+[22:22:12]   Loaded.
+[22:22:12]  Loaded 3 plugins.
+
+[22:22:12] 
+[22:22:12] Filterscripts
+[22:22:12] ---------------
+[22:22:12]   Loading filterscript 'fsdebug.amx'...
+[22:22:12] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[22:22:12]   * By Simon Campbell *
+  *********************
+[22:22:12]   * Version: 0.5d      *
+  *********************
+[22:22:12]   * -- LOADED         *
+  *********************
+
+[22:22:12]   Loading filterscript 'TDE.amx'...
+[22:22:12]  
+[22:22:12]  
+[22:22:12]  
+[22:22:12]  
+[22:22:12] ___ __  __
+[22:22:12]  | |  \|_  _|.|_ _  _		
+[22:22:12]  | |__/|__(_|||_(_)|			
+[22:22:12]  
+[22:22:12] TDEditor V1.17 by adri1
+[22:22:12] TDEditor loaded
+[22:22:12]  
+[22:22:12]   Loaded 2 filterscripts.
+
+[22:22:12] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:22:12] [ADM] Info: MapAndreas successfully init.
+[22:22:12] 
+--------------------------------------------------------------------
+[22:22:12]  		GTA:T Korea Mode On
+[22:22:12]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:22:12] --------------------------------------------------------------------
+
+[22:22:12] Number of vehicle models: 0
+[22:22:12] [connection] 127.0.0.1:55272 requests connection cookie.
+[22:22:12] [connection] 127.0.0.1:60656 requests connection cookie.
+[22:22:12] 
+인증에 성공하였습니다.
+
+[22:22:13] [connection] incoming connection: 127.0.0.1:55272 id: 0
+[22:22:13] [connection] incoming connection: 127.0.0.1:60656 id: 1
+[22:22:13] [npc:join] npctest has joined the server (0:127.0.0.1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:22:40] 
+[22:22:40] Server Plugins
+[22:22:40] --------------
+[22:22:40]  Loading plugin: MapAndreas
+[22:22:40]   Loaded.
+[22:22:40]  Loading plugin: sscanf
+[22:22:40] 
+
+[22:22:40]  ===============================
+
+[22:22:40]       sscanf plugin loaded.     
+
+[22:22:40]    (c) 2009 Alex "Y_Less" Cole
+
+[22:22:40]    0.3d-R2 500 Players "dnee"
+
+[22:22:40]  ===============================
+
+[22:22:40]   Loaded.
+[22:22:40]  Loading plugin: TDE
+[22:22:40] 
+TDEditor Plugin loaded, thank you for using.
+
+[22:22:40]   Loaded.
+[22:22:40]  Loaded 3 plugins.
+
+[22:22:40] 
+[22:22:40] Filterscripts
+[22:22:40] ---------------
+[22:22:40]   Loading filterscript 'fsdebug.amx'...
+[22:22:40] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[22:22:40]   * By Simon Campbell *
+  *********************
+[22:22:40]   * Version: 0.5d      *
+  *********************
+[22:22:40]   * -- LOADED         *
+  *********************
+
+[22:22:40]   Loading filterscript 'TDE.amx'...
+[22:22:40]  
+[22:22:40]  
+[22:22:40]  
+[22:22:40]  
+[22:22:41] ___ __  __
+[22:22:41]  | |  \|_  _|.|_ _  _		
+[22:22:41]  | |__/|__(_|||_(_)|			
+[22:22:41]  
+[22:22:41] TDEditor V1.17 by adri1
+[22:22:41] TDEditor loaded
+[22:22:41]  
+[22:22:41]   Loaded 2 filterscripts.
+
+[22:22:41] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:22:41] [ADM] Info: MapAndreas successfully init.
+[22:22:41] 
+--------------------------------------------------------------------
+[22:22:41]  		GTA:T Korea Mode On
+[22:22:41]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:22:41] --------------------------------------------------------------------
+
+[22:22:41] Number of vehicle models: 0
+[22:22:41] [connection] 127.0.0.1:50070 requests connection cookie.
+[22:22:41] 
+인증에 성공하였습니다.
+
+[22:22:41] [connection] 127.0.0.1:51027 requests connection cookie.
+[22:22:42] [connection] incoming connection: 127.0.0.1:50070 id: 0
+[22:22:42] [connection] incoming connection: 127.0.0.1:51027 id: 1
+[22:22:42] [npc:join] npctest has joined the server (0:127.0.0.1)
+[22:22:42] [npc:join] npctest2 has joined the server (1:127.0.0.1)
+[22:23:04] [connection] 127.0.0.1:56356 requests connection cookie.
+[22:23:05] [connection] incoming connection: 127.0.0.1:56356 id: 2
+[22:23:05] [join] Cada has joined the server (2:127.0.0.1)
+[22:23:06] [System] Cada(id:2) 로그인 [IP:127.0.0.1]
+[22:23:21] RCON (In-Game): Player #2 (Cada) has logged in.
+Console input: gmx
+[22:24:49] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:25:01] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:25:01] 
+--------------------------------------------------------------------
+[22:25:01]  		GTA:T Korea Mode On
+[22:25:01]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:25:01] --------------------------------------------------------------------
+
+[22:25:01] Number of vehicle models: 0
+[22:25:01] [connection] 127.0.0.1:56445 requests connection cookie.
+[22:25:01] [connection] 127.0.0.1:56446 requests connection cookie.
+[22:25:02] 
+인증에 성공하였습니다.
+
+[22:25:02] [connection] incoming connection: 127.0.0.1:56445 id: 3
+[22:25:03] [connection] incoming connection: 127.0.0.1:56446 id: 4
+[22:25:10] [System] Cada(id:2) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[22:26:44] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:26:56] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:26:56] 
+--------------------------------------------------------------------
+[22:26:56]  		GTA:T Korea Mode On
+[22:26:56]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:26:56] --------------------------------------------------------------------
+
+[22:26:56] Number of vehicle models: 0
+[22:26:57] [connection] 127.0.0.1:59802 requests connection cookie.
+[22:26:57] 
+인증에 성공하였습니다.
+
+[22:26:57] [connection] 127.0.0.1:51133 requests connection cookie.
+[22:26:58] [connection] incoming connection: 127.0.0.1:59802 id: 3
+[22:26:58] [connection] incoming connection: 127.0.0.1:51133 id: 4
+[22:27:08] [System] Cada(id:2) 로그인 [IP:127.0.0.1]
+[22:29:14] [part] Cada has left the server (2:1)

@@ -29,8 +29,11 @@ new Text:TD_Setting[4];
 new Text:TD_SiteURL;
 new Text:TD_Zone[2];
 new Text:TD_Spec[2];
+new Text:TD_Time;
 
 new Slot[M_P];
+
+new PlayTime = 1200;
 
 enum pInfo
 {
@@ -86,8 +89,6 @@ new WeaponInfo[][wInfo] =
 new ZoneID = 0;
 new GangZone[MAX_ZONE];
 new ZoneOwner[MAX_ZONE];
-
-new ChangeTimer;
 
 new DualID[M_P];
 new Dualed[M_P];
@@ -371,7 +372,8 @@ enum config
 	bool:DamageTextdraw,
 	bool:MaplogoTextdraw,
 	bool:HitSound,
-	SpawnProtectionTime
+	SpawnProtectionTime,
+	bool:TimeTextdraw
 };
 new PlayerVariable[M_P][config];
 
@@ -397,6 +399,30 @@ forward ResetPlayerHits(playerid, hits);
 forward ResetDmgLabel(playerid);
 forward DestroyObjectEx(objectid);
 forward ShowPlayerConfigDialog(playerid);
+
+stock ResetPlayerVariable(playerid)
+{
+	new Temp[pInfo];
+    PlayerInfo[playerid] = Temp;
+	PlayerInfo[playerid][pWeapons][0] = WeaponInfo[6][wID];
+	PlayerInfo[playerid][pAmmo][0] = WeaponInfo[6][wAmount];
+
+	gPlayerLogged[playerid] = false;
+	gPlayerSpanwed[playerid] = false;
+	Kills[playerid] = 0;
+	KillStat[playerid] = 0;
+ 	SpawnType[playerid] = true;
+ 	ToggleWar[playerid] = false;
+	Spectate[playerid] = false;
+    Protection[playerid] = false;
+
+	PlayerVariable[playerid][ZoneTextdraw] = true;
+	PlayerVariable[playerid][DamageTextdraw] = true;
+	PlayerVariable[playerid][MaplogoTextdraw] = true;
+	PlayerVariable[playerid][TimeTextdraw] = true;
+	PlayerVariable[playerid][HitSound] = true;
+	PlayerVariable[playerid][SpawnProtectionTime] = 3;
+}
 
 stock RandomSpawn(playerid)
 {
@@ -628,6 +654,7 @@ main()
 public OnGameModeInit()
 {
     ConnectNPC("npctest","npctest");
+    ConnectNPC("npctest2","npctest2");
     
 	SetGameModeText("GTAT:Korea");
 	MapAndreas_Init(MAP_ANDREAS_MODE_MINIMAL);
@@ -652,7 +679,6 @@ public OnGameModeInit()
 	}
 	
 	SetTimer("BasicTimer",1000,1);
-	ChangeTimer = SetTimer("ChangeZone",60000*20,0);
 	
 	AddPlayerClass(54, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
 	AddPlayerClass(55, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
@@ -795,6 +821,7 @@ public OnGameModeInit()
 	TextDrawBackgroundColor(TD_Spec[1], 51);
 	TextDrawFont(TD_Spec[1], 2);
 	TextDrawSetProportional(TD_Spec[1], 1);
+	
 	for(new i,t=GetMaxPlayers(); i<t; i++)
 	{
 	   		DamageTexts[i] = TextDrawCreate(525.0, 330.0,"-");
@@ -807,6 +834,18 @@ public OnGameModeInit()
 			TextDrawSetProportional(DamageTexts[i],1);
 			TextDrawColor(DamageTexts[i], 0xFF0000FF);
 	}
+	
+	TD_Time = TextDrawCreate(554.676086, 19.546667, "00:00");
+	TextDrawLetterSize(TD_Time, 0.352000, 2.012265);
+	TextDrawAlignment(TD_Time, 1);
+	TextDrawColor(TD_Time, 255);
+	TextDrawSetShadow(TD_Time, 0);
+	TextDrawSetOutline(TD_Time, 0);
+	TextDrawBackgroundColor(TD_Time, 255);
+	TextDrawFont(TD_Time, 2);
+	TextDrawSetProportional(TD_Time, 1);
+	TextDrawSetShadow(TD_Time, 0);
+
 	return 1;
 }
 
@@ -840,6 +879,8 @@ public OnPlayerRequestClass(playerid, classid)
 		TextDrawHideForPlayer(playerid, TD_Zone[i]);
 	for(new i=0; i<5; i++)
 		TextDrawHideForPlayer(playerid, TD_GTAT[i]);
+	TextDrawHideForPlayer(playerid, TD_Time);
+		
 	return 1;
 }
 
@@ -866,7 +907,7 @@ public OnPlayerConnect(playerid)
 	SelectTextDraw(playerid, 0x00FF00FF);
 	
 	EnableStuntBonusForPlayer(playerid, 0);
- 	SpawnType[playerid] = true;
+ 	ResetPlayerVariable(playerid);
 	return 1;
 }
 
@@ -874,7 +915,7 @@ public OnPlayerDisconnect(playerid, reason)
 {
     OnPlayerSave(playerid);
     
-	new string[128],  Temp[pInfo];
+	new string[128];
 	switch(reason)
 	{
 	    case 0:	format(string, sizeof(string), "[!] %s(%d) 비정상 종료", PlayerName(playerid), playerid);
@@ -883,24 +924,7 @@ public OnPlayerDisconnect(playerid, reason)
 	}
 	SCMToAll(COLOR_GREY, string);
 	
-    PlayerInfo[playerid] = Temp;
-	PlayerInfo[playerid][pWeapons][0] = WeaponInfo[6][wID];
-	PlayerInfo[playerid][pAmmo][0] = WeaponInfo[6][wAmount];
-
-	gPlayerLogged[playerid] = false;
-	gPlayerSpanwed[playerid] = false;
-	Kills[playerid] = 0;
-	KillStat[playerid] = 0;
- 	SpawnType[playerid] = true;
- 	ToggleWar[playerid] = false;
-	Spectate[playerid] = false;
-    Protection[playerid] = false;
-
-	PlayerVariable[playerid][ZoneTextdraw] = true;
-	PlayerVariable[playerid][DamageTextdraw] = true;
-	PlayerVariable[playerid][MaplogoTextdraw] = true;
-	PlayerVariable[playerid][HitSound] = true;
-	PlayerVariable[playerid][SpawnProtectionTime] = 3;
+	ResetPlayerVariable(playerid);
 	return 1;
 }
 
@@ -910,10 +934,15 @@ public OnPlayerSpawn(playerid)
 	{
 		new npc[MAX_PLAYER_NAME];
 		GetPlayerName(playerid, npc, sizeof(npc));
-		if(!strcmp(npc, "test", true))
+		if(!strcmp(npc, "npctest", true))
 		{
 			SetPlayerPos(playerid, -342.9893,1509.2260,75.5625); // 엔피시가 서있을자리 입니다.
 			SetPlayerSkin(playerid, 104); // 엔피시의 스킨을 지정하는겁니다.
+		}
+		else if(!strcmp(npc, "npctest2", true))
+		{
+			SetPlayerPos(playerid, -345.0834,1525.3529,75.3570); // 엔피시가 서있을자리 입니다.
+			SetPlayerSkin(playerid, 105); // 엔피시의 스킨을 지정하는겁니다.
 		}
 		return 1;
 	}
@@ -1079,6 +1108,8 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	        SetPlayerPos(0, -342.9893,1509.2260,75.5625);
 	        ToggleWar[0] = true;
 			gPlayerSpanwed[0] = true;
+	        ToggleWar[1] = true;
+			gPlayerSpanwed[1] = true;
 		    return 1;
 		}
 		
@@ -1194,13 +1225,12 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
 	    tmp = strtok(cmdtext, idx);
 	    new targetid;
-		if(!strlen(tmp))
+		if(!strlen(tmp) && Spectate[playerid] == false)
 			return SCM(playerid, COLOR_GREY, "* 사용법: (/spec)tate [플레이어 번호]");
 	    targetid = strval(tmp);
-		if(!IsPlayerConnected(targetid))
-		    return SCM(playerid, COLOR_GREY, "[!] 접속하지 않은 플레이어 입니다.");
-		if(targetid == playerid)
-		    return SCM(playerid, COLOR_GREY, "[!] 자기 자신을 관전할 순 없습니다.");
+		if(!IsPlayerConnected(targetid) || ToggleWar[targetid] == false || Spectate[targetid] == true || targetid == playerid)
+		    return SCM(playerid, COLOR_GREY, "[!] 관전할 수 없는 플레이어 입니다.");
+
 		Spectating(playerid, targetid, Spectate[playerid]);
 
 	    return 1;
@@ -1368,13 +1398,20 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 
 	if(Spectate[playerid] == true)
 	{
+		new Bad_Count = 200;
 		if(newkeys == KEY_ANALOG_LEFT) // PREV
 		{
 		    do
 			{
-		        SpecTarget[playerid] -=1;
+		        SpecTarget[playerid] --;
+		        Bad_Count --;
 		        if(SpecTarget[playerid]<0) SpecTarget[playerid] = GetMaxPlayers();
-		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[playerid] == true || SpecTarget[playerid] == playerid);
+				if(Bad_Count < 0)
+				{
+					SpecTarget[playerid] ++;
+					return 1;
+				}
+		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[SpecTarget[playerid]] == false || SpecTarget[playerid] == playerid);
             Spectating(playerid, SpecTarget[playerid], false);
 		}
 		
@@ -1382,9 +1419,15 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		{
 		    do
 			{
-		        SpecTarget[playerid] +=1;
+		        SpecTarget[playerid] ++;
+		        Bad_Count --;
 		        if(SpecTarget[playerid]>GetMaxPlayers()) SpecTarget[playerid] = 0;
-		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[playerid] == true || SpecTarget[playerid] == playerid);
+		        if(Bad_Count < 0)
+				{
+					SpecTarget[playerid] --;
+					return 1;
+				}
+		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[SpecTarget[playerid]] == false || SpecTarget[playerid] == playerid);
             Spectating(playerid, SpecTarget[playerid], false);
 		}
 	}
@@ -1608,19 +1651,26 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					else
 					    PlayerVariable[playerid][MaplogoTextdraw] = true;
 			    }
-			    case 5:
+			    case 4:
+			    {
+			        if(PlayerVariable[playerid][TimeTextdraw] == true)
+			            PlayerVariable[playerid][TimeTextdraw] = false;
+					else
+					    PlayerVariable[playerid][TimeTextdraw] = true;
+			    }
+			    case 6:
 			    {
 			        if(PlayerVariable[playerid][HitSound] == true)
 			            PlayerVariable[playerid][HitSound] = false;
 					else
 					    PlayerVariable[playerid][HitSound] = true;
 			    }
-			    case 6:
+			    case 7:
 			    {
                     ShowPlayerDialog(playerid, DialogID_Config(1), DIALOG_STYLE_INPUT, ""#C_ORANGE"스폰보호 시간 설정", ""#C_IVORY"설정하고싶은 스폰보호 시간을 초 단위로 입력하세요."#C_RED"(1~10 사이)", "확인", "취소");
 			    }
 			}
-			if(listitem != 6)
+			if(listitem != 7)
 				ShowPlayerConfigDialog(playerid);
 	    }
 	}
@@ -1696,6 +1746,11 @@ public SetPlayerSpawn(playerid)
 	else
 		for(new i=0; i<5; i++)
 			TextDrawHideForPlayer(playerid, TD_GTAT[i]);
+
+	if(PlayerVariable[playerid][TimeTextdraw] == true)
+		TextDrawShowForPlayer(playerid, TD_Time);
+	else
+		TextDrawHideForPlayer(playerid, TD_Time);
 			
 	CancelSelectTextDraw(playerid);
 
@@ -1912,7 +1967,8 @@ public OnTeamLoad(teamid)
 public BasicTimer()
 {
     new pPing[100], tmp1[30], tmp2[30];
-
+	new string[56];
+	
 	for(new i,t=GetMaxPlayers(); i<t; i++)
 	{
 		if(PlayerInfo[i][FPS2]-1 < 26) format(tmp1, sizeof(tmp1), "{FF0000}%d", PlayerInfo[i][FPS2]-1);
@@ -1927,13 +1983,30 @@ public BasicTimer()
 
 		format(pPing, sizeof(pPing), "{33CC00}Ping: %s\n {33CC00}FPS: %s", tmp2, tmp1);
 	    Update3DTextLabelText(PingLabels[i], GetPlayerColor(i), pPing);
-	    Attach3DTextLabelToPlayer(PingLabels[i], i, 0, 0, -0.7);
-
-
+	   	Attach3DTextLabelToPlayer(PingLabels[i], i, 0, 0, -0.7);
+		
 	    GetPlayerHealth(i, PlayerInfo[i][pHP]);
 	    if(PlayerInfo[i][pHP] > 100)
 			SetPlayerHealth(i, 100);
  	}
+ 	
+ 	if(PlayTime > 0)
+	{
+	    PlayTime --;
+	    format(string,sizeof(string),"%02d:%02d",PlayTime/60,PlayTime%60);
+        TextDrawSetString(TD_Time, string);
+        if(PlayTime <= 10 && PlayTime >= 0)
+        {
+            format(string,sizeof(string),"~r~%d",PlayTime);
+            GameTextForAll(string, 1000, 4);
+            for(new j,t=GetMaxPlayers(); j<t; j++)
+           		PlayerPlaySound(j, 1057, 0.0, 0.0, 0.0);
+        }
+        if(PlayTime <= 0)
+			ChangeZone();
+	}
+ 	
+ 	
 }
 
 public ResetDual(playerid, targetid)
@@ -1953,13 +2026,12 @@ public ChangeZone()
 	new string[256];
 	new BestTeam = 0;
 	
-	KillTimer(ChangeTimer);
-	ChangeTimer = SetTimer("ChangeZone",60000*20,0);
+	PlayTime = 1200;
 
     for(new i = 1; i<MAX_TEAM; i++)
         if(TeamKill[BestTeam] < TeamKill[i])
             BestTeam = i;
-            
+
     for(new i = 1; i<MAX_TEAM; i++)
         TeamKill[i] = 0;
     
@@ -1991,7 +2063,8 @@ public ChangeZone()
     LoadZoneInfo(ZoneID);
     
 	for(new i,t=GetMaxPlayers(); i<t; i++)
-	    SetPlayerSpawn(i);
+	    if(ToggleWar[i] == true && Dualed[i] == 0 && Spectate[i] == false)
+	    	SetPlayerSpawn(i);
 	    
     SCMToAll(COLOR_SYSTEM, "[!] 맵이 변경되었습니다. 새로운 전장에서 미쳐 날뛰어 보세요!");
 	return 1;
@@ -2053,6 +2126,7 @@ public Spectating(playerid, targetid, bool: toogle)
 	    Spectate[playerid] = false;
 		for(new i=0; i<2; i++)
 			TextDrawHideForPlayer(playerid, TD_Spec[i]);
+        TogglePlayerSpectating(playerid, 0);
 		SetPlayerSpawn(playerid);
 	}
 }
@@ -2111,6 +2185,11 @@ public ShowPlayerConfigDialog(playerid)
 	else
 	    strcat(string,"> GTA:T 로고 텍스트드로우\t\t\t"#C_PASTEL_RED"OFF\n");
 
+	if(PlayerVariable[playerid][TimeTextdraw] == true)
+	    strcat(string,"> 시간 텍스트드로우\t\t\t"#C_PASTEL_GREEN"ON\n");
+	else
+	    strcat(string,"> 시간 텍스트드로우\t\t\t"#C_PASTEL_RED"OFF\n");
+	    
 	strcat(string,""#C_IVORY"Features\n");
 
 	if(PlayerVariable[playerid][HitSound] == true)
@@ -2118,10 +2197,9 @@ public ShowPlayerConfigDialog(playerid)
 	else
 	    strcat(string,"> 히트 사운드\t\t\t"#C_PASTEL_RED"OFF\n");
 
-
 	strcat(string,"> 스폰보호 시간\t\t\t"#C_YELLOW"");
 	format(str,sizeof(str),"%d",PlayerVariable[playerid][SpawnProtectionTime]);
 	strcat(string,str);
-
-	ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "확인", "취소");
+	    
+	ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "확인", "뒤로");
 }
