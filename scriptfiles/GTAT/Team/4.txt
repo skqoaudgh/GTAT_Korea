@@ -1,1 +1,2 @@
-TeamColor=0
+Color=51
+Name=

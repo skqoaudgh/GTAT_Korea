@@ -1,6 +1,6 @@
 Password=1
 Kill=3
-Death=4
+Death=13
 Point=98
 WeaponKill[0]=1
 WeaponKill[1]=1
