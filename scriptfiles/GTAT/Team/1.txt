@@ -1,3 +1,3 @@
 Color=-87
-Name=Ä«´Ù ¾ß¾Æ
+Name=Cada_Team
 Leader=

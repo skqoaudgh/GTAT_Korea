@@ -1,7 +1,3 @@
-/*
-
-*/
-
 #include <a_samp>
 #include <Color>
 #include <dudb>
@@ -13,7 +9,7 @@
 
 #pragma unused ret_memcpy
 
-#define MODE_VERSION "1.3.0"
+#define MODE_VERSION "1.4.0"
 #define MODE_LANGUAGE "KOREAN"
 #define MODE_MAPNAME "GTA:T Korea"
 #define MODE_URL "cafe.daum.net/sampkor"
@@ -33,6 +29,10 @@
 #define Zone_File	"GTAT/Zone/%d.txt"
 #define Team_File	"GTAT/Team/%d.txt"
 
+new pITERATION[M_P];
+new pITER_INDEX[M_P];
+new NUM_PLAYERS = 0;
+
 new Text:TD_GTAT[5];
 new Text:TD_Setting[5];
 new Text:TD_SiteURL;
@@ -49,7 +49,7 @@ new Slot[M_P];
 
 new DualTimer[M_P];
 
-new PlayTime = 60*8;
+new PlayTime;
 
 enum tInfo
 {
@@ -115,6 +115,7 @@ new WeaponInfo[][wInfo] =
 new ZoneID = 0;
 new GangZone[MAX_ZONE];
 new ZoneOwner[MAX_ZONE];
+new EnterZone[M_P];
 
 new DualID[M_P];
 new Dualed[M_P];
@@ -396,7 +397,8 @@ enum pconfig
 	bool:MaplogoTextdraw,
 	bool:HitSound,
 	SpawnProtectionTime,
-	bool:TimeTextdraw
+	bool:TimeTextdraw,
+	StatTime
 };
 new PlayerVariable[M_P][pconfig];
 
@@ -431,6 +433,14 @@ forward ShowServerConfigDialog(playerid);
 forward SaveConfigInfo();
 forward LoadConfigInfo();
 
+stock IsPlayerInZone(playerid, gangzone)
+{
+	new Float:X,Float:Y,Float:Z;
+	GetPlayerPos(playerid, X, Y, Z);
+	if(X >= gSANZones[gangzone][SAZONE_AREA][0] && X <= gSANZones[gangzone][SAZONE_AREA][2] && Y >= gSANZones[gangzone][SAZONE_AREA][1] && Y <= gSANZones[gangzone][SAZONE_AREA][3]) return 1;
+	else return 0;
+}
+
 stock ResetPlayerVariable(playerid)
 {
 	new Temp[pInfo];
@@ -461,6 +471,7 @@ stock ResetPlayerVariable(playerid)
 	PlayerVariable[playerid][TimeTextdraw] = true;
 	PlayerVariable[playerid][HitSound] = true;
 	PlayerVariable[playerid][SpawnProtectionTime] = 3;
+	PlayerVariable[playerid][StatTime] = 10;
 }
 
 stock RandomSpawn(playerid)
@@ -480,9 +491,13 @@ stock RandomSpawn(playerid)
 stock GetBattlePlayer(playerid)
 {
 	new number = 0;
-	for(new j,t=GetMaxPlayers(); j<t; j++)
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
 	    if(j != playerid && ToggleWar[j] == true)
 			number ++;
+        #undef j
+	}
 	return number;
 }
 stock strcpy(dest[],src[])
@@ -638,7 +653,7 @@ stock ShowStats(showid, playerid)
 	TextDrawSetString(TD_Stat[playerid], string);
 	TextDrawShowForPlayer(showid, TD_Stat[playerid]);
 	KillTimer(StatTimer[showid]);
-	StatTimer[showid] = SetTimerEx("HideStats", 6000, 0, "i", showid, playerid);
+	StatTimer[showid] = SetTimerEx("HideStats", PlayerVariable[playerid][StatTime], 0, "i", showid, playerid);
 	return 1;
 }
 
@@ -663,9 +678,13 @@ stock GetMostWeaponStr(playerid)
 
 stock SendTeamMessage(team, color, text[])
 {
-	for(new j,t=GetMaxPlayers(); j<t; j++)
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
 	    if(PlayerInfo[j][pTeam] == team)
 			SCM(j, color, text);
+        #undef j
+	}
 }
 
 stock OnPlayerHealthChange(playerid, Float:newhealth)
@@ -715,6 +734,7 @@ public OnGameModeInit()
 	OnWeaponDropInit();
 	TeamInfo[0][Color] = -87;
 	
+	LoadConfigInfo();
 	for(new i=0; i<MAX_ZONE; i++)
 	{
 	    GangZone[i] = GangZoneCreate(gSANZones[i][SAZONE_AREA][0],gSANZones[i][SAZONE_AREA][1],gSANZones[i][SAZONE_AREA][2],gSANZones[i][SAZONE_AREA][3]);
@@ -875,32 +895,32 @@ public OnGameModeInit()
 	TextDrawBackgroundColor(TD_Spec[1], 51);
 	TextDrawFont(TD_Spec[1], 2);
 	TextDrawSetProportional(TD_Spec[1], 1);
-	
+
 	for(new i,t=GetMaxPlayers(); i<t; i++)
 	{
-	   		DamageTexts[i] = TextDrawCreate(525.0, 330.0,"-");
-			TextDrawAlignment(DamageTexts[i],0);
-			TextDrawFont(DamageTexts[i],3);
-			TextDrawLetterSize(DamageTexts[i],0.45,1.40);
-			TextDrawSetOutline(DamageTexts[i],1);
-			TextDrawSetShadow(DamageTexts[i],1);
-			TextDrawBackgroundColor(DamageTexts[i],0x000000FF);
-			TextDrawSetProportional(DamageTexts[i],1);
-			TextDrawColor(DamageTexts[i], 0xFF0000FF);
-			
-			TD_Stat[i] = TextDrawCreate(41.999950, 283.013336, "Stats of Name");
-			TextDrawLetterSize(TD_Stat[i], 0.199999, 1.062932);
-			TextDrawTextSize(TD_Stat[i], 180.000000, 0.000000);
-			TextDrawAlignment(TD_Stat[i], 1);
-			TextDrawColor(TD_Stat[i], -1);
-			TextDrawUseBox(TD_Stat[i], 1);
-			TextDrawBoxColor(TD_Stat[i], 96);
-			TextDrawSetShadow(TD_Stat[i], 0);
-			TextDrawSetOutline(TD_Stat[i], 1);
-			TextDrawBackgroundColor(TD_Stat[i], 255);
-			TextDrawFont(TD_Stat[i], 1);
-			TextDrawSetProportional(TD_Stat[i], 1);
-			TextDrawSetShadow(TD_Stat[i], 0);
+		DamageTexts[i] = TextDrawCreate(525.0, 330.0,"-");
+		TextDrawAlignment(DamageTexts[i],0);
+		TextDrawFont(DamageTexts[i],3);
+		TextDrawLetterSize(DamageTexts[i],0.45,1.40);
+		TextDrawSetOutline(DamageTexts[i],1);
+		TextDrawSetShadow(DamageTexts[i],1);
+		TextDrawBackgroundColor(DamageTexts[i],0x000000FF);
+		TextDrawSetProportional(DamageTexts[i],1);
+		TextDrawColor(DamageTexts[i], 0xFF0000FF);
+
+		TD_Stat[i] = TextDrawCreate(41.999950, 283.013336, "Stats of Name");
+		TextDrawLetterSize(TD_Stat[i], 0.199999, 1.062932);
+		TextDrawTextSize(TD_Stat[i], 180.000000, 0.000000);
+		TextDrawAlignment(TD_Stat[i], 1);
+		TextDrawColor(TD_Stat[i], -1);
+		TextDrawUseBox(TD_Stat[i], 1);
+		TextDrawBoxColor(TD_Stat[i], 96);
+		TextDrawSetShadow(TD_Stat[i], 0);
+		TextDrawSetOutline(TD_Stat[i], 1);
+		TextDrawBackgroundColor(TD_Stat[i], 255);
+		TextDrawFont(TD_Stat[i], 1);
+		TextDrawSetProportional(TD_Stat[i], 1);
+		TextDrawSetShadow(TD_Stat[i], 0);
 	}
 	
 	TD_Time = TextDrawCreate(554.676086, 19.546667, "00:00");
@@ -933,7 +953,8 @@ public OnGameModeExit()
 {
 	for(new i=0; i<MAX_TEAM; i++)
     	OnTeamSave(i);
-    	
+    SaveConfigInfo();
+    
  	OnWeaponDropExit();
 	return 1;
 }
@@ -984,6 +1005,11 @@ public OnPlayerConnect(playerid)
 		
 	EnableStuntBonusForPlayer(playerid, 0);
  	ResetPlayerVariable(playerid);
+
+	pITERATION[NUM_PLAYERS] = playerid;
+	pITER_INDEX[playerid] = NUM_PLAYERS;
+	NUM_PLAYERS++;
+
 	return 1;
 }
 
@@ -1001,6 +1027,10 @@ public OnPlayerDisconnect(playerid, reason)
 	SCMToAll(COLOR_GREY, string);
 	
 	ResetPlayerVariable(playerid);
+	
+	NUM_PLAYERS--;
+	pITERATION[pITER_INDEX[playerid]] = pITERATION[NUM_PLAYERS];
+	pITER_INDEX[pITERATION[ NUM_PLAYERS ]] = pITER_INDEX[playerid];
 	return 1;
 }
 
@@ -1094,6 +1124,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	
 		if(strcmp("/서버설정",cmd,true) == 0)
 		{
+		    ShowServerConfigDialog(playerid);
 		    return 1;
 		}
 		
@@ -1103,7 +1134,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			return 1;
 		}
 		
-		if(strcmp("/리더설정",cmd,true) == 0 || strcmp("/팀설정",cmd,true) == 0 || strcmp("/리더",cmd,true) == 0)
+		if(strcmp("/리더설정",cmd,true) == 0 || strcmp("/팀설정",cmd,true) == 0 || strcmp("/리더",cmd,true) == 0|| strcmp("/팀장설정",cmd,true) == 0 )
 		{
 			tmp = strtok(cmdtext, idx);
 			if(!strlen(tmp))
@@ -1142,13 +1173,13 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		{
 			tmp = strtok(cmdtext, idx);
 			if(!strlen(tmp))
-				return SCM(playerid, COLOR_GREY, "* 사용법: /팀색깔 [팀 번호] [색깔 코드]");
+				return SCM(playerid, COLOR_GREY, "* 사용법: /팀색깔 [팀 번호] [색깔코드(RGBA]");
 			new teamid = strval(tmp);
 			if(teamid > MAX_TEAM || teamid < 0)
 			    return SCM(playerid, COLOR_GREY, "[!] 부적절한 팀 번호 입니다.");
 			tmp = strtok(cmdtext, idx);
 			if(!strlen(tmp))
-				return SCM(playerid, COLOR_GREY, "* 사용법: /리더설정 [플레이어 번호] [팀 번호]");
+				return SCM(playerid, COLOR_GREY, "* 사용법: /리더설정 [플레이어 번호] [색깔코드(RGBA]");
 			new colorid = strval(tmp);
 			    
 			TeamInfo[teamid][Color] = colorid;
@@ -1239,13 +1270,25 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		    OnWeaponDrop(playerid);
 		    return 1;
 		}
+		
+		if(strcmp(cmd, "/ahelp", true)==0 || strcmp(cmd, "/acmd", true)==0 || strcmp(cmd, "/acmds", true)==0)
+		{
+		    SCM(playerid, COLOR_PASTEL_GREEN,"		Server Admin Commands");
+		    SCM(playerid, COLOR_WHITE,"[!] Server - /서버설정 /맵변경");
+		    SCM(playerid, COLOR_WHITE,"[!] Team - /팀장설정 /팀이름 /팀색깔");
+		    SCM(playerid, COLOR_WHITE,"[!] ETC - /코드(보기)");
+		    return 1;
+		}
 	}
 	
 	//-----
-	if(strcmp(cmd, "/help", true)==0)
+	if(strcmp(cmd, "/help", true)==0 || strcmp(cmd, "/?", true)==0 || strcmp(cmd, "/cmd", true)==0 || strcmp(cmd, "/cmds", true)==0)
 	{
-	    SCM(playerid, COLOR_WHITE,"* /dual  /lounge  /stats  /spectate  /pm /respawn /kill /config*");
-	    SCM(playerid, COLOR_WHITE,"* /t /팀초대 /팀추방 /팀원목록 *");
+        SCM(playerid, COLOR_PASTEL_GREEN,"		Server User Commands");
+		SCM(playerid, COLOR_WHITE,"[!] User - /config /kill /stat (/re)spawn (/l)obby");
+	    SCM(playerid, COLOR_WHITE,"[!] User - /spec /dual");
+	    SCM(playerid, COLOR_WHITE,"[!] Team - /팀접속 /팀초대 /팀추방");
+	    SCM(playerid, COLOR_WHITE,"[!] Chat - /pm (/t)eam");
 	    return 1;
 	}
 
@@ -1280,16 +1323,16 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
 	    format(string,sizeof(string),"* 현재 접속한 당신의 팀원 목록 [%s(%d) 팀]",TeamInfo[PlayerInfo[playerid][pTeam]][Name], PlayerInfo[playerid][pTeam]);
 		SCM(playerid,COLOR_SYSTEM,string);
-		for(new i=0; i<MAX_PLAYERS; i++)
+		
+		for(new i=0; i<NUM_PLAYERS; i++)
 		{
-			if(IsPlayerConnected(i))
-			{
-			    if(PlayerInfo[i][pTeam] == PlayerInfo[playerid][pTeam])
-			    {
-			        format(string,sizeof(string)," %s (id: %d)",PlayerName(i),i);
-			        SCM(playerid,COLOR_IVORY,string);
-			    }
-			}
+		    #define j pITERATION[i]
+		    if(PlayerInfo[j][pTeam] == PlayerInfo[playerid][pTeam])
+		    {
+		        format(string,sizeof(string)," %s (id: %d)",PlayerName(j),j);
+		        SCM(playerid,COLOR_IVORY,string);
+		    }
+	        #undef j
 		}
 		return 1;
 	}
@@ -1779,9 +1822,13 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 			    case 7:
 			    {
                     ShowPlayerDialog(playerid, DialogID_Config(1), DIALOG_STYLE_INPUT, ""#C_ORANGE"스폰보호 시간 설정", ""#C_IVORY"설정하고싶은 스폰보호 시간을 초 단위로 입력하세요."#C_RED"(1~10 사이)", "확인", "취소");
-			    }
+				}
+			    case 8:
+			    {
+                    ShowPlayerDialog(playerid, DialogID_Config(4), DIALOG_STYLE_INPUT, ""#C_ORANGE"스탯표기 시간 설정", ""#C_IVORY"설정하고싶은 스탯표기 시간을 초 단위로 입력하세요."#C_RED"(1~20 사이)", "확인", "취소");
+				}
 			}
-			if(listitem != 7)
+			if(listitem != 7 && listitem != 8)
 				ShowPlayerConfigDialog(playerid);
 	    }
 	}
@@ -1798,6 +1845,58 @@ public OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				return 1;
 			}
 			PlayerVariable[playerid][SpawnProtectionTime] = value;
+			ShowPlayerConfigDialog(playerid);
+		}
+	    else
+	    	ShowPlayerConfigDialog(playerid);
+	}
+	
+	else if(dialogid == DialogID_Config(2))
+	{
+	    if(response)
+	    {
+			switch(listitem)
+			{
+			    case 0:
+			    {
+			        ShowPlayerDialog(playerid, DialogID_Config(3), DIALOG_STYLE_INPUT, ""#C_ORANGE"라운드 시간 설정", ""#C_IVORY"설정하고싶은 라운드 시간을 초 단위로 입력하세요."#C_RED"(1~1800 사이)", "확인", "취소");
+			    }
+			}
+			if(listitem != 0)
+			    ShowServerConfigDialog(playerid);
+		}
+	}
+	
+	else if(dialogid == DialogID_Config(3))
+	{
+	    if(response)
+	    {
+	        new value = strval(inputtext);
+	        if(value < 1 || value > 1800)
+	        {
+				SCM(playerid, COLOR_GREY,"[!] 1에서 1800 사이의 값을 입력해주세요!");
+	            ShowPlayerDialog(playerid, DialogID_Config(3), DIALOG_STYLE_INPUT, ""#C_ORANGE"라운드 시간 설정", ""#C_IVORY"설정하고싶은 라운드 시간을 초 단위로 입력하세요.  "#C_RED"(1~1800 사이)", "확인", "취소");
+				return 1;
+			}
+			ServerVariable[RoundTime] = value;
+			ShowServerConfigDialog(playerid);
+		}
+	    else
+	    	ShowPlayerConfigDialog(playerid);
+	}
+	
+	else if(dialogid == DialogID_Config(4))
+	{
+	    if(response)
+	    {
+	        new value = strval(inputtext);
+	        if(value < 1 || value > 20)
+	        {
+				SCM(playerid, COLOR_GREY,"[!] 1에서 20 사이의 값을 입력해주세요!");
+	            ShowPlayerDialog(playerid, DialogID_Config(4), DIALOG_STYLE_INPUT, ""#C_ORANGE"스탯표기 시간 설정", ""#C_IVORY"설정하고싶은 스탯표기 시간을 초 단위로 입력하세요.  "#C_RED"(1~20 사이)", "확인", "취소");
+				return 1;
+			}
+			PlayerVariable[playerid][StatTime] = value;
 			ShowPlayerConfigDialog(playerid);
 		}
 	    else
@@ -2112,28 +2211,41 @@ public OnTeamLoad(teamid)
 public BasicTimer()
 {
     new pPing[100], tmp1[30], tmp2[30];
-	new string[56];
-	
-	for(new i,t=GetMaxPlayers(); i<t; i++)
-	{
-		if(PlayerInfo[i][FPS2]-1 < 26) format(tmp1, sizeof(tmp1), "{FF0000}%d", PlayerInfo[i][FPS2]-1);
-	    else if(PlayerInfo[i][FPS2]-1 < 45) format(tmp1, sizeof(tmp1), "{FFFF00}%d", PlayerInfo[i][FPS2]-1);
-	    else format(tmp1, sizeof(tmp1), "{33CC00}%d", PlayerInfo[i][FPS2]-1);
+	new string[128];
 
-	    new p = GetPlayerPing(i);
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
+		if(PlayerInfo[j][FPS2]-1 < 26) format(tmp1, sizeof(tmp1), "{FF0000}%d", PlayerInfo[j][FPS2]-1);
+	    else if(PlayerInfo[j][FPS2]-1 < 45) format(tmp1, sizeof(tmp1), "{FFFF00}%d", PlayerInfo[j][FPS2]-1);
+	    else format(tmp1, sizeof(tmp1), "{33CC00}%d", PlayerInfo[j][FPS2]-1);
+
+	    new p = GetPlayerPing(j);
 
 	    if(p < 100) format(tmp2, sizeof(tmp2), "{33CC00}%d", p);
 	    else if(p < 175)  format(tmp2, sizeof(tmp2), "{FFFF00}%d", p);
 	    else format(tmp2, sizeof(tmp2), "{FF0000}%d", p);
 
 		format(pPing, sizeof(pPing), "{33CC00}Ping: %s\n {33CC00}FPS: %s", tmp2, tmp1);
-	    Update3DTextLabelText(PingLabels[i], GetPlayerColor(i), pPing);
-	   	Attach3DTextLabelToPlayer(PingLabels[i], i, 0, 0, -0.7);
+	    Update3DTextLabelText(PingLabels[j], GetPlayerColor(j), pPing);
+	   	Attach3DTextLabelToPlayer(PingLabels[j], i, 0, 0, -0.7);
+
+	    GetPlayerHealth(j, PlayerInfo[j][pHP]);
+	    if(PlayerInfo[j][pHP] > 100)
+			SetPlayerHealth(j, 100);
+			
+		for(new g=0; g<MAX_ZONE; g++)
+		{
+        	if(IsPlayerInZone(j,g) && EnterZone[j] != g)
+        	{
+				format(string,sizeof(string),"~w~Welcome to Zone~n~of ~r~%s!",TeamInfo[ZoneOwner[g]][Name]);
+        	    GameTextForPlayer(j,string,5000,1);
+        	    EnterZone[j] = g;
+        	}
+		}
 		
-	    GetPlayerHealth(i, PlayerInfo[i][pHP]);
-	    if(PlayerInfo[i][pHP] > 100)
-			SetPlayerHealth(i, 100);
- 	}
+        #undef j
+	}
  	
  	if(PlayTime > 0)
 	{
@@ -2144,8 +2256,12 @@ public BasicTimer()
         {
             format(string,sizeof(string),"~r~%d",PlayTime);
             GameTextForAll(string, 1000, 4);
-            for(new j,t=GetMaxPlayers(); j<t; j++)
-           		PlayerPlaySound(j, 1057, 0.0, 0.0, 0.0);
+			for(new i=0; i<NUM_PLAYERS; i++)
+			{
+			    #define j pITERATION[i]
+                PlayerPlaySound(j, 1057, 0.0, 0.0, 0.0);
+		        #undef j
+			}
         }
         if(PlayTime <= 0)
 			ChangeZone();
@@ -2171,7 +2287,7 @@ public ChangeZone()
 	new string[256];
 	new BestTeam = 0;
 	ChangeMap = true;
-	PlayTime = 60*8;
+	PlayTime = ServerVariable[RoundTime];
 
     for(new i = 1; i<MAX_TEAM; i++)
         if(TeamInfo[BestTeam][Kill] < TeamInfo[i][Kill])
@@ -2179,12 +2295,14 @@ public ChangeZone()
 
     for(new i = 1; i<MAX_TEAM; i++)
         TeamInfo[i][Kill] = 0;
-    
-    for(new i,t=GetMaxPlayers(); i<t; i++)
-    {
-        GangZoneShowForPlayer(i, GangZone[ZoneID], TeamInfo[BestTeam][Color]);
-    	if(PlayerInfo[i][pTeam] == BestTeam)
-    	    PlayerInfo[i][pPoint] += 5;
+
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
+        GangZoneShowForPlayer(j, GangZone[ZoneID], TeamInfo[BestTeam][Color]);
+    	if(PlayerInfo[j][pTeam] == BestTeam)
+    	    PlayerInfo[j][pPoint] += 5;
+        #undef j
 	}
 	
 	ZoneOwner[ZoneID] = BestTeam;
@@ -2206,11 +2324,14 @@ public ChangeZone()
     ZoneID = random(MAX_ZONE);
     TextDrawSetString(TD_Zone[1], gSANZones[ZoneID][SAZONE_NAME]);
     LoadZoneInfo(ZoneID);
-    
-	for(new i,t=GetMaxPlayers(); i<t; i++)
-	    if(ToggleWar[i] == true && Dualed[i] == 0 && Spectate[i] == false && Dualed[i] != 2)
-	    	SetPlayerSpawn(i);
-	    
+
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
+	    if(ToggleWar[j] == true && Dualed[j] == 0 && Spectate[j] == false && Dualed[j] != 2)
+	    	SetPlayerSpawn(j);
+        #undef j
+	}
     SCMToAll(COLOR_SYSTEM, "[!] 맵이 변경되었습니다. 새로운 전장에서 미쳐 날뛰어 보세요!");
 	return 1;
 }
@@ -2280,7 +2401,7 @@ public LoadConfigInfo()
 	    while(fread(tFile, Data, sizeof(Data)))
 		{
 			key = ini_GetKey(Data);
-			if(strcmp(key, "RoundTime", true) == 0) {val = ini_GetValue(Data); ServerVariable[RoundTime] = strval(val);}
+			if(strcmp(key, "RoundTime", true) == 0) {val = ini_GetValue(Data); ServerVariable[RoundTime] = strval(val); PlayTime = ServerVariable[RoundTime];}
 		}
 		fclose(tFile);
     }
@@ -2310,6 +2431,7 @@ public Spectating(playerid, targetid, bool: toogle)
 
 public CreatePingLabels()
 {
+
 	for(new i = 0; i < GetMaxPlayers(); i++)
 	{
 		PingLabels[i] = Create3DTextLabel("-", COLOR_RED, 0.0, 0.0, 0.0, 30.0, 0, true);
@@ -2375,9 +2497,13 @@ public ShowPlayerConfigDialog(playerid)
 	    strcat(string,"> 히트 사운드\t\t\t"#C_PASTEL_RED"OFF\n");
 
 	strcat(string,"> 스폰보호 시간\t\t\t"#C_YELLOW"");
-	format(str,sizeof(str),"%d",PlayerVariable[playerid][SpawnProtectionTime]);
+	format(str,sizeof(str),"%d\n",PlayerVariable[playerid][SpawnProtectionTime]);
 	strcat(string,str);
-	    
+
+	strcat(string,"> 스탯 표기 시간\t\t\t"#C_YELLOW"");
+	format(str,sizeof(str),"%d",PlayerVariable[playerid][StatTime]);
+	strcat(string,str);
+	
 	ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "확인", "뒤로");
 }
 
