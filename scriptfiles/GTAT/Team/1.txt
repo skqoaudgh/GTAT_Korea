@@ -1,2 +1,3 @@
-Color=0
-Name=Â÷Ä«´Ù 3
+Color=-87
+Name=Ä«´Ù ¾ß¾Æ
+Leader=

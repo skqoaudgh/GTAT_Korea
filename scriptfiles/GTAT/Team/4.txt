@@ -1,2 +1,3 @@
-Color=51
-Name=
+Color=184
+Name=¶ì
+Leader=

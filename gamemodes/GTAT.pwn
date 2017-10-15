@@ -1,3 +1,7 @@
+/*
+
+*/
+
 #include <a_samp>
 #include <Color>
 #include <dudb>
@@ -9,7 +13,7 @@
 
 #pragma unused ret_memcpy
 
-#define MODE_VERSION "v1.1.1"
+#define MODE_VERSION "1.3.0"
 #define MODE_LANGUAGE "KOREAN"
 #define MODE_MAPNAME "GTA:T Korea"
 #define MODE_URL "cafe.daum.net/sampkor"
@@ -30,21 +34,29 @@
 #define Team_File	"GTAT/Team/%d.txt"
 
 new Text:TD_GTAT[5];
-new Text:TD_Setting[4];
+new Text:TD_Setting[5];
 new Text:TD_SiteURL;
 new Text:TD_Zone[2];
 new Text:TD_Spec[2];
 new Text:TD_Time;
+new Text:TD_RequestBG[2];
+new Text:TD_Stat[M_P];
 
+new bool:ChangeMap;
+
+new StatTimer[M_P];
 new Slot[M_P];
 
-new PlayTime = 1200;
+new DualTimer[M_P];
+
+new PlayTime = 60*8;
 
 enum tInfo
 {
     Color,
     Kill,
-	Name
+	Name[256],
+	Leader[256]
 }
 new TeamInfo[MAX_TEAM][tInfo];
 
@@ -63,6 +75,7 @@ enum pInfo
 	pPoint,
 	pTeam,
 	pLeader,
+	pSkin,
 	
 	FPS2,
 	DLlast,
@@ -87,8 +100,8 @@ new WeaponInfo[][wInfo] =
 {
     {"Fist", 0, 1},
 	{"Chainsaw", 9, 1},
-	{"Grenade", 16, 2},
-	{"Molotov", 18, 2},
+	{"Grenade", 16, 10},
+	{"Molotov", 18, 10},
 	{"Silenced Pistol", 23, 450},
 	{"Desert Eagle", 24, 450},
 	{"Shotgun", 25, 120},
@@ -376,7 +389,7 @@ static const gSANZones[][SAZONE_MAIN] = { // 이것은 자신의위치를 나타내는 것입니
 	{"Willowfield, Los Santos",                 	{2541.70,-2059.20,2703.50,-1941.40}}
 };
 
-enum config
+enum pconfig
 {
 	bool:ZoneTextdraw,
 	bool:DamageTextdraw,
@@ -385,9 +398,13 @@ enum config
 	SpawnProtectionTime,
 	bool:TimeTextdraw
 };
-new PlayerVariable[M_P][config];
+new PlayerVariable[M_P][pconfig];
 
-
+enum sconfig
+{
+	RoundTime
+};
+new ServerVariable[sconfig];
 
 forward SaveZoneInfo(Zoneid,owner);
 forward BasicTimer();
@@ -409,6 +426,10 @@ forward ResetPlayerHits(playerid, hits);
 forward ResetDmgLabel(playerid);
 forward DestroyObjectEx(objectid);
 forward ShowPlayerConfigDialog(playerid);
+forward HideStats(showid, playerid);
+forward ShowServerConfigDialog(playerid);
+forward SaveConfigInfo();
+forward LoadConfigInfo();
 
 stock ResetPlayerVariable(playerid)
 {
@@ -599,23 +620,25 @@ stock ShowStats(showid, playerid)
 	new Hour, Minute, Second;
 	gettime(Hour, Minute, Second);
 	
-	new string[128];
+	new string[256];
+	new temp[512];
 	new Float:Ratio=floatdiv(PlayerInfo[playerid][pKill],PlayerInfo[playerid][pDeath]);
-	format(string, sizeof(string), "[ %s(%d) 님의 정보 ]", PlayerName(playerid), playerid);
-	SCM(showid, 0xADFF2FAA, string);
-	format(string, sizeof(string), "[ Point: "#C_WHITE"%d "#C_STAT"]", PlayerInfo[playerid][pPoint]);
-	SCM(showid, 0x6FA7FB96, string);
-	format(string, sizeof(string), "[ Kill: "#C_WHITE"%d "#C_STAT"]", PlayerInfo[playerid][pKill]);
-	SCM(showid, 0x6FA7FB96, string);
-	format(string, sizeof(string), "%s",GetMostWeaponStr(playerid));
-	SCM(showid, 0x6FA7FB96, string);
-	format(string, sizeof(string), "[ Death: "#C_WHITE"%d "#C_STAT"]", PlayerInfo[playerid][pDeath]);
-	SCM(showid, 0x6FA7FB96, string);
 	
-	format(string, sizeof(string), "[ Ratio: "#C_WHITE"%0.3f "#C_STAT"]", Ratio);
-	SCM(showid, 0x6FA7FB96, string);
-	format(string, sizeof(string), "[ Current Time: "#C_WHITE"%02d시 %02d분 %02d초"#C_STAT"]", Hour, Minute, Second);
-	SCM(showid, 0x6FA7FB96, string);
+	format(temp,sizeof(temp)," ~w~Stats of ~r~%s~n~",PlayerName(playerid));
+	strcat(string,temp);
+	format(temp,sizeof(temp)," ~w~Kills: ~y~%d ~w~Deaths: ~y~%d ~w~Ratio: ~y~%.4f~n~",PlayerInfo[playerid][pKill],PlayerInfo[playerid][pDeath],Ratio);
+	strcat(string,temp);
+	format(temp,sizeof(temp)," ~w~Gained Point: ~y~%d~n~",PlayerInfo[playerid][pPoint]);
+	strcat(string,temp);
+	format(temp,sizeof(temp)," %s~n~",GetMostWeaponStr(playerid));
+	strcat(string,temp);
+	format(temp,sizeof(temp)," ~w~Current Time: ~y~%02d:%02d:%02d",Hour, Minute, Second);
+	strcat(string,temp);
+	
+	TextDrawSetString(TD_Stat[playerid], string);
+	TextDrawShowForPlayer(showid, TD_Stat[playerid]);
+	KillTimer(StatTimer[showid]);
+	StatTimer[showid] = SetTimerEx("HideStats", 6000, 0, "i", showid, playerid);
 	return 1;
 }
 
@@ -631,7 +654,10 @@ stock GetMostWeaponStr(playerid)
 			id = i;
 		}
 	}
-	format(str,sizeof(str),"[ Favorite Weapon: "#C_WHITE"%s (Kills: %d) "#C_STAT"]", WeaponInfo[id][wName], MAX);
+	if(PlayerInfo[playerid][pWeaponKill][id] == 0)
+	    format(str,sizeof(str),"~w~Favorite Weapon: ~y~No Kills Yet");
+	else
+		format(str,sizeof(str),"~w~Favorite Weapon: ~y~%s (%d Kills)", WeaponInfo[id][wName], MAX);
 	return str;
 }
 
@@ -662,15 +688,12 @@ main()
 	print(" \t\t\t이 모드의 저작권은 'Cada'에게 있습니다.");
 	print("--------------------------------------------------------------------\n");
 	
-	Authentication("skqoaudgh.dothome.co.kr",true);
+	Authentication("skqoaudgh.dothome.co.kr",0);
 }
 
 public OnGameModeInit()
 {
 	new string[56];
-	
-    ConnectNPC("npctest","npctest");
-    ConnectNPC("npctest2","npctest2");
     
     format(string,sizeof(string),"GTAT:Korea v%s",MODE_VERSION);
 	SetGameModeText(string);
@@ -690,6 +713,7 @@ public OnGameModeInit()
 	LoadZoneInfo(0);
 	CreatePingLabels();
 	OnWeaponDropInit();
+	TeamInfo[0][Color] = -87;
 	
 	for(new i=0; i<MAX_ZONE; i++)
 	{
@@ -700,17 +724,16 @@ public OnGameModeInit()
 	
 	SetTimer("BasicTimer",1000,1);
 	
-	AddPlayerClass(54, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
-	AddPlayerClass(55, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
-	AddPlayerClass(56, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
-	AddPlayerClass(57, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
-	AddPlayerClass(58, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
+	for(new i=0; i<74; i++)
+		AddPlayerClass(i, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
+	for(new i=75; i<312; i++)
+		AddPlayerClass(i, 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
 
 	CreateObject(19074, 1903.18604, 698.42468, 1005.52058,   0.00000, 0.00000, 0.00000);
 	
 	AddStaticPickup(1239, 1, -785.0139, 500.2697, 1371.7422, -1);
 	
-	TD_GTAT[0] = TextDrawCreate(142.628540, 397.653198, "Grand");
+	TD_GTAT[0] = TextDrawCreate(142.628540, 402.653198, "Grand");
 	TextDrawLetterSize(TD_GTAT[0], 0.300000, 1.500000);
 	TextDrawAlignment(TD_GTAT[0], 1);
 	TextDrawColor(TD_GTAT[0], -1);
@@ -719,7 +742,7 @@ public OnGameModeInit()
 	TextDrawFont(TD_GTAT[0], 1);
 	TextDrawSetProportional(TD_GTAT[0], 1);
 
-	TD_GTAT[1] = TextDrawCreate(154.590438, 407.893280, "theft");
+	TD_GTAT[1] = TextDrawCreate(154.590438, 413.393280, "theft");
 	TextDrawLetterSize(TD_GTAT[1], 0.300000, 1.500000);
 	TextDrawAlignment(TD_GTAT[1], 1);
 	TextDrawColor(TD_GTAT[1], -1);
@@ -728,7 +751,7 @@ public OnGameModeInit()
 	TextDrawFont(TD_GTAT[1], 1);
 	TextDrawSetProportional(TD_GTAT[1], 1);
 
-	TD_GTAT[2] = TextDrawCreate(142.171493, 417.706604, "Auto");
+	TD_GTAT[2] = TextDrawCreate(142.171493, 423.206604, "Auto");
 	TextDrawLetterSize(TD_GTAT[2], 0.300000, 1.500000);
 	TextDrawAlignment(TD_GTAT[2], 1);
 	TextDrawColor(TD_GTAT[2], -1);
@@ -737,7 +760,7 @@ public OnGameModeInit()
 	TextDrawFont(TD_GTAT[2], 1);
 	TextDrawSetProportional(TD_GTAT[2], 1);
 
-	TD_GTAT[3] = TextDrawCreate(189.257232, 397.653289, "Korea");
+	TD_GTAT[3] = TextDrawCreate(189.257232, 403.153289, "Korea");
 	TextDrawLetterSize(TD_GTAT[3], 0.500000, 2.000000);
 	TextDrawAlignment(TD_GTAT[3], 1);
 	TextDrawColor(TD_GTAT[3], -16776961);
@@ -746,7 +769,7 @@ public OnGameModeInit()
 	TextDrawFont(TD_GTAT[3], 0);
 	TextDrawSetProportional(TD_GTAT[3], 1);
 
-	TD_GTAT[4] = TextDrawCreate(180.114181, 418.559967, "Tournament");
+	TD_GTAT[4] = TextDrawCreate(180.114181, 424.059967, "Tournament");
 	TextDrawLetterSize(TD_GTAT[4], 0.300000, 1.500000);
 	TextDrawAlignment(TD_GTAT[4], 1);
 	TextDrawColor(TD_GTAT[4], -16776961);
@@ -755,14 +778,14 @@ public OnGameModeInit()
 	TextDrawFont(TD_GTAT[4], 1);
 	TextDrawSetProportional(TD_GTAT[4], 1);
 
-	TD_Setting[0] = TextDrawCreate(356.666687, 349.233337, "usebox");
-	TextDrawLetterSize(TD_Setting[0], 0.000000, 5.018147);
+	TD_Setting[0] = TextDrawCreate(356.666687, 334.313437, "usebox");
+	TextDrawLetterSize(TD_Setting[0], 0.000000, 6.218147);
 	TextDrawTextSize(TD_Setting[0], 260.857147, 0.000000);
 	TextDrawAlignment(TD_Setting[0], 1);
 	TextDrawUseBox(TD_Setting[0], true);
 	TextDrawBoxColor(TD_Setting[0], 102);
 	
-	TD_Setting[1] = TextDrawCreate(308.514373, 350.720031, "Set SpawnPosition");
+	TD_Setting[1] = TextDrawCreate(308.514373, 350.720031, "Set SpawnPosition"); 
 	TextDrawTextSize(TD_Setting[1],10.000000, 100.000000);
  	TextDrawLetterSize(TD_Setting[1], 0.250000, 1.250000);
 	TextDrawAlignment(TD_Setting[1], 2);
@@ -794,6 +817,17 @@ public OnGameModeInit()
 	TextDrawFont(TD_Setting[3], 1);
 	TextDrawSetProportional(TD_Setting[3], 1);
 	TextDrawSetSelectable(TD_Setting[3], 1);
+
+	TD_Setting[4] = TextDrawCreate(308.514373, 335.800031, "Spawn Saved Skin");
+	TextDrawTextSize(TD_Setting[4],10.000000, 100.000000);
+ 	TextDrawLetterSize(TD_Setting[4], 0.250000, 1.250000);
+	TextDrawAlignment(TD_Setting[4], 2);
+	TextDrawColor(TD_Setting[4], -5963521);
+	TextDrawSetOutline(TD_Setting[4], 1);
+	TextDrawBackgroundColor(TD_Setting[4], 51);
+	TextDrawFont(TD_Setting[4], 1);
+	TextDrawSetProportional(TD_Setting[4], 1);
+	TextDrawSetSelectable(TD_Setting[4], 1);
 	
 	TD_SiteURL = TextDrawCreate(8.333349, 428.006530, "cafe.daum.net/sampkor");
 	TextDrawLetterSize(TD_SiteURL, 0.300000, 1.500000);
@@ -853,6 +887,20 @@ public OnGameModeInit()
 			TextDrawBackgroundColor(DamageTexts[i],0x000000FF);
 			TextDrawSetProportional(DamageTexts[i],1);
 			TextDrawColor(DamageTexts[i], 0xFF0000FF);
+			
+			TD_Stat[i] = TextDrawCreate(41.999950, 283.013336, "Stats of Name");
+			TextDrawLetterSize(TD_Stat[i], 0.199999, 1.062932);
+			TextDrawTextSize(TD_Stat[i], 180.000000, 0.000000);
+			TextDrawAlignment(TD_Stat[i], 1);
+			TextDrawColor(TD_Stat[i], -1);
+			TextDrawUseBox(TD_Stat[i], 1);
+			TextDrawBoxColor(TD_Stat[i], 96);
+			TextDrawSetShadow(TD_Stat[i], 0);
+			TextDrawSetOutline(TD_Stat[i], 1);
+			TextDrawBackgroundColor(TD_Stat[i], 255);
+			TextDrawFont(TD_Stat[i], 1);
+			TextDrawSetProportional(TD_Stat[i], 1);
+			TextDrawSetShadow(TD_Stat[i], 0);
 	}
 	
 	TD_Time = TextDrawCreate(554.676086, 19.546667, "00:00");
@@ -865,7 +913,19 @@ public OnGameModeInit()
 	TextDrawFont(TD_Time, 2);
 	TextDrawSetProportional(TD_Time, 1);
 	TextDrawSetShadow(TD_Time, 0);
+	
 
+	TD_RequestBG[0] = TextDrawCreate(0.476174, 400.412902, " ");
+	TextDrawLetterSize(TD_RequestBG[0], 0.400000, 1.600000);
+	TextDrawTextSize(TD_RequestBG[0], 643.000000, 0.000000);
+	TextDrawUseBox(TD_RequestBG[0], 1);
+	TextDrawBoxColor(TD_RequestBG[0], -1378294017);
+	
+	TD_RequestBG[1] = TextDrawCreate(-2.571452, 404.026275, "l");
+	TextDrawLetterSize(TD_RequestBG[1], 0.402285, 5.731733);
+	TextDrawTextSize(TD_RequestBG[1], 639.000000, 0.000000);
+	TextDrawUseBox(TD_RequestBG[1], 1);
+	TextDrawBoxColor(TD_RequestBG[1], 96);
 	return 1;
 }
 
@@ -880,25 +940,26 @@ public OnGameModeExit()
 
 public OnPlayerRequestClass(playerid, classid)
 {
-	if(IsPlayerNPC(playerid)) // 만약 엔피시일 경우
-	{
-		OnPlayerSpawn(playerid); // 리스폰을 시킨다.
-		return 1;
-	}
 	gPlayerSpanwed[playerid] = false;
 	
 	SetPlayerPos(playerid, -2384.8484,-584.4088,132.1172);
 	SetPlayerFacingAngle(playerid, 272.7505);
 	SetPlayerCameraPos(playerid, -2379.0386,-581.3090,133.6117);
 	SetPlayerCameraLookAt(playerid, -2384.8484,-584.4088,132.1172);
-	for(new i=0; i<4; i++)
+	for(new i=0; i<5; i++)
 		TextDrawShowForPlayer(playerid, TD_Setting[i]);
     SelectTextDraw(playerid, 0x00FF00FF);
 
-	for(new i=0; i<2; i++)
-		TextDrawHideForPlayer(playerid, TD_Zone[i]);
+    TextDrawShowForPlayer(playerid, TD_SiteURL);
 	for(new i=0; i<5; i++)
-		TextDrawHideForPlayer(playerid, TD_GTAT[i]);
+		TextDrawShowForPlayer(playerid, TD_GTAT[i]);
+		
+	for(new i=0; i<2; i++)
+	{
+		TextDrawHideForPlayer(playerid, TD_Zone[i]);
+		TextDrawShowForPlayer(playerid,TD_RequestBG[i]);
+	}
+	
 	TextDrawHideForPlayer(playerid, TD_Time);
 		
 	return 1;
@@ -920,12 +981,7 @@ public OnPlayerConnect(playerid)
 	
 	for(new i=0; i<MAX_ZONE; i++)
     	GangZoneShowForPlayer(playerid, GangZone[i], TeamInfo[ZoneOwner[i]][Color]);
-    	
-	for(new i=0; i<4; i++)
-		TextDrawShowForPlayer(playerid, TD_Setting[i]);
-    TextDrawShowForPlayer(playerid, TD_SiteURL);
-	SelectTextDraw(playerid, 0x00FF00FF);
-	
+		
 	EnableStuntBonusForPlayer(playerid, 0);
  	ResetPlayerVariable(playerid);
 	return 1;
@@ -950,23 +1006,7 @@ public OnPlayerDisconnect(playerid, reason)
 
 public OnPlayerSpawn(playerid)
 {
-	if(IsPlayerNPC(playerid)) // 엔피시일 경우
-	{
-		new npc[MAX_PLAYER_NAME];
-		GetPlayerName(playerid, npc, sizeof(npc));
-		if(!strcmp(npc, "npctest", true))
-		{
-			SetPlayerPos(playerid, -342.9893,1509.2260,75.5625); // 엔피시가 서있을자리 입니다.
-			SetPlayerSkin(playerid, 104); // 엔피시의 스킨을 지정하는겁니다.
-		}
-		else if(!strcmp(npc, "npctest2", true))
-		{
-			SetPlayerPos(playerid, -345.0834,1525.3529,75.3570); // 엔피시가 서있을자리 입니다.
-			SetPlayerSkin(playerid, 105); // 엔피시의 스킨을 지정하는겁니다.
-		}
-		return 1;
-	}
- 
+	PlayerInfo[playerid][pSkin] = GetPlayerSkin(playerid);
 	SetPlayerSpawn(playerid);
 	return 1;
 }
@@ -990,7 +1030,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 	    SetPlayerSpawn(DualID[playerid]);
 	    ResetDual(playerid, DualID[playerid]);
 	    
-	    format(string, sizeof(string), "[Dual] %s(%d) 님이 %s(%d) 님을 듀얼에서 이겼습니다!", PlayerName(DualID[playerid]), DualID[playerid], PlayerName(playerid), playerid);
+	    format(string, sizeof(string), "[Dual] %s(%d)가 %s(%d)을 듀얼에서 이겼습니다.", PlayerName(DualID[playerid]), DualID[playerid], PlayerName(playerid), playerid);
 	    SCMToAll(COLOR_LIGHTGREEN,string);
 	}
 	
@@ -1003,7 +1043,7 @@ public OnPlayerDeath(playerid, killerid, reason)
 	    if(KillStat[killerid] == 8)
 	    {
 	        KillStat[killerid] = 0;
-	        format(string,sizeof(string),"[!] %s(%d) 님이 God Father 칭호에 도달하였습니다!!",PlayerName(killerid),killerid);
+	        format(string,sizeof(string),"[!] %s(%d)가 God Father 칭호에 도달하였습니다!!",PlayerName(killerid),killerid);
 			SCMToAll(COLOR_LIGHTRED,string);
 	    }
 	    
@@ -1051,6 +1091,12 @@ public OnPlayerCommandText(playerid, cmdtext[])
 
 	if(IsPlayerAdmin(playerid))
 	{
+	
+		if(strcmp("/서버설정",cmd,true) == 0)
+		{
+		    return 1;
+		}
+		
 		if(strcmp("/맵변경",cmd,true) == 0)
 		{
 			ChangeZone();
@@ -1075,14 +1121,17 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			{
 			    PlayerInfo[targetid][pLeader] = 0;
 			    PlayerInfo[targetid][pTeam] = 0;
-				format(string,sizeof(string),"[!] 당신은 %s(%d) 의 리더 권한을 회수하였습니다.", PlayerName(targetid), targetid);
+				format(string,sizeof(string),"[!] 당신은 %s(%d)의 리더 권한을 회수하였습니다.", PlayerName(targetid), targetid);
 				SCM(playerid, COLOR_SYSTEM, string);
 				SCM(targetid, COLOR_SYSTEM, "[!] 당신의 리더 권환이 회수되었습니다.");
 				return 1;
 			}
 			PlayerInfo[targetid][pLeader] = teamid;
 			PlayerInfo[targetid][pTeam] = teamid;
-			format(string,sizeof(string),"[!] 당신은 %d번 팀의 리더를 %s(%d) (으)로 설정하였습니다.",teamid, PlayerName(targetid), targetid);
+
+            strmid(TeamInfo[teamid][Leader], PlayerName(targetid), 0, strlen(PlayerName(targetid)), 255);
+            OnTeamSave(teamid);
+			format(string,sizeof(string),"[!] 당신은 %d번 팀의 리더를 %s(%d)로 설정하였습니다.",teamid, PlayerName(targetid), targetid);
 			SCM(playerid, COLOR_SYSTEM, string);
 			format(string,sizeof(string),"[!] 당신은 %d번 팀의 리더가 되었습니다.",teamid);
 			SCM(targetid, COLOR_SYSTEM, string);
@@ -1104,7 +1153,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			    
 			TeamInfo[teamid][Color] = colorid;
 			OnTeamSave(teamid);
-			format(string,sizeof(string),"[!] 당신은 %d번 팀의 색깔을 %d (으)로 설정하였습니다.",teamid, colorid);
+			format(string,sizeof(string),"[!] 당신은 %d번 팀의 색깔을 %d로 설정하였습니다.",teamid, colorid);
 			SCM(playerid, COLOR_SYSTEM, string);
 			return 1;
 	 	}
@@ -1128,7 +1177,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 			strmid(TeamInfo[teamid][Name],talk,0,strlen(talk),sizeof(talk));
 			OnTeamSave(teamid);
 			
-			format(string,sizeof(string),"[!] 당신은 %d번 팀의 이름을 %s (으)로 설정하였습니다.",teamid, TeamInfo[teamid][Name]);
+			format(string,sizeof(string),"[!] 당신은 %d번 팀의 이름을 %s로 설정하였습니다.",teamid, TeamInfo[teamid][Name]);
 			SCM(playerid, COLOR_SYSTEM, string);
 			print(string);
 			return 1;
@@ -1195,9 +1244,15 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	//-----
 	if(strcmp(cmd, "/help", true)==0)
 	{
-	    SCM(playerid, COLOR_WHITE,"* /dual  /lounge  /stats  /spectate  /pm /respawn /kill *");
+	    SCM(playerid, COLOR_WHITE,"* /dual  /lounge  /stats  /spectate  /pm /respawn /kill /config*");
 	    SCM(playerid, COLOR_WHITE,"* /t /팀초대 /팀추방 /팀원목록 *");
 	    return 1;
+	}
+
+	if(strcmp(cmd, "/config", true)==0)
+	{
+	    ShowPlayerConfigDialog(playerid);
+		return 1;
 	}
 	
 	if(strcmp(cmd, "/kill", true)==0 || strcmp(cmd, "/자살", true)==0)
@@ -1251,9 +1306,9 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		    return SCM(playerid, COLOR_GREY, "[!] 접속하지 않은 플레이어 입니다.");
 
 		PlayerInfo[targetid][pTeam] = PlayerInfo[playerid][pLeader];
-		format(string,sizeof(string),"[!] 당신은 %s(%d) (을)를 팀으로 초대하였습니다.", PlayerName(targetid), targetid);
+		format(string,sizeof(string),"[!] 당신은 %s(%d)을 팀으로 초대하였습니다.", PlayerName(targetid), targetid);
 		SCM(playerid, COLOR_SYSTEM, string);
-		format(string,sizeof(string),"[!] 당신은 %d번 팀의 일원이 되었습니다.",PlayerInfo[playerid][pLeader]);
+		format(string,sizeof(string),"[!] 당신은 %s(%d) 팀의 일원이 되었습니다.",TeamInfo[PlayerInfo[playerid][pLeader]][Name],PlayerInfo[playerid][pLeader]);
 		SCM(targetid, COLOR_SYSTEM, string);
 		return 1;
 	}
@@ -1270,7 +1325,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		    return SCM(playerid, COLOR_GREY, "[!] 접속하지 않은 플레이어 입니다.");
 
 		PlayerInfo[targetid][pTeam] = PlayerInfo[playerid][pLeader];
-		format(string,sizeof(string),"[!] 당신은 %s(%d) (을)를 팀에서 추방시켰습니다.", PlayerName(targetid), targetid);
+		format(string,sizeof(string),"[!] 당신은 %s(%d)을 팀에서 추방시켰습니다.", PlayerName(targetid), targetid);
 		SCM(playerid, COLOR_SYSTEM, string);
 		SCM(targetid, COLOR_SYSTEM, "[!] 당신은 리더에 의해 팀에서 추방당했습니다.");
 		return 1;
@@ -1341,7 +1396,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	    return 1;
 	}
 
-	if(strcmp("/dual",cmd,true) == 0)
+	if(strcmp("/dual",cmd,true) == 0 || strcmp("/듀얼",cmd,true) == 0)
 	{
 		if(PlayerInfo[playerid][pHP] < 80)
 		    return SCM(playerid, COLOR_GREY, "[!] 체력이 80 이상이어야 사용할 수 있습니다.");
@@ -1356,15 +1411,16 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		if(PlayerInfo[targetid][pHP] < 80)
 		    return SCM(playerid, COLOR_GREY, "[!] 상대방의 체력이 부족해 듀얼을 할 수 없습니다.");
 		//-----
-		format(string, sizeof(string), "[듀얼] %s(%d) 님에게 듀얼을 신청하였습니다.", PlayerName(targetid), targetid);
+		format(string, sizeof(string), "[듀얼] %s(%d)에게 듀얼을 신청하였습니다.", PlayerName(targetid), targetid);
 		SCM(playerid, COLOR_LIGHTGREEN, string);
-		format(string, sizeof(string), "[듀얼] %s(%d) 님으로부터 듀얼 신청을 받았습니다. (/수락)", PlayerName(playerid), playerid);
-		SCM(playerid, COLOR_LIGHTGREEN, string);
+		format(string, sizeof(string), "[듀얼] %s(%d)으로부터 듀얼 신청을 받았습니다. (/수락)", PlayerName(playerid), playerid);
+		SCM(targetid, COLOR_LIGHTGREEN, string);
 		Dualed[playerid] = 1;
 		Dualed[targetid] = 1;
 		DualID[targetid] = playerid;
 
-		SetTimerEx("ResetDual", 5000, 0, "i", playerid, targetid);
+		KillTimer(DualTimer[playerid]);
+		DualTimer[playerid] = SetTimerEx("ResetDual", 5000, 0, "i", playerid, targetid);
 		return 1;
 	}
 
@@ -1765,13 +1821,20 @@ public OnPlayerClickTextDraw(playerid, Text:clickedid)
 
 	else if(clickedid == TD_Setting[3]) // config
 		ShowPlayerConfigDialog(playerid);
+
+	else if(clickedid == TD_Setting[4]) // spawn with skin
+	{
+	    SetSpawnInfo(playerid, NO_TEAM, PlayerInfo[playerid][pSkin], 0.0, 0.0, 0.0, 0.0, 0, 0, 0, 0, 0, 0);
+	    SpawnPlayer(playerid);
+	}
 	return 1;
 }
 
 public OnPlayerTakeDamage(playerid, issuerid, Float: amount, weaponid)
 {
-    if(PlayerVariable[issuerid][HitSound] == true)
-		PlayerPlaySound(issuerid, 17802, 0.0, 0.0, 0.0);
+	if(playerid != INVALID_PLAYER_ID && issuerid != INVALID_PLAYER_ID)
+	    if(PlayerVariable[issuerid][HitSound] == true)
+			PlayerPlaySound(issuerid, 17802, 0.0, 0.0, 0.0);
     	
 	return 1;
 }
@@ -1785,8 +1848,10 @@ public SetPlayerSpawn(playerid)
 	else
 	   SetPlayerColor(playerid, TeamInfo[PlayerInfo[playerid][pTeam]][Color]);
 
-	for(new i=0; i<4; i++)
+	for(new i=0; i<5; i++)
 		TextDrawHideForPlayer(playerid, TD_Setting[i]);
+	for(new i=0; i<2; i++)
+	    TextDrawHideForPlayer(playerid,TD_RequestBG[i]);
 		
 	if(PlayerVariable[playerid][ZoneTextdraw] == true)
 		for(new i=0; i<2; i++)
@@ -1811,7 +1876,7 @@ public SetPlayerSpawn(playerid)
 
 	if(ToggleWar[playerid] == true)
 	{
-	    if(SpawnType[playerid] == false || GetBattlePlayer(playerid) == 0)
+	    if(SpawnType[playerid] == false || GetBattlePlayer(playerid) == 0 || ChangeMap == false)
 	    {
 	        RandomSpawn(playerid);
 		}
@@ -1891,19 +1956,19 @@ public OnPlayerRegister(playerid, password[])
         format(var, 32, "Kill=%d\n",PlayerInfo[playerid][pKill]);fwrite(hFile, var);
         format(var, 32, "Death=%d\n",PlayerInfo[playerid][pDeath]);fwrite(hFile, var);
         format(var, 32, "Point=%d\n",PlayerInfo[playerid][pPoint]);fwrite(hFile, var);
+		format(var, 32, "Team=%d\n",PlayerInfo[playerid][pTeam]);fwrite(hFile, var);
+		format(var, 32, "Leader=%d\n",PlayerInfo[playerid][pLeader]);fwrite(hFile, var);
+		format(var, 32, "Point=%d\n",PlayerInfo[playerid][pPoint]);fwrite(hFile, var);
+		format(var, 32, "Skin=%d\n",PlayerInfo[playerid][pSkin]);fwrite(hFile, var);
+		for(new i=0; i<4; i++)
+        {
+            format(var, 32, "Weapons[%d]=%d\n",i,PlayerInfo[playerid][pWeapons][i]);fwrite(hFile, var);
+            format(var, 32, "WeaponID[%d]=%d\n",i,PlayerInfo[playerid][pWeaponID][i]);fwrite(hFile, var);
+        }
         for(new i=0; i<12; i++)
         {
 			format(var, 32, "WeaponKill[%d]=%d\n",i,PlayerInfo[playerid][pWeaponKill]);fwrite(hFile, var);
 		}
-		format(var, 32, "Team=%d\n",PlayerInfo[playerid][pTeam]);fwrite(hFile, var);
-		format(var, 32, "Leader=%d\n",PlayerInfo[playerid][pLeader]);fwrite(hFile, var);
-		format(var, 32, "Point=%d\n",PlayerInfo[playerid][pPoint]);fwrite(hFile, var);
-		for(new i=0; i<4; i++)
-        {
-            format(var, 32, "pWeapons[%d]=%d\n",i,PlayerInfo[playerid][pWeapons][i]);fwrite(hFile, var);
-            format(var, 32, "pWeaponID[%d]=%d\n",i,PlayerInfo[playerid][pWeaponID][i]);fwrite(hFile, var);
-            format(var, 32, "pAmmo[%d]=%d\n",i,PlayerInfo[playerid][pAmmo][i]);fwrite(hFile, var);
-        }
 		fclose(hFile);
 		GetPlayerIp(playerid,PlayerIP,sizeof(PlayerIP));
         printf("[System] %s(id:%d) 계정 생성 [IP:%s]",PlayerName(playerid),playerid,PlayerIP);
@@ -1937,25 +2002,22 @@ public OnPlayerLogin(playerid,password[])
                 if(strcmp(key, "Kill", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pKill] = strval(val);}
                 if(strcmp(key, "Death", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pDeath] = strval(val);}
                 if(strcmp(key, "Point", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pPoint] = strval(val); SetPlayerScore(playerid, PlayerInfo[playerid][pPoint]);}
+				if(strcmp(key, "Team", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pTeam] = strval(val);}
+				if(strcmp(key, "Leader", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pLeader] = strval(val);}
+				if(strcmp(key, "Point", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pPoint] = strval(val);}
+				if(strcmp(key, "Skin", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pSkin] = strval(val);}
+		        for(new i=0; i<4; i++)
+		        {
+		            format(string,sizeof(string),"Weapons[%d]",i);
+		            if(strcmp(key, string, true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pWeapons][i] = strval(val);}
+		            format(string,sizeof(string),"WeaponID[%d]",i);
+		            if(strcmp(key, string, true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pWeaponID][i] = strval(val);}
+		        }
         		for(new i=0; i<12; i++)
         		{
         		    format(string,sizeof(string),"WeaponKill[%d]",i);
             		if(strcmp(key, string, true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pWeaponKill][i] = strval(val);}
 				}
-				if(strcmp(key, "Team", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pTeam] = strval(val);}
-				if(strcmp(key, "Leader", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pLeader] = strval(val);}
-				if(strcmp(key, "Point", true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pPoint] = strval(val);}
-				
-		        for(new i=0; i<4; i++)
-		        {
-		            format(string,sizeof(string),"pWeapons[%d]",i);
-		            if(strcmp(key, string, true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pWeapons][i] = strval(val);}
-		            format(string,sizeof(string),"pWeaponID[%d]",i);
-		            if(strcmp(key, string, true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pWeaponID][i] = strval(val);}
-		            format(string,sizeof(string),"pAmmo[%d]",i);
-		            if(strcmp(key, string, true) == 0) {val = ini_GetValue(Data); PlayerInfo[playerid][pAmmo][i] = strval(val);}
-		        }
-        
 			}
 			ClearChatbox(playerid, 10);
 			gPlayerLogged[playerid] = true;
@@ -1967,6 +2029,8 @@ public OnPlayerLogin(playerid,password[])
 			fclose(UserFile);
 			
 			SetTimerEx("OnPlayerSave", 30000, 1, "i", playerid);
+			for(new i=0; i<5; i++)
+				TextDrawShowForPlayer(playerid, TD_Setting[i]);
 		}
 		else
 		{
@@ -1991,13 +2055,19 @@ public OnPlayerSave(playerid)
             format(var, 64, "Kill=%d\n",PlayerInfo[playerid][pKill]);fwrite(hFile, var);
             format(var, 64, "Death=%d\n",PlayerInfo[playerid][pDeath]);fwrite(hFile, var);
             format(var, 64, "Point=%d\n",PlayerInfo[playerid][pPoint]);fwrite(hFile, var);
-	        for(new i=0; i<12; i++)
-	        {
-	            format(var, 64, "WeaponKill[%d]=%d\n",i,PlayerInfo[playerid][pWeaponKill]);fwrite(hFile, var);
-			}
 			format(var, 64, "Team=%d\n",PlayerInfo[playerid][pTeam]);fwrite(hFile, var);
 			format(var, 64, "Leader=%d\n",PlayerInfo[playerid][pLeader]);fwrite(hFile, var);
 			format(var, 64, "Point=%d\n",PlayerInfo[playerid][pPoint]);fwrite(hFile, var);
+			format(var, 64, "Skin=%d\n",PlayerInfo[playerid][pSkin]);fwrite(hFile, var);
+			for(new i=0; i<4; i++)
+	        {
+	            format(var, 32, "Weapons[%d]=%d\n",i,PlayerInfo[playerid][pWeapons][i]);fwrite(hFile, var);
+	            format(var, 32, "WeaponID[%d]=%d\n",i,PlayerInfo[playerid][pWeaponID][i]);fwrite(hFile, var);
+	        }
+	        for(new i=0; i<12; i++)
+	        {
+				format(var, 32, "WeaponKill[%d]=%d\n",i,PlayerInfo[playerid][pWeaponKill]);fwrite(hFile, var);
+			}
 			fclose(hFile);
 		}
 	}
@@ -2014,6 +2084,7 @@ public OnTeamSave(teamid)
 	    new var[64];
 		format(var, 64, "Color=%d\n", TeamInfo[teamid][Color]);fwrite(tFile, var);
 		format(var, 64, "Name=%s\n", TeamInfo[teamid][Name]);fwrite(tFile, var);
+		format(var, 64, "Leader=%s\n", TeamInfo[teamid][Leader]);fwrite(tFile, var);
 		fclose(tFile);
 	}
 	return 1;
@@ -2099,8 +2170,8 @@ public ChangeZone()
 {
 	new string[256];
 	new BestTeam = 0;
-	
-	PlayTime = 1200;
+	ChangeMap = true;
+	PlayTime = 60*8;
 
     for(new i = 1; i<MAX_TEAM; i++)
         if(TeamInfo[BestTeam][Kill] < TeamInfo[i][Kill])
@@ -2137,7 +2208,7 @@ public ChangeZone()
     LoadZoneInfo(ZoneID);
     
 	for(new i,t=GetMaxPlayers(); i<t; i++)
-	    if(ToggleWar[i] == true && Dualed[i] == 0 && Spectate[i] == false)
+	    if(ToggleWar[i] == true && Dualed[i] == 0 && Spectate[i] == false && Dualed[i] != 2)
 	    	SetPlayerSpawn(i);
 	    
     SCMToAll(COLOR_SYSTEM, "[!] 맵이 변경되었습니다. 새로운 전장에서 미쳐 날뛰어 보세요!");
@@ -2182,6 +2253,38 @@ public LoadZoneInfo(Zoneid)
 		ZoneOwner[Zoneid] = strval(Data);
 		fclose(hfile);
 	}
+}
+
+public SaveConfigInfo()
+{
+	new file[32];
+    format(file, sizeof(file),"GTAT/Config.txt");
+    new File: hFile = fopen(file,io_write);
+	if(hFile)
+	{
+	    new var[64];
+		format(var, 64, "RoundTime=%d\n", ServerVariable[RoundTime]);fwrite(hFile, var);
+		fclose(hFile);
+	}
+	return 1;
+}
+
+public LoadConfigInfo()
+{
+    new file[32];
+    format(file, sizeof(file),"GTAT/Config.txt");
+    new File: tFile = fopen(file, io_read);
+    if(tFile)
+    {
+	    new key[256],val[256],Data[256];
+	    while(fread(tFile, Data, sizeof(Data)))
+		{
+			key = ini_GetKey(Data);
+			if(strcmp(key, "RoundTime", true) == 0) {val = ini_GetValue(Data); ServerVariable[RoundTime] = strval(val);}
+		}
+		fclose(tFile);
+    }
+	return 1;
 }
 
 public Spectating(playerid, targetid, bool: toogle)
@@ -2276,4 +2379,21 @@ public ShowPlayerConfigDialog(playerid)
 	strcat(string,str);
 	    
 	ShowPlayerDialog(playerid, DialogID_Config(0), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "확인", "뒤로");
+}
+
+public ShowServerConfigDialog(playerid)
+{
+	new string[1000];
+	new str[32];
+	strcat(string,""#C_IVORY"  옵션\t\t\t"#C_IVORY"상태\n");
+	strcat(string,"> 라운드 시간\t\t\t"#C_YELLOW"");
+	format(str,sizeof(str),"%d",ServerVariable[RoundTime]);
+	strcat(string,str);
+	
+    ShowPlayerDialog(playerid, DialogID_Config(2), DIALOG_STYLE_TABLIST_HEADERS, ""#C_ORANGE"설정할 항목을 선택하세요.", string , "확인", "뒤로");
+}
+
+public HideStats(showid, playerid)
+{
+    TextDrawHideForPlayer(showid, TD_Stat[playerid]);
 }
