@@ -52,46 +52,6 @@ stock OnWeaponDropInit()
 	return 1;
 }
 
-stock OnWeaponDropPickup(playerid, pickupid)
-{
-    new world = GetPlayerVirtualWorld(playerid);
-    new Float:hp;
-    GetPlayerHealth(playerid, hp);
-	for(new i=0; i<MAX_PLAYERS; i++)
-	{
-		for(new a=0; a<13; a++)
-		{
-		    if(WeaponDrop[i][a] == pickupid && WeaponData[i][a][2] == world)
-		    {
-		        WeaponDrop[i][a] = -1;
-		        DestroyPickup(pickupid);
-		        GivePlayerWeapon(playerid, WeaponData[i][a][0], WeaponData[i][a][1]);
-		    	WeaponData[i][a][0] = -1;
-		    	WeaponData[i][a][1] = -1;
-		    }
-		}
-		if(WeaponDrop[i][13] == pickupid)
-		{
-	        WeaponDrop[i][13] = -1;
-	        DestroyPickup(pickupid);
-		    GivePlayerMoney(playerid, WeaponData[i][13][0]);
-	    	WeaponData[i][13][0] = -1;
-	    	WeaponData[i][13][1] = -1;
-		}
-
-		if(WeaponDrop[i][14] == pickupid)
-		{
-	        WeaponDrop[i][14] = -1;
-	        DestroyPickup(pickupid);
-		    SetPlayerHealth(playerid,hp+20);
-	    	WeaponData[i][14][0] = -1;
-	    	WeaponData[i][14][1] = -1;
-		}
-	}
-
-	return 1;
-}
-
 stock OnWeaponDrop(playerid)
 {
 	RemovePickups(playerid);

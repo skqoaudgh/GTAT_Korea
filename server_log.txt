@@ -12379,3 +12379,1392 @@ Console input: gmx
 [00:15:43] [!] 당신은 0번 팀의 이름을 No_Team로 설정하였습니다.
 [00:15:53] [!] 당신은 1번 팀의 이름을 Cada_Team로 설정하였습니다.
 [00:16:52] [part] Cada has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[12:11:39] 
+[12:11:39] Server Plugins
+[12:11:39] --------------
+[12:11:39]  Loading plugin: MapAndreas
+[12:11:39]   Loaded.
+[12:11:39]  Loading plugin: sscanf
+[12:11:39] 
+
+[12:11:39]  ===============================
+
+[12:11:39]       sscanf plugin loaded.     
+
+[12:11:39]    (c) 2009 Alex "Y_Less" Cole
+
+[12:11:39]    0.3d-R2 500 Players "dnee"
+
+[12:11:39]  ===============================
+
+[12:11:39]   Loaded.
+[12:11:39]  Loading plugin: TDE
+[12:11:39] 
+TDEditor Plugin loaded, thank you for using.
+
+[12:11:39]   Loaded.
+[12:11:39]  Loaded 3 plugins.
+
+[12:11:39] 
+[12:11:39] Filterscripts
+[12:11:39] ---------------
+[12:11:39]   Loading filterscript 'fsdebug.amx'...
+[12:11:39] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[12:11:39]   * By Simon Campbell *
+  *********************
+[12:11:39]   * Version: 0.5d      *
+  *********************
+[12:11:39]   * -- LOADED         *
+  *********************
+
+[12:11:39]   Loading filterscript 'TDE.amx'...
+[12:11:39]  
+[12:11:39]  
+[12:11:39]  
+[12:11:39]  
+[12:11:39] ___ __  __
+[12:11:39]  | |  \|_  _|.|_ _  _		
+[12:11:39]  | |__/|__(_|||_(_)|			
+[12:11:39]  
+[12:11:39] TDEditor V1.17 by adri1
+[12:11:39] TDEditor loaded
+[12:11:39]  
+[12:11:39]   Loaded 2 filterscripts.
+
+[12:11:39] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:11:39] [ADM] Info: MapAndreas successfully init.
+[12:11:39] 
+--------------------------------------------------------------------
+[12:11:39]  		GTA:T Korea Mode On
+[12:11:39]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:11:39] --------------------------------------------------------------------
+
+[12:11:39] Number of vehicle models: 0
+[12:11:39] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:12:01] [connection] 127.0.0.1:49827 requests connection cookie.
+[12:12:02] [connection] incoming connection: 127.0.0.1:49827 id: 0
+[12:12:02] [join] Cada has joined the server (0:127.0.0.1)
+[12:12:07] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:38:56] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:39:08] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:39:08] 
+--------------------------------------------------------------------
+[12:39:08]  		GTA:T Korea Mode On
+[12:39:08]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:39:08] --------------------------------------------------------------------
+
+[12:39:08] Number of vehicle models: 0
+[12:39:08] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:39:25] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:40:10] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:40:22] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:40:22] 
+--------------------------------------------------------------------
+[12:40:22]  		GTA:T Korea Mode On
+[12:40:22]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:40:22] --------------------------------------------------------------------
+
+[12:40:22] Number of vehicle models: 0
+[12:40:22] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:40:32] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:40:59] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:41:11] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:41:11] 
+--------------------------------------------------------------------
+[12:41:11]  		GTA:T Korea Mode On
+[12:41:11]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:41:11] --------------------------------------------------------------------
+
+[12:41:11] Number of vehicle models: 0
+[12:41:12] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:42:13] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:42:42] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:42:54] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:42:54] 
+--------------------------------------------------------------------
+[12:42:54]  		GTA:T Korea Mode On
+[12:42:54]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:42:54] --------------------------------------------------------------------
+
+[12:42:54] Number of vehicle models: 0
+[12:42:55] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:49:15] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:49:38] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:49:50] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:49:50] 
+--------------------------------------------------------------------
+[12:49:50]  		GTA:T Korea Mode On
+[12:49:50]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:49:50] --------------------------------------------------------------------
+
+[12:49:50] Number of vehicle models: 0
+[12:49:51] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:50:24] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:50:59] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:51:11] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:51:11] 
+--------------------------------------------------------------------
+[12:51:11]  		GTA:T Korea Mode On
+[12:51:11]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:51:11] --------------------------------------------------------------------
+
+[12:51:11] Number of vehicle models: 0
+[12:51:11] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:51:17] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:51:48] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:52:00] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:52:00] 
+--------------------------------------------------------------------
+[12:52:00]  		GTA:T Korea Mode On
+[12:52:00]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:52:00] --------------------------------------------------------------------
+
+[12:52:00] Number of vehicle models: 0
+[12:52:00] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:52:01] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[12:52:29] RCON (In-Game): Player #0 (Cada) has logged in.
+[12:52:30] RCON (In-Game): Player [Cada] sent command: gmx
+[12:52:30] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:52:42] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:52:42] 
+--------------------------------------------------------------------
+[12:52:42]  		GTA:T Korea Mode On
+[12:52:42]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:52:42] --------------------------------------------------------------------
+
+[12:52:42] Number of vehicle models: 0
+[12:52:42] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:52:51] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:53:12] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:53:24] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:53:24] 
+--------------------------------------------------------------------
+[12:53:24]  		GTA:T Korea Mode On
+[12:53:24]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:53:24] --------------------------------------------------------------------
+
+[12:53:24] Number of vehicle models: 0
+[12:53:25] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:53:29] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:54:06] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:54:18] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:54:18] 
+--------------------------------------------------------------------
+[12:54:18]  		GTA:T Korea Mode On
+[12:54:18]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:54:18] --------------------------------------------------------------------
+
+[12:54:18] Number of vehicle models: 0
+[12:54:18] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:54:32] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[12:54:45] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:54:57] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[12:54:57] 
+--------------------------------------------------------------------
+[12:54:57]  		GTA:T Korea Mode On
+[12:54:57]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[12:54:57] --------------------------------------------------------------------
+
+[12:54:57] Number of vehicle models: 0
+[12:54:57] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[12:55:13] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:19:18] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:19:30] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:19:30] 
+--------------------------------------------------------------------
+[13:19:30]  		GTA:T Korea Mode On
+[13:19:30]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:19:30] --------------------------------------------------------------------
+
+[13:19:30] Number of vehicle models: 0
+[13:19:30] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:19:33] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:20:50] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:21:02] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:21:02] 
+--------------------------------------------------------------------
+[13:21:02]  		GTA:T Korea Mode On
+[13:21:02]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:21:02] --------------------------------------------------------------------
+
+[13:21:02] Number of vehicle models: 0
+[13:21:02] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:21:03] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:21:39] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:21:51] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:21:51] 
+--------------------------------------------------------------------
+[13:21:51]  		GTA:T Korea Mode On
+[13:21:51]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:21:51] --------------------------------------------------------------------
+
+[13:21:51] Number of vehicle models: 0
+[13:21:51] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:21:54] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:27:14] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:27:26] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:27:26] 
+--------------------------------------------------------------------
+[13:27:26]  		GTA:T Korea Mode On
+[13:27:26]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:27:26] --------------------------------------------------------------------
+
+[13:27:26] Number of vehicle models: 0
+[13:27:26] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:27:31] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:28:56] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:29:08] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:29:08] 
+--------------------------------------------------------------------
+[13:29:08]  		GTA:T Korea Mode On
+[13:29:08]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:29:08] --------------------------------------------------------------------
+
+[13:29:08] Number of vehicle models: 0
+[13:29:08] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:29:14] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:30:36] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:30:48] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:30:48] 
+--------------------------------------------------------------------
+[13:30:48]  		GTA:T Korea Mode On
+[13:30:48]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:30:48] --------------------------------------------------------------------
+
+[13:30:48] Number of vehicle models: 0
+[13:30:48] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:31:08] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:31:26] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:31:38] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:31:38] 
+--------------------------------------------------------------------
+[13:31:38]  		GTA:T Korea Mode On
+[13:31:38]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:31:38] --------------------------------------------------------------------
+
+[13:31:38] Number of vehicle models: 0
+[13:31:38] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:31:43] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:32:21] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:32:33] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:32:33] 
+--------------------------------------------------------------------
+[13:32:33]  		GTA:T Korea Mode On
+[13:32:33]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:32:33] --------------------------------------------------------------------
+
+[13:32:33] Number of vehicle models: 0
+[13:32:33] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:32:57] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:35:35] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:35:47] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:35:47] 
+--------------------------------------------------------------------
+[13:35:47]  		GTA:T Korea Mode On
+[13:35:47]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:35:47] --------------------------------------------------------------------
+
+[13:35:47] Number of vehicle models: 0
+[13:35:47] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:35:54] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:44:08] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:44:20] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:44:20] 
+--------------------------------------------------------------------
+[13:44:20]  		GTA:T Korea Mode On
+[13:44:20]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:44:20] --------------------------------------------------------------------
+
+[13:44:20] Number of vehicle models: 0
+[13:44:20] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:44:21] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[13:46:20] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:46:32] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[13:46:32] 
+--------------------------------------------------------------------
+[13:46:32]  		GTA:T Korea Mode On
+[13:46:32]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[13:46:32] --------------------------------------------------------------------
+
+[13:46:32] Number of vehicle models: 0
+[13:46:32] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[13:46:37] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[13:46:50] [part] Cada has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:48:32] 
+[22:48:32] Server Plugins
+[22:48:32] --------------
+[22:48:32]  Loading plugin: MapAndreas
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: sscanf
+[22:48:32] 
+
+[22:48:32]  ===============================
+
+[22:48:32]       sscanf plugin loaded.     
+
+[22:48:32]    (c) 2009 Alex "Y_Less" Cole
+
+[22:48:32]    0.3d-R2 500 Players "dnee"
+
+[22:48:32]  ===============================
+
+[22:48:32]   Loaded.
+[22:48:32]  Loading plugin: TDE
+[22:48:32] 
+TDEditor Plugin loaded, thank you for using.
+
+[22:48:32]   Loaded.
+[22:48:32]  Loaded 3 plugins.
+
+[22:48:32] 
+[22:48:32] Filterscripts
+[22:48:32] ---------------
+[22:48:32]   Loading filterscript 'fsdebug.amx'...
+[22:48:32] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[22:48:32]   * By Simon Campbell *
+  *********************
+[22:48:32]   * Version: 0.5d      *
+  *********************
+[22:48:32]   * -- LOADED         *
+  *********************
+
+[22:48:32]   Loading filterscript 'TDE.amx'...
+[22:48:32]  
+[22:48:32]  
+[22:48:32]  
+[22:48:32]  
+[22:48:32] ___ __  __
+[22:48:32]  | |  \|_  _|.|_ _  _		
+[22:48:32]  | |__/|__(_|||_(_)|			
+[22:48:32]  
+[22:48:32] TDEditor V1.17 by adri1
+[22:48:32] TDEditor loaded
+[22:48:32]  
+[22:48:32]   Loaded 2 filterscripts.
+
+[22:48:32] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:48:32] [ADM] Info: MapAndreas successfully init.
+[22:48:32] 
+--------------------------------------------------------------------
+[22:48:32]  		GTA:T Korea Mode On
+[22:48:32]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:48:32] --------------------------------------------------------------------
+
+[22:48:32] Number of vehicle models: 0
+[22:48:32] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[22:48:58] [connection] 127.0.0.1:64039 requests connection cookie.
+[22:48:59] [connection] incoming connection: 127.0.0.1:64039 id: 0
+[22:48:59] [join] Cada has joined the server (0:127.0.0.1)
+[22:49:00] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:49:09] RCON (In-Game): Player #0 (Cada) has logged in.
+Console input: gmx
+[22:49:33] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:49:45] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:49:45] 
+--------------------------------------------------------------------
+[22:49:45]  		GTA:T Korea Mode On
+[22:49:45]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:49:45] --------------------------------------------------------------------
+
+[22:49:45] Number of vehicle models: 0
+[22:49:45] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[22:49:46] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:52:37] RCON (In-Game): Player [Cada] sent command: gmx
+[22:52:37] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:52:49] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:52:49] 
+--------------------------------------------------------------------
+[22:52:49]  		GTA:T Korea Mode On
+[22:52:49]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:52:49] --------------------------------------------------------------------
+
+[22:52:49] Number of vehicle models: 0
+[22:52:50] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[22:53:11] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:53:15] RCON (In-Game): Player [Cada] sent command: gmx
+[22:53:15] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:53:27] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:53:27] 
+--------------------------------------------------------------------
+[22:53:27]  		GTA:T Korea Mode On
+[22:53:27]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:53:27] --------------------------------------------------------------------
+
+[22:53:27] Number of vehicle models: 0
+[22:53:27] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[22:53:27] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[22:57:21] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:57:33] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:57:33] 
+--------------------------------------------------------------------
+[22:57:33]  		GTA:T Korea Mode On
+[22:57:33]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:57:33] --------------------------------------------------------------------
+
+[22:57:33] Number of vehicle models: 0
+[22:57:33] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[22:57:41] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:58:10] RCON (In-Game): Player [Cada] sent command: unloadfs fsdebug
+[22:58:10] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[22:58:10]   * -- SHUTDOWN       *
+  *********************
+
+[22:58:10]   Filterscript 'fsdebug.amx' unloaded.
+[22:58:11] [Team Chat] Cada: 1
+[23:12:22] [part] Cada has left the server (0:1)
+[23:12:26] --- Server Shutting Down.
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[23:18:18] 
+[23:18:18] Server Plugins
+[23:18:18] --------------
+[23:18:18]  Loading plugin: MapAndreas
+[23:18:18]   Loaded.
+[23:18:18]  Loading plugin: sscanf
+[23:18:18] 
+
+[23:18:18]  ===============================
+
+[23:18:18]       sscanf plugin loaded.     
+
+[23:18:18]    (c) 2009 Alex "Y_Less" Cole
+
+[23:18:18]    0.3d-R2 500 Players "dnee"
+
+[23:18:18]  ===============================
+
+[23:18:18]   Loaded.
+[23:18:18]  Loading plugin: TDE
+[23:18:18] 
+TDEditor Plugin loaded, thank you for using.
+
+[23:18:18]   Loaded.
+[23:18:18]  Loaded 3 plugins.
+
+[23:18:18] 
+[23:18:18] Filterscripts
+[23:18:18] ---------------
+[23:18:18]   Loading filterscript 'fsdebug.amx'...
+[23:18:18] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[23:18:18]   * By Simon Campbell *
+  *********************
+[23:18:18]   * Version: 0.5d      *
+  *********************
+[23:18:18]   * -- LOADED         *
+  *********************
+
+[23:18:18]   Loading filterscript 'TDE.amx'...
+[23:18:18]  
+[23:18:18]  
+[23:18:18]  
+[23:18:18]  
+[23:18:18] ___ __  __
+[23:18:18]  | |  \|_  _|.|_ _  _		
+[23:18:18]  | |__/|__(_|||_(_)|			
+[23:18:18]  
+[23:18:18] TDEditor V1.17 by adri1
+[23:18:18] TDEditor loaded
+[23:18:18]  
+[23:18:18]   Loaded 2 filterscripts.
+
+[23:18:18] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:18:18] [ADM] Info: MapAndreas successfully init.
+[23:18:18] 
+--------------------------------------------------------------------
+[23:18:18]  		GTA:T Korea Mode On
+[23:18:18]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:18:18] --------------------------------------------------------------------
+
+[23:18:18] Number of vehicle models: 0
+[23:18:19] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:18:40] [connection] 127.0.0.1:62802 requests connection cookie.
+[23:18:41] [connection] incoming connection: 127.0.0.1:62802 id: 0
+[23:18:41] [join] Jay_Salazar has joined the server (0:127.0.0.1)
+[23:18:43] [System] Jay_Salazar(id:0) 계정 생성 [IP:127.0.0.1]
+[23:18:43] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[23:18:53] RCON (In-Game): Player #0 (Jay_Salazar) has logged in.
+Console input: gmx
+[23:19:55] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:20:07] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:20:07] 
+--------------------------------------------------------------------
+[23:20:07]  		GTA:T Korea Mode On
+[23:20:07]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:20:07] --------------------------------------------------------------------
+
+[23:20:07] Number of vehicle models: 0
+[23:20:07] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:20:27] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:23:45] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:23:57] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:23:57] 
+--------------------------------------------------------------------
+[23:23:57]  		GTA:T Korea Mode On
+[23:23:57]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:23:57] --------------------------------------------------------------------
+
+[23:23:57] Number of vehicle models: 0
+[23:23:57] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:23:58] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:35:36] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:35:48] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:35:48] 
+--------------------------------------------------------------------
+[23:35:48]  		GTA:T Korea Mode On
+[23:35:48]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:35:48] --------------------------------------------------------------------
+
+[23:35:48] Number of vehicle models: 0
+[23:35:48] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:35:48] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:37:41] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:37:53] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:37:53] 
+--------------------------------------------------------------------
+[23:37:53]  		GTA:T Korea Mode On
+[23:37:53]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:37:53] --------------------------------------------------------------------
+
+[23:37:53] Number of vehicle models: 0
+[23:37:54] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[23:37:54] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+Console input: gmx
+[23:41:45] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:41:58] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:41:58] 
+--------------------------------------------------------------------
+[23:41:58]  		GTA:T Korea Mode On
+[23:41:58]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:41:58] --------------------------------------------------------------------
+
+[23:41:58] Number of vehicle models: 0
+[23:41:58] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:41:58] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:44:15] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:44:27] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:44:27] 
+--------------------------------------------------------------------
+[23:44:27]  		GTA:T Korea Mode On
+[23:44:27]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:44:27] --------------------------------------------------------------------
+
+[23:44:27] Number of vehicle models: 0
+[23:44:28] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:44:34] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:47:31] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:47:43] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:47:43] 
+--------------------------------------------------------------------
+[23:47:43]  		GTA:T Korea Mode On
+[23:47:43]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:47:43] --------------------------------------------------------------------
+
+[23:47:43] Number of vehicle models: 0
+[23:47:43] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:47:44] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:49:00] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:49:12] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:49:12] 
+--------------------------------------------------------------------
+[23:49:12]  		GTA:T Korea Mode On
+[23:49:12]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:49:12] --------------------------------------------------------------------
+
+[23:49:12] Number of vehicle models: 0
+[23:49:12] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:49:13] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:49:40] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:49:52] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:49:52] 
+--------------------------------------------------------------------
+[23:49:52]  		GTA:T Korea Mode On
+[23:49:52]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:49:52] --------------------------------------------------------------------
+
+[23:49:52] Number of vehicle models: 0
+[23:49:52] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:49:58] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[23:50:48] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:51:00] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[23:51:00] 
+--------------------------------------------------------------------
+[23:51:00]  		GTA:T Korea Mode On
+[23:51:00]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[23:51:00] --------------------------------------------------------------------
+
+[23:51:00] Number of vehicle models: 0
+[23:51:00] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[23:51:19] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[23:53:39] [part] Jay_Salazar has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:05:19] 
+[14:05:19] Server Plugins
+[14:05:19] --------------
+[14:05:19]  Loading plugin: MapAndreas
+[14:05:19]   Loaded.
+[14:05:19]  Loading plugin: sscanf
+[14:05:19] 
+
+[14:05:19]  ===============================
+
+[14:05:19]       sscanf plugin loaded.     
+
+[14:05:19]    (c) 2009 Alex "Y_Less" Cole
+
+[14:05:19]    0.3d-R2 500 Players "dnee"
+
+[14:05:19]  ===============================
+
+[14:05:19]   Loaded.
+[14:05:19]  Loading plugin: TDE
+[14:05:19] 
+TDEditor Plugin loaded, thank you for using.
+
+[14:05:19]   Loaded.
+[14:05:19]  Loaded 3 plugins.
+
+[14:05:19] 
+[14:05:19] Filterscripts
+[14:05:19] ---------------
+[14:05:19]   Loading filterscript 'fsdebug.amx'...
+[14:05:19] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[14:05:19]   * By Simon Campbell *
+  *********************
+[14:05:19]   * Version: 0.5d      *
+  *********************
+[14:05:19]   * -- LOADED         *
+  *********************
+
+[14:05:19]   Loading filterscript 'TDE.amx'...
+[14:05:19]  
+[14:05:19]  
+[14:05:19]  
+[14:05:19]  
+[14:05:19] ___ __  __
+[14:05:19]  | |  \|_  _|.|_ _  _		
+[14:05:19]  | |__/|__(_|||_(_)|			
+[14:05:19]  
+[14:05:19] TDEditor V1.17 by adri1
+[14:05:19] TDEditor loaded
+[14:05:19]  
+[14:05:19]   Loaded 2 filterscripts.
+
+[14:05:19] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:05:19] [ADM] Info: MapAndreas successfully init.
+[14:05:19] 
+--------------------------------------------------------------------
+[14:05:19]  		GTA:T Korea Mode On
+[14:05:19]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:05:19] --------------------------------------------------------------------
+
+[14:05:19] Number of vehicle models: 0
+[14:05:19] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:05:48] [connection] 127.0.0.1:53497 requests connection cookie.
+[14:05:49] [connection] incoming connection: 127.0.0.1:53497 id: 0
+[14:05:49] [join] Jay_Salazar has joined the server (0:127.0.0.1)
+[14:05:52] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:06:16] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:06:28] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:06:28] 
+--------------------------------------------------------------------
+[14:06:28]  		GTA:T Korea Mode On
+[14:06:28]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:06:28] --------------------------------------------------------------------
+
+[14:06:28] Number of vehicle models: 0
+[14:06:28] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:07:16] RCON (In-Game): Player #0 (Jay_Salazar) has logged in.
+[14:09:03] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:09:03] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:09:15] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:09:15] 
+--------------------------------------------------------------------
+[14:09:15]  		GTA:T Korea Mode On
+[14:09:15]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:09:15] --------------------------------------------------------------------
+
+[14:09:15] Number of vehicle models: 0
+[14:09:15] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:11:18] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:11:18] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:11:30] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:11:30] 
+--------------------------------------------------------------------
+[14:11:30]  		GTA:T Korea Mode On
+[14:11:30]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:11:30] --------------------------------------------------------------------
+
+[14:11:30] Number of vehicle models: 0
+[14:11:30] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:12:18] RCON (In-Game): Player [Jay_Salazar] sent command: login 1
+[14:12:23] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:12:23] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:12:35] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:12:35] 
+--------------------------------------------------------------------
+[14:12:35]  		GTA:T Korea Mode On
+[14:12:35]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:12:35] --------------------------------------------------------------------
+
+[14:12:35] Number of vehicle models: 0
+[14:12:35] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+Console input: gmx
+[14:15:07] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:15:19] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:15:19] 
+--------------------------------------------------------------------
+[14:15:19]  		GTA:T Korea Mode On
+[14:15:19]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:15:19] --------------------------------------------------------------------
+
+[14:15:19] Number of vehicle models: 0
+[14:15:19] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:15:34] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:15:34] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:15:46] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:15:46] 
+--------------------------------------------------------------------
+[14:15:46]  		GTA:T Korea Mode On
+[14:15:46]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:15:46] --------------------------------------------------------------------
+
+[14:15:46] Number of vehicle models: 0
+[14:15:46] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:16:31] [part] Jay_Salazar has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:18:17] 
+[14:18:17] Server Plugins
+[14:18:17] --------------
+[14:18:17]  Loading plugin: MapAndreas
+[14:18:17]   Loaded.
+[14:18:17]  Loading plugin: sscanf
+[14:18:17] 
+
+[14:18:17]  ===============================
+
+[14:18:17]       sscanf plugin loaded.     
+
+[14:18:17]    (c) 2009 Alex "Y_Less" Cole
+
+[14:18:17]    0.3d-R2 500 Players "dnee"
+
+[14:18:17]  ===============================
+
+[14:18:17]   Loaded.
+[14:18:17]  Loading plugin: TDE
+[14:18:17] 
+TDEditor Plugin loaded, thank you for using.
+
+[14:18:17]   Loaded.
+[14:18:17]  Loaded 3 plugins.
+
+[14:18:17] 
+[14:18:17] Filterscripts
+[14:18:17] ---------------
+[14:18:17]   Loading filterscript 'fsdebug.amx'...
+[14:18:17] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[14:18:17]   * By Simon Campbell *
+  *********************
+[14:18:17]   * Version: 0.5d      *
+  *********************
+[14:18:17]   * -- LOADED         *
+  *********************
+
+[14:18:17]   Loading filterscript 'TDE.amx'...
+[14:18:17]  
+[14:18:17]  
+[14:18:17]  
+[14:18:17]  
+[14:18:17] ___ __  __
+[14:18:17]  | |  \|_  _|.|_ _  _		
+[14:18:17]  | |__/|__(_|||_(_)|			
+[14:18:17]  
+[14:18:17] TDEditor V1.17 by adri1
+[14:18:17] TDEditor loaded
+[14:18:17]  
+[14:18:17]   Loaded 2 filterscripts.
+
+[14:18:17] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:18:17] [ADM] Info: MapAndreas successfully init.
+[14:18:17] 
+--------------------------------------------------------------------
+[14:18:17]  		GTA:T Korea Mode On
+[14:18:17]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:18:17] --------------------------------------------------------------------
+
+[14:18:17] Number of vehicle models: 0
+[14:18:17] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:18:37] [connection] 127.0.0.1:50136 requests connection cookie.
+[14:18:38] [connection] incoming connection: 127.0.0.1:50136 id: 0
+[14:18:38] [join] Jay_Salazar has joined the server (0:127.0.0.1)
+[14:18:52] RCON (In-Game): Player #0 (Jay_Salazar) has logged in.
+[14:18:54] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:18:54] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:19:06] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:19:06] 
+--------------------------------------------------------------------
+[14:19:06]  		GTA:T Korea Mode On
+[14:19:06]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:19:06] --------------------------------------------------------------------
+
+[14:19:06] Number of vehicle models: 0
+[14:19:06] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+Console input: gmx
+[14:20:09] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:20:21] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:20:21] 
+--------------------------------------------------------------------
+[14:20:21]  		GTA:T Korea Mode On
+[14:20:21]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:20:21] --------------------------------------------------------------------
+
+[14:20:21] Number of vehicle models: 0
+[14:20:21] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:20:43] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:20:43] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:20:55] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:20:55] 
+--------------------------------------------------------------------
+[14:20:55]  		GTA:T Korea Mode On
+[14:20:55]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:20:55] --------------------------------------------------------------------
+
+[14:20:55] Number of vehicle models: 0
+[14:20:55] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:21:27] [part] Jay_Salazar has left the server (0:1)
+[14:22:24] [connection] 127.0.0.1:53447 requests connection cookie.
+[14:22:25] [connection] incoming connection: 127.0.0.1:53447 id: 0
+[14:22:26] [join] Jay_Salazar has joined the server (0:127.0.0.1)
+[14:22:42] RCON (In-Game): Player #0 (Jay_Salazar) has logged in.
+[14:22:43] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:22:43] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:22:55] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:22:55] 
+--------------------------------------------------------------------
+[14:22:55]  		GTA:T Korea Mode On
+[14:22:55]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:22:55] --------------------------------------------------------------------
+
+[14:22:55] Number of vehicle models: 0
+[14:22:55] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+Console input: gmx
+[14:24:17] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:24:29] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:24:29] 
+--------------------------------------------------------------------
+[14:24:29]  		GTA:T Korea Mode On
+[14:24:29]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:24:29] --------------------------------------------------------------------
+
+[14:24:29] Number of vehicle models: 0
+[14:24:29] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:24:37] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:24:37] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:24:49] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:24:49] 
+--------------------------------------------------------------------
+[14:24:49]  		GTA:T Korea Mode On
+[14:24:49]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:24:49] --------------------------------------------------------------------
+
+[14:24:49] Number of vehicle models: 0
+[14:24:50] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+Console input: gm
+Console input: gmx
+[14:28:05] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:28:17] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:28:17] 
+--------------------------------------------------------------------
+[14:28:17]  		GTA:T Korea Mode On
+[14:28:17]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:28:17] --------------------------------------------------------------------
+
+[14:28:17] Number of vehicle models: 0
+[14:28:17] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:28:49] RCON (In-Game): Player [Jay_Salazar] sent command: loginm 1
+[14:28:51] RCON (In-Game): Player [Jay_Salazar] sent command: login 1
+[14:29:13] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:29:13] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:29:25] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:29:25] 
+--------------------------------------------------------------------
+[14:29:25]  		GTA:T Korea Mode On
+[14:29:25]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:29:25] --------------------------------------------------------------------
+
+[14:29:25] Number of vehicle models: 0
+[14:29:25] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:30:23] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:30:23] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:30:36] Script[gamemodes/GTAT.amx]: Run time error 17: "Invalid/unsupported P-code file format"
+[14:30:36] Failed to load 'gamemodes/GTAT.amx' script.
+[14:30:36] Number of vehicle models: 0
+Console input: gmx
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:30:58] 
+[14:30:58] Server Plugins
+[14:30:58] --------------
+[14:30:58]  Loading plugin: MapAndreas
+[14:30:58]   Loaded.
+[14:30:58]  Loading plugin: sscanf
+[14:30:58] 
+
+[14:30:58]  ===============================
+
+[14:30:58]       sscanf plugin loaded.     
+
+[14:30:58]    (c) 2009 Alex "Y_Less" Cole
+
+[14:30:58]    0.3d-R2 500 Players "dnee"
+
+[14:30:58]  ===============================
+
+[14:30:58]   Loaded.
+[14:30:58]  Loading plugin: TDE
+[14:30:58] 
+TDEditor Plugin loaded, thank you for using.
+
+[14:30:58]   Loaded.
+[14:30:58]  Loaded 3 plugins.
+
+[14:30:58] 
+[14:30:58] Filterscripts
+[14:30:58] ---------------
+[14:30:58]   Loading filterscript 'fsdebug.amx'...
+[14:30:58] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[14:30:58]   * By Simon Campbell *
+  *********************
+[14:30:58]   * Version: 0.5d      *
+  *********************
+[14:30:58]   * -- LOADED         *
+  *********************
+
+[14:30:58]   Loading filterscript 'TDE.amx'...
+[14:30:58]  
+[14:30:58]  
+[14:30:58]  
+[14:30:58]  
+[14:30:58] ___ __  __
+[14:30:58]  | |  \|_  _|.|_ _  _		
+[14:30:58]  | |__/|__(_|||_(_)|			
+[14:30:58]  
+[14:30:58] TDEditor V1.17 by adri1
+[14:30:58] TDEditor loaded
+[14:30:58]  
+[14:30:58]   Loaded 2 filterscripts.
+
+[14:30:58] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:30:58] [ADM] Info: MapAndreas successfully init.
+[14:30:58] 
+--------------------------------------------------------------------
+[14:30:58]  		GTA:T Korea Mode On
+[14:30:58]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:30:58] --------------------------------------------------------------------
+
+[14:30:58] Number of vehicle models: 0
+[14:30:59] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:31:14] [connection] 127.0.0.1:64193 requests connection cookie.
+[14:31:15] [connection] incoming connection: 127.0.0.1:64193 id: 0
+[14:31:18] [join] Jay_Salazar has joined the server (0:127.0.0.1)
+[14:31:38] RCON (In-Game): Player #0 (Jay_Salazar) has logged in.
+[14:31:39] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:31:39] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:31:51] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:31:51] 
+--------------------------------------------------------------------
+[14:31:51]  		GTA:T Korea Mode On
+[14:31:51]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:31:51] --------------------------------------------------------------------
+
+[14:31:51] Number of vehicle models: 0
+[14:31:51] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:32:31] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:32:31] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:32:43] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:32:43] 
+--------------------------------------------------------------------
+[14:32:43]  		GTA:T Korea Mode On
+[14:32:43]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:32:43] --------------------------------------------------------------------
+
+[14:32:43] Number of vehicle models: 0
+[14:32:43] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+Console input: gmx
+[14:35:44] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:35:56] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:35:56] 
+--------------------------------------------------------------------
+[14:35:56]  		GTA:T Korea Mode On
+[14:35:56]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:35:56] --------------------------------------------------------------------
+
+[14:35:56] Number of vehicle models: 0
+[14:35:56] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:35:57] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:36:14] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:36:14] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:36:26] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:36:26] 
+--------------------------------------------------------------------
+[14:36:26]  		GTA:T Korea Mode On
+[14:36:26]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:36:26] --------------------------------------------------------------------
+
+[14:36:26] Number of vehicle models: 0
+[14:36:27] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:36:29] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:36:46] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:36:46] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:36:58] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:36:58] 
+--------------------------------------------------------------------
+[14:36:58]  		GTA:T Korea Mode On
+[14:36:58]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:36:58] --------------------------------------------------------------------
+
+[14:36:58] Number of vehicle models: 0
+[14:36:59] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:37:14] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:37:26] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:37:26] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:37:38] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:37:38] 
+--------------------------------------------------------------------
+[14:37:38]  		GTA:T Korea Mode On
+[14:37:38]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:37:38] --------------------------------------------------------------------
+
+[14:37:38] Number of vehicle models: 0
+[14:37:38] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:37:45] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:38:35] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:38:48] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:38:48] 
+--------------------------------------------------------------------
+[14:38:48]  		GTA:T Korea Mode On
+[14:38:48]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:38:48] --------------------------------------------------------------------
+
+[14:38:48] Number of vehicle models: 0
+[14:38:49] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:38:50] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:38:59] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:38:59] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:39:11] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:39:11] 
+--------------------------------------------------------------------
+[14:39:11]  		GTA:T Korea Mode On
+[14:39:11]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:39:11] --------------------------------------------------------------------
+
+[14:39:11] Number of vehicle models: 0
+[14:39:11] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:39:12] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:40:04] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:40:04] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:40:16] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:40:16] 
+--------------------------------------------------------------------
+[14:40:16]  		GTA:T Korea Mode On
+[14:40:16]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:40:16] --------------------------------------------------------------------
+
+[14:40:16] Number of vehicle models: 0
+[14:40:16] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:40:18] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:42:29] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:42:29] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:42:41] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:42:41] 
+--------------------------------------------------------------------
+[14:42:41]  		GTA:T Korea Mode On
+[14:42:41]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:42:41] --------------------------------------------------------------------
+
+[14:42:41] Number of vehicle models: 0
+[14:42:41] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:42:41] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:43:17] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:43:29] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:43:29] 
+--------------------------------------------------------------------
+[14:43:29]  		GTA:T Korea Mode On
+[14:43:29]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:43:29] --------------------------------------------------------------------
+
+[14:43:29] Number of vehicle models: 0
+[14:43:29] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:43:45] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:46:35] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:46:47] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:46:47] 
+--------------------------------------------------------------------
+[14:46:47]  		GTA:T Korea Mode On
+[14:46:47]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:46:47] --------------------------------------------------------------------
+
+[14:46:47] Number of vehicle models: 0
+[14:46:47] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:46:59] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:49:54] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:49:54] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:50:06] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:50:06] 
+--------------------------------------------------------------------
+[14:50:06]  		GTA:T Korea Mode On
+[14:50:06]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:50:06] --------------------------------------------------------------------
+
+[14:50:06] Number of vehicle models: 0
+[14:50:06] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:50:07] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:50:22] RCON (In-Game): Player [Jay_Salazar] sent command: gmx
+[14:50:22] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:50:34] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:50:34] 
+--------------------------------------------------------------------
+[14:50:34]  		GTA:T Korea Mode On
+[14:50:34]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:50:34] --------------------------------------------------------------------
+
+[14:50:34] Number of vehicle models: 0
+[14:50:34] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:50:36] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
+[14:50:56] [part] Jay_Salazar has left the server (0:1)

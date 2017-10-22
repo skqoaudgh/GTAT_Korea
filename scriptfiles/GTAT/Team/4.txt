@@ -1,3 +1,4 @@
+Used=0
 Color=184
 Name=¶ì
 Leader=
