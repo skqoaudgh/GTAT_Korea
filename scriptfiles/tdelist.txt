@@ -2,3 +2,4 @@ NameStat.tde
 request.tde
 sad.tde
 level.tde
+preview.tde

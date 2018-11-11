@@ -13768,3 +13768,1106 @@ Console input: gmx
 
 [14:50:36] [System] Jay_Salazar(id:0) 로그인 [IP:127.0.0.1]
 [14:50:56] [part] Jay_Salazar has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:29:04] 
+[14:29:04] Server Plugins
+[14:29:04] --------------
+[14:29:04]  Loading plugin: MapAndreas
+[14:29:04]   Loaded.
+[14:29:04]  Loading plugin: sscanf
+[14:29:04] 
+
+[14:29:04]  ===============================
+
+[14:29:04]       sscanf plugin loaded.     
+
+[14:29:04]    (c) 2009 Alex "Y_Less" Cole
+
+[14:29:04]    0.3d-R2 500 Players "dnee"
+
+[14:29:04]  ===============================
+
+[14:29:04]   Loaded.
+[14:29:04]  Loading plugin: TDE
+[14:29:04] 
+TDEditor Plugin loaded, thank you for using.
+
+[14:29:04]   Loaded.
+[14:29:04]  Loaded 3 plugins.
+
+[14:29:04] 
+[14:29:04] Filterscripts
+[14:29:04] ---------------
+[14:29:04]   Loading filterscript 'fsdebug.amx'...
+[14:29:04] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[14:29:04]   * By Simon Campbell *
+  *********************
+[14:29:04]   * Version: 0.5d      *
+  *********************
+[14:29:04]   * -- LOADED         *
+  *********************
+
+[14:29:04]   Loading filterscript 'TDE.amx'...
+[14:29:04]  
+[14:29:04]  
+[14:29:04]  
+[14:29:04]  
+[14:29:04] ___ __  __
+[14:29:04]  | |  \|_  _|.|_ _  _		
+[14:29:04]  | |__/|__(_|||_(_)|			
+[14:29:04]  
+[14:29:04] TDEditor V1.17 by adri1
+[14:29:04] TDEditor loaded
+[14:29:04]  
+[14:29:04]   Loaded 2 filterscripts.
+
+[14:29:04] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:29:05] [ADM] Info: MapAndreas successfully init.
+[14:29:05] 
+--------------------------------------------------------------------
+[14:29:05]  		GTA:T Korea Mode On
+[14:29:05]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:29:05] --------------------------------------------------------------------
+
+[14:29:05] Number of vehicle models: 0
+[14:29:05] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:29:28] [connection] 127.0.0.1:55696 requests connection cookie.
+[14:29:29] [connection] incoming connection: 127.0.0.1:55696 id: 0
+[14:29:29] [join] Amanda_Ortolano has joined the server (0:127.0.0.1)
+[14:29:32] [System] Amanda_Ortolano(id:0) 계정 생성 [IP:127.0.0.1]
+[14:29:32] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+[14:30:36] RCON (In-Game): Player #0 (Amanda_Ortolano) has logged in.
+[14:30:37] RCON (In-Game): Player [Amanda_Ortolano] sent command: gmx
+[14:30:37] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:30:49] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:30:49] 
+--------------------------------------------------------------------
+[14:30:49]  		GTA:T Korea Mode On
+[14:30:49]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:30:49] --------------------------------------------------------------------
+
+[14:30:49] Number of vehicle models: 0
+[14:30:49] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:30:50] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:32:04] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:32:16] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:32:16] 
+--------------------------------------------------------------------
+[14:32:16]  		GTA:T Korea Mode On
+[14:32:16]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:32:16] --------------------------------------------------------------------
+
+[14:32:16] Number of vehicle models: 0
+[14:32:16] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:32:23] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:34:55] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:35:07] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:35:07] 
+--------------------------------------------------------------------
+[14:35:07]  		GTA:T Korea Mode On
+[14:35:07]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:35:07] --------------------------------------------------------------------
+
+[14:35:07] Number of vehicle models: 0
+[14:35:07] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:35:11] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:35:52] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:36:04] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:36:04] 
+--------------------------------------------------------------------
+[14:36:04]  		GTA:T Korea Mode On
+[14:36:04]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:36:04] --------------------------------------------------------------------
+
+[14:36:04] Number of vehicle models: 0
+[14:36:04] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:36:05] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:38:22] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:38:34] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:38:34] 
+--------------------------------------------------------------------
+[14:38:34]  		GTA:T Korea Mode On
+[14:38:34]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:38:34] --------------------------------------------------------------------
+
+[14:38:34] Number of vehicle models: 0
+[14:38:34] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:39:13] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+[14:40:48] [part] Amanda_Ortolano has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[14:41:39] 
+[14:41:39] Server Plugins
+[14:41:39] --------------
+[14:41:39]  Loading plugin: MapAndreas
+[14:41:39]   Loaded.
+[14:41:39]  Loading plugin: sscanf
+[14:41:39] 
+
+[14:41:39]  ===============================
+
+[14:41:39]       sscanf plugin loaded.     
+
+[14:41:39]    (c) 2009 Alex "Y_Less" Cole
+
+[14:41:39]    0.3d-R2 500 Players "dnee"
+
+[14:41:39]  ===============================
+
+[14:41:39]   Loaded.
+[14:41:39]  Loading plugin: TDE
+[14:41:39] 
+TDEditor Plugin loaded, thank you for using.
+
+[14:41:39]   Loaded.
+[14:41:39]  Loaded 3 plugins.
+
+[14:41:39] 
+[14:41:39] Filterscripts
+[14:41:39] ---------------
+[14:41:39]   Loading filterscript 'fsdebug.amx'...
+[14:41:39] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[14:41:39]   * By Simon Campbell *
+  *********************
+[14:41:39]   * Version: 0.5d      *
+  *********************
+[14:41:39]   * -- LOADED         *
+  *********************
+
+[14:41:39]   Loading filterscript 'TDE.amx'...
+[14:41:39]  
+[14:41:39]  
+[14:41:39]  
+[14:41:39]  
+[14:41:39] ___ __  __
+[14:41:39]  | |  \|_  _|.|_ _  _		
+[14:41:39]  | |__/|__(_|||_(_)|			
+[14:41:39]  
+[14:41:39] TDEditor V1.17 by adri1
+[14:41:39] TDEditor loaded
+[14:41:39]  
+[14:41:39]   Loaded 2 filterscripts.
+
+[14:41:39] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:41:39] [ADM] Info: MapAndreas successfully init.
+[14:41:39] 
+--------------------------------------------------------------------
+[14:41:39]  		GTA:T Korea Mode On
+[14:41:39]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:41:39] --------------------------------------------------------------------
+
+[14:41:39] Number of vehicle models: 0
+[14:41:39] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:41:56] [connection] 127.0.0.1:59947 requests connection cookie.
+[14:41:57] [connection] incoming connection: 127.0.0.1:59947 id: 0
+[14:41:58] [join] Amanda_Ortolano has joined the server (0:127.0.0.1)
+[14:42:00] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:42:32] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:42:44] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:42:44] 
+--------------------------------------------------------------------
+[14:42:44]  		GTA:T Korea Mode On
+[14:42:44]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:42:44] --------------------------------------------------------------------
+
+[14:42:44] Number of vehicle models: 0
+[14:42:44] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:42:49] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:43:36] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:43:48] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:43:48] 
+--------------------------------------------------------------------
+[14:43:48]  		GTA:T Korea Mode On
+[14:43:48]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:43:48] --------------------------------------------------------------------
+
+[14:43:48] Number of vehicle models: 0
+[14:43:48] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:43:51] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:44:40] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:44:52] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:44:52] 
+--------------------------------------------------------------------
+[14:44:52]  		GTA:T Korea Mode On
+[14:44:52]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:44:52] --------------------------------------------------------------------
+
+[14:44:52] Number of vehicle models: 0
+[14:44:52] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:44:53] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+[14:46:17] RCON (In-Game): Player #0 (Amanda_Ortolano) has logged in.
+[14:46:18] RCON (In-Game): Player [Amanda_Ortolano] sent command: gmx
+[14:46:18] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:46:30] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:46:30] 
+--------------------------------------------------------------------
+[14:46:30]  		GTA:T Korea Mode On
+[14:46:30]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:46:30] --------------------------------------------------------------------
+
+[14:46:30] Number of vehicle models: 0
+[14:46:30] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:46:31] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:47:58] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:48:10] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:48:10] 
+--------------------------------------------------------------------
+[14:48:10]  		GTA:T Korea Mode On
+[14:48:10]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:48:10] --------------------------------------------------------------------
+
+[14:48:10] Number of vehicle models: 0
+[14:48:10] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:48:11] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:49:00] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:49:12] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:49:12] 
+--------------------------------------------------------------------
+[14:49:12]  		GTA:T Korea Mode On
+[14:49:12]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:49:12] --------------------------------------------------------------------
+
+[14:49:12] Number of vehicle models: 0
+[14:49:13] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:49:13] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[14:49:47] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:49:59] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[14:49:59] 
+--------------------------------------------------------------------
+[14:49:59]  		GTA:T Korea Mode On
+[14:49:59]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[14:49:59] --------------------------------------------------------------------
+
+[14:49:59] Number of vehicle models: 0
+[14:49:59] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[14:50:02] [System] Amanda_Ortolano(id:0) 로그인 [IP:127.0.0.1]
+[14:50:44] [part] Amanda_Ortolano has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[16:00:51] 
+[16:00:51] Server Plugins
+[16:00:51] --------------
+[16:00:51]  Loading plugin: MapAndreas
+[16:00:51]   Loaded.
+[16:00:51]  Loading plugin: sscanf
+[16:00:51] 
+
+[16:00:51]  ===============================
+
+[16:00:51]       sscanf plugin loaded.     
+
+[16:00:51]    (c) 2009 Alex "Y_Less" Cole
+
+[16:00:51]    0.3d-R2 500 Players "dnee"
+
+[16:00:51]  ===============================
+
+[16:00:51]   Loaded.
+[16:00:51]  Loading plugin: TDE
+[16:00:51] 
+TDEditor Plugin loaded, thank you for using.
+
+[16:00:51]   Loaded.
+[16:00:51]  Loaded 3 plugins.
+
+[16:00:51] 
+[16:00:51] Filterscripts
+[16:00:51] ---------------
+[16:00:51]   Loading filterscript 'fsdebug.amx'...
+[16:00:51] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[16:00:51]   * By Simon Campbell *
+  *********************
+[16:00:51]   * Version: 0.5d      *
+  *********************
+[16:00:51]   * -- LOADED         *
+  *********************
+
+[16:00:51]   Loading filterscript 'TDE.amx'...
+[16:00:51]  
+[16:00:51]  
+[16:00:51]  
+[16:00:51]  
+[16:00:51] ___ __  __
+[16:00:51]  | |  \|_  _|.|_ _  _		
+[16:00:51]  | |__/|__(_|||_(_)|			
+[16:00:51]  
+[16:00:51] TDEditor V1.17 by adri1
+[16:00:51] TDEditor loaded
+[16:00:51]  
+[16:00:51]   Loaded 2 filterscripts.
+
+[16:00:51] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[16:00:51] [ADM] Info: MapAndreas successfully init.
+[16:00:51] 
+--------------------------------------------------------------------
+[16:00:51]  		GTA:T Korea Mode On
+[16:00:51]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[16:00:51] --------------------------------------------------------------------
+
+[16:00:51] Number of vehicle models: 0
+[16:00:51] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[16:00:52]  
+[16:00:52] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[16:00:52] http://8.ct8.pl/d/3DTryg.inc
+[16:00:52]  
+[16:01:10] [connection] 127.0.0.1:59191 requests connection cookie.
+[16:01:11] [connection] incoming connection: 127.0.0.1:59191 id: 0
+[16:01:11] [join] Seungho_Choi has joined the server (0:127.0.0.1)
+[16:02:03] [System] Seungho_Choi(id:0) 계정 생성 [IP:127.0.0.1]
+[16:02:03] [System] Seungho_Choi(id:0) 로그인 [IP:127.0.0.1]
+[16:38:31] [part] Seungho_Choi has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[17:14:25] 
+[17:14:25] Server Plugins
+[17:14:25] --------------
+[17:14:25]  Loading plugin: MapAndreas
+[17:14:25]   Loaded.
+[17:14:25]  Loading plugin: sscanf
+[17:14:25] 
+
+[17:14:25]  ===============================
+
+[17:14:25]       sscanf plugin loaded.     
+
+[17:14:25]    (c) 2009 Alex "Y_Less" Cole
+
+[17:14:25]    0.3d-R2 500 Players "dnee"
+
+[17:14:25]  ===============================
+
+[17:14:25]   Loaded.
+[17:14:25]  Loading plugin: TDE
+[17:14:25] 
+TDEditor Plugin loaded, thank you for using.
+
+[17:14:25]   Loaded.
+[17:14:25]  Loaded 3 plugins.
+
+[17:14:25] 
+[17:14:25] Filterscripts
+[17:14:25] ---------------
+[17:14:25]   Loading filterscript 'fsdebug.amx'...
+[17:14:25] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[17:14:25]   * By Simon Campbell *
+  *********************
+[17:14:25]   * Version: 0.5d      *
+  *********************
+[17:14:25]   * -- LOADED         *
+  *********************
+
+[17:14:25]   Loading filterscript 'TDE.amx'...
+[17:14:25]  
+[17:14:25]  
+[17:14:25]  
+[17:14:25]  
+[17:14:25] ___ __  __
+[17:14:25]  | |  \|_  _|.|_ _  _		
+[17:14:25]  | |__/|__(_|||_(_)|			
+[17:14:25]  
+[17:14:25] TDEditor V1.17 by adri1
+[17:14:25] TDEditor loaded
+[17:14:25]  
+[17:14:25]   Loaded 2 filterscripts.
+
+[17:14:25] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[17:14:25] [ADM] Info: MapAndreas successfully init.
+[17:14:25] 
+--------------------------------------------------------------------
+[17:14:25]  		GTA:T Korea Mode On
+[17:14:25]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[17:14:25] --------------------------------------------------------------------
+
+[17:14:25] Number of vehicle models: 0
+[17:14:25] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[17:14:26]  
+[17:14:26] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[17:14:26] http://8.ct8.pl/d/3DTryg.inc
+[17:14:26]  
+[17:14:41] [connection] 127.0.0.1:61492 requests connection cookie.
+[17:14:43] [connection] incoming connection: 127.0.0.1:61492 id: 0
+[17:14:43] [join] Seungho_Choi3 has joined the server (0:127.0.0.1)
+[17:14:47] [System] Seungho_Choi3(id:0) 계정 생성 [IP:127.0.0.1]
+[17:14:47] [System] Seungho_Choi3(id:0) 로그인 [IP:127.0.0.1]
+[17:18:08] [part] Seungho_Choi3 has left the server (0:1)
+Console input: gmx
+[17:20:37] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[17:27:40] 
+[17:27:40] Server Plugins
+[17:27:40] --------------
+[17:27:40]  Loading plugin: MapAndreas
+[17:27:40]   Loaded.
+[17:27:40]  Loading plugin: sscanf
+[17:27:40] 
+
+[17:27:40]  ===============================
+
+[17:27:40]       sscanf plugin loaded.     
+
+[17:27:40]    (c) 2009 Alex "Y_Less" Cole
+
+[17:27:40]    0.3d-R2 500 Players "dnee"
+
+[17:27:40]  ===============================
+
+[17:27:40]   Loaded.
+[17:27:40]  Loading plugin: TDE
+[17:27:40] 
+TDEditor Plugin loaded, thank you for using.
+
+[17:27:40]   Loaded.
+[17:27:40]  Loaded 3 plugins.
+
+[17:27:40] 
+[17:27:40] Filterscripts
+[17:27:40] ---------------
+[17:27:40]   Loading filterscript 'fsdebug.amx'...
+[17:27:40] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[17:27:40]   * By Simon Campbell *
+  *********************
+[17:27:40]   * Version: 0.5d      *
+  *********************
+[17:27:40]   * -- LOADED         *
+  *********************
+
+[17:27:40]   Loading filterscript 'TDE.amx'...
+[17:27:40]  
+[17:27:40]  
+[17:27:40]  
+[17:27:40]  
+[17:27:40] ___ __  __
+[17:27:40]  | |  \|_  _|.|_ _  _		
+[17:27:40]  | |__/|__(_|||_(_)|			
+[17:27:40]  
+[17:27:40] TDEditor V1.17 by adri1
+[17:27:40] TDEditor loaded
+[17:27:40]  
+[17:27:40]   Loaded 2 filterscripts.
+
+[17:27:40] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[17:27:40] [ADM] Info: MapAndreas successfully init.
+[17:27:40] 
+--------------------------------------------------------------------
+[17:27:40]  		GTA:T Korea Mode On
+[17:27:40]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[17:27:40] --------------------------------------------------------------------
+
+[17:27:40] Number of vehicle models: 0
+[17:27:40] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[17:27:41]  
+[17:27:41] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[17:27:41] http://8.ct8.pl/d/3DTryg.inc
+[17:27:41]  
+[17:27:57] [connection] 127.0.0.1:62774 requests connection cookie.
+[17:27:58] [connection] incoming connection: 127.0.0.1:62774 id: 0
+[17:27:58] [join] Seungho_Choi has joined the server (0:127.0.0.1)
+[17:28:06] [System] Seungho_Choi(id:0) 로그인 [IP:127.0.0.1]
+[17:30:52] [part] Seungho_Choi has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[19:47:29] 
+[19:47:29] Server Plugins
+[19:47:29] --------------
+[19:47:29]  Loading plugin: MapAndreas
+[19:47:29]   Loaded.
+[19:47:29]  Loading plugin: sscanf
+[19:47:29] 
+
+[19:47:29]  ===============================
+
+[19:47:29]       sscanf plugin loaded.     
+
+[19:47:29]    (c) 2009 Alex "Y_Less" Cole
+
+[19:47:29]    0.3d-R2 500 Players "dnee"
+
+[19:47:29]  ===============================
+
+[19:47:29]   Loaded.
+[19:47:29]  Loading plugin: TDE
+[19:47:29] 
+TDEditor Plugin loaded, thank you for using.
+
+[19:47:29]   Loaded.
+[19:47:29]  Loaded 3 plugins.
+
+[19:47:29] 
+[19:47:29] Filterscripts
+[19:47:29] ---------------
+[19:47:29]   Loading filterscript 'fsdebug.amx'...
+[19:47:29] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[19:47:29]   * By Simon Campbell *
+  *********************
+[19:47:29]   * Version: 0.5d      *
+  *********************
+[19:47:29]   * -- LOADED         *
+  *********************
+
+[19:47:29]   Loading filterscript 'TDE.amx'...
+[19:47:29]  
+[19:47:29]  
+[19:47:29]  
+[19:47:29]  
+[19:47:29] ___ __  __
+[19:47:29]  | |  \|_  _|.|_ _  _		
+[19:47:29]  | |__/|__(_|||_(_)|			
+[19:47:29]  
+[19:47:29] TDEditor V1.17 by adri1
+[19:47:29] TDEditor loaded
+[19:47:29]  
+[19:47:29]   Loaded 2 filterscripts.
+
+[19:47:29] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[19:47:29] [ADM] Info: MapAndreas successfully init.
+[19:47:29] 
+--------------------------------------------------------------------
+[19:47:29]  		GTA:T Korea Mode On
+[19:47:29]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[19:47:29] --------------------------------------------------------------------
+
+[19:47:29] Number of vehicle models: 0
+[19:47:29] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[19:47:30]  
+[19:47:30] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[19:47:30] http://8.ct8.pl/d/3DTryg.inc
+[19:47:30]  
+[19:47:45] [connection] 127.0.0.1:50663 requests connection cookie.
+[19:47:46] [connection] incoming connection: 127.0.0.1:50663 id: 0
+[19:47:46] [join] Seungho_Choi31233 has joined the server (0:127.0.0.1)
+[19:47:49] [System] Seungho_Choi31233(id:0) 계정 생성 [IP:127.0.0.1]
+[19:47:49] [System] Seungho_Choi31233(id:0) 로그인 [IP:127.0.0.1]
+[19:49:12] [part] Seungho_Choi31233 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:01:12] 
+[20:01:12] Server Plugins
+[20:01:12] --------------
+[20:01:12]  Loading plugin: MapAndreas
+[20:01:12]   Loaded.
+[20:01:12]  Loading plugin: sscanf
+[20:01:12] 
+
+[20:01:12]  ===============================
+
+[20:01:12]       sscanf plugin loaded.     
+
+[20:01:12]    (c) 2009 Alex "Y_Less" Cole
+
+[20:01:12]    0.3d-R2 500 Players "dnee"
+
+[20:01:12]  ===============================
+
+[20:01:12]   Loaded.
+[20:01:12]  Loading plugin: TDE
+[20:01:12] 
+TDEditor Plugin loaded, thank you for using.
+
+[20:01:12]   Loaded.
+[20:01:12]  Loaded 3 plugins.
+
+[20:01:12] 
+[20:01:12] Filterscripts
+[20:01:12] ---------------
+[20:01:12]   Loading filterscript 'fsdebug.amx'...
+[20:01:12] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[20:01:12]   * By Simon Campbell *
+  *********************
+[20:01:12]   * Version: 0.5d      *
+  *********************
+[20:01:12]   * -- LOADED         *
+  *********************
+
+[20:01:12]   Loading filterscript 'TDE.amx'...
+[20:01:12]  
+[20:01:12]  
+[20:01:12]  
+[20:01:12]  
+[20:01:12] ___ __  __
+[20:01:12]  | |  \|_  _|.|_ _  _		
+[20:01:12]  | |__/|__(_|||_(_)|			
+[20:01:12]  
+[20:01:12] TDEditor V1.17 by adri1
+[20:01:12] TDEditor loaded
+[20:01:12]  
+[20:01:12]   Loaded 2 filterscripts.
+
+[20:01:12] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[20:01:12] [ADM] Info: MapAndreas successfully init.
+[20:01:12] 
+--------------------------------------------------------------------
+[20:01:12]  		GTA:T Korea Mode On
+[20:01:12]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:01:12] --------------------------------------------------------------------
+
+[20:01:12] Number of vehicle models: 0
+[20:01:13] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[20:01:13]  
+[20:01:13] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[20:01:13] http://8.ct8.pl/d/3DTryg.inc
+[20:01:13]  
+[20:01:30] [connection] 127.0.0.1:50090 requests connection cookie.
+[20:01:31] [connection] incoming connection: 127.0.0.1:50090 id: 0
+[20:01:31] [join] Seungho_Choi531 has joined the server (0:127.0.0.1)
+[20:02:12] [System] Seungho_Choi531(id:0) 계정 생성 [IP:127.0.0.1]
+[20:02:12] [System] Seungho_Choi531(id:0) 로그인 [IP:127.0.0.1]
+[20:05:01] [part] Seungho_Choi531 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[20:10:00] 
+[20:10:00] Server Plugins
+[20:10:00] --------------
+[20:10:00]  Loading plugin: MapAndreas
+[20:10:00]   Loaded.
+[20:10:00]  Loading plugin: sscanf
+[20:10:00] 
+
+[20:10:00]  ===============================
+
+[20:10:00]       sscanf plugin loaded.     
+
+[20:10:00]    (c) 2009 Alex "Y_Less" Cole
+
+[20:10:00]    0.3d-R2 500 Players "dnee"
+
+[20:10:00]  ===============================
+
+[20:10:00]   Loaded.
+[20:10:00]  Loading plugin: TDE
+[20:10:00] 
+TDEditor Plugin loaded, thank you for using.
+
+[20:10:00]   Loaded.
+[20:10:00]  Loaded 3 plugins.
+
+[20:10:00] 
+[20:10:00] Filterscripts
+[20:10:00] ---------------
+[20:10:00]   Loading filterscript 'fsdebug.amx'...
+[20:10:00] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[20:10:00]   * By Simon Campbell *
+  *********************
+[20:10:00]   * Version: 0.5d      *
+  *********************
+[20:10:00]   * -- LOADED         *
+  *********************
+
+[20:10:00]   Loading filterscript 'TDE.amx'...
+[20:10:00]  
+[20:10:00]  
+[20:10:00]  
+[20:10:00]  
+[20:10:00] ___ __  __
+[20:10:00]  | |  \|_  _|.|_ _  _		
+[20:10:00]  | |__/|__(_|||_(_)|			
+[20:10:00]  
+[20:10:00] TDEditor V1.17 by adri1
+[20:10:00] TDEditor loaded
+[20:10:00]  
+[20:10:00]   Loaded 2 filterscripts.
+
+[20:10:00] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[20:10:00] [ADM] Info: MapAndreas successfully init.
+[20:10:00] 
+--------------------------------------------------------------------
+[20:10:00]  		GTA:T Korea Mode On
+[20:10:00]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[20:10:00] --------------------------------------------------------------------
+
+[20:10:00] Number of vehicle models: 0
+[20:10:00] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[20:10:01]  
+[20:10:01] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[20:10:01] http://8.ct8.pl/d/3DTryg.inc
+[20:10:01]  
+[20:10:17] [connection] 127.0.0.1:49480 requests connection cookie.
+[20:10:18] [connection] incoming connection: 127.0.0.1:49480 id: 0
+[20:10:18] [join] Seungho_Ch3 has joined the server (0:127.0.0.1)
+[20:10:32] [System] Seungho_Ch3(id:0) 계정 생성 [IP:127.0.0.1]
+[20:10:32] [System] Seungho_Ch3(id:0) 로그인 [IP:127.0.0.1]
+[20:12:26] [part] Seungho_Ch3 has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[02:56:47] 
+[02:56:47] Server Plugins
+[02:56:47] --------------
+[02:56:47]  Loading plugin: MapAndreas
+[02:56:47]   Loaded.
+[02:56:47]  Loading plugin: sscanf
+[02:56:47] 
+
+[02:56:47]  ===============================
+
+[02:56:47]       sscanf plugin loaded.     
+
+[02:56:47]    (c) 2009 Alex "Y_Less" Cole
+
+[02:56:47]    0.3d-R2 500 Players "dnee"
+
+[02:56:47]  ===============================
+
+[02:56:47]   Loaded.
+[02:56:47]  Loading plugin: TDE
+[02:56:47] 
+TDEditor Plugin loaded, thank you for using.
+
+[02:56:47]   Loaded.
+[02:56:47]  Loaded 3 plugins.
+
+[02:56:47] 
+[02:56:47] Filterscripts
+[02:56:47] ---------------
+[02:56:47]   Loading filterscript 'fsdebug.amx'...
+[02:56:47] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[02:56:48]   * By Simon Campbell *
+  *********************
+[02:56:48]   * Version: 0.5d      *
+  *********************
+[02:56:48]   * -- LOADED         *
+  *********************
+
+[02:56:48]   Loading filterscript 'TDE.amx'...
+[02:56:48]  
+[02:56:48]  
+[02:56:48]  
+[02:56:48]  
+[02:56:48] ___ __  __
+[02:56:48]  | |  \|_  _|.|_ _  _		
+[02:56:48]  | |__/|__(_|||_(_)|			
+[02:56:48]  
+[02:56:48] TDEditor V1.17 by adri1
+[02:56:48] TDEditor loaded
+[02:56:48]  
+[02:56:48]   Loaded 2 filterscripts.
+
+[02:56:48] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[02:56:48] [ADM] Info: MapAndreas successfully init.
+[02:56:48] 
+--------------------------------------------------------------------
+[02:56:48]  		GTA:T Korea Mode On
+[02:56:48]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[02:56:48] --------------------------------------------------------------------
+
+[02:56:48] Number of vehicle models: 0
+[02:56:48] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[02:56:49]  
+[02:56:49] [ADM] Info: Please update your 3DTryg include to v4.6.0 from here:
+[02:56:49] http://8.ct8.pl/d/3DTryg.inc
+[02:56:49]  
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[22:48:57] 
+[22:48:57] Server Plugins
+[22:48:57] --------------
+[22:48:57]  Loading plugin: MapAndreas
+[22:48:57]   Loaded.
+[22:48:57]  Loading plugin: sscanf
+[22:48:57] 
+
+[22:48:57]  ===============================
+
+[22:48:57]       sscanf plugin loaded.     
+
+[22:48:57]    (c) 2009 Alex "Y_Less" Cole
+
+[22:48:57]    0.3d-R2 500 Players "dnee"
+
+[22:48:57]  ===============================
+
+[22:48:57]   Loaded.
+[22:48:57]  Loading plugin: TDE
+[22:48:57] 
+TDEditor Plugin loaded, thank you for using.
+
+[22:48:57]   Loaded.
+[22:48:57]  Loaded 3 plugins.
+
+[22:48:57] 
+[22:48:57] Filterscripts
+[22:48:57] ---------------
+[22:48:57]   Loading filterscript 'fsdebug.amx'...
+[22:48:57] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[22:48:57]   * By Simon Campbell *
+  *********************
+[22:48:57]   * Version: 0.5d      *
+  *********************
+[22:48:57]   * -- LOADED         *
+  *********************
+
+[22:48:57]   Loading filterscript 'TDE.amx'...
+[22:48:57]  
+[22:48:57]  
+[22:48:57]  
+[22:48:57]  
+[22:48:57] ___ __  __
+[22:48:57]  | |  \|_  _|.|_ _  _		
+[22:48:57]  | |__/|__(_|||_(_)|			
+[22:48:57]  
+[22:48:57] TDEditor V1.17 by adri1
+[22:48:57] TDEditor loaded
+[22:48:57]  
+[22:48:57]   Loaded 2 filterscripts.
+
+[22:48:57] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[22:48:57] [ADM] Info: MapAndreas successfully init.
+[22:48:57] 
+--------------------------------------------------------------------
+[22:48:57]  		GTA:T Korea Mode On
+[22:48:57]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[22:48:57] --------------------------------------------------------------------
+
+[22:48:57] Number of vehicle models: 0
+[22:48:57] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[22:48:58]  
+[22:48:58] [ADM] Info: Please update your 3DTryg include to v4.6.1 from here:
+[22:48:58] http://8.ct8.pl/d/3DTryg.inc
+[22:48:58]  
+[22:49:24] [connection] 127.0.0.1:61302 requests connection cookie.
+[22:49:25] [connection] incoming connection: 127.0.0.1:61302 id: 0
+[22:49:26] [join] Cada has joined the server (0:127.0.0.1)
+[22:49:41] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[22:49:54] [part] Cada has left the server (0:1)
+
+----------
+Loaded log file: "server_log.txt".
+----------
+
+SA-MP Dedicated Server
+----------------------
+v0.3.7-R2, (C)2005-2015 SA-MP Team
+
+[17:45:37] 
+[17:45:37] Server Plugins
+[17:45:37] --------------
+[17:45:37]  Loading plugin: MapAndreas
+[17:45:37]   Loaded.
+[17:45:37]  Loading plugin: sscanf
+[17:45:37] 
+
+[17:45:37]  ===============================
+
+[17:45:37]       sscanf plugin loaded.     
+
+[17:45:37]    (c) 2009 Alex "Y_Less" Cole
+
+[17:45:37]    0.3d-R2 500 Players "dnee"
+
+[17:45:37]  ===============================
+
+[17:45:37]   Loaded.
+[17:45:37]  Loading plugin: TDE
+[17:45:37] 
+TDEditor Plugin loaded, thank you for using.
+
+[17:45:37]   Loaded.
+[17:45:37]  Loaded 3 plugins.
+
+[17:45:37] 
+[17:45:37] Filterscripts
+[17:45:37] ---------------
+[17:45:37]   Loading filterscript 'fsdebug.amx'...
+[17:45:37] 
+  *********************
+  * SA:MP DEBUG 0.2   *
+[17:45:37]   * By Simon Campbell *
+  *********************
+[17:45:37]   * Version: 0.5d      *
+  *********************
+[17:45:37]   * -- LOADED         *
+  *********************
+
+[17:45:37]   Loading filterscript 'TDE.amx'...
+[17:45:37]  
+[17:45:37]  
+[17:45:37]  
+[17:45:37]  
+[17:45:37] ___ __  __
+[17:45:37]  | |  \|_  _|.|_ _  _		
+[17:45:37]  | |__/|__(_|||_(_)|			
+[17:45:37]  
+[17:45:37] TDEditor V1.17 by adri1
+[17:45:37] TDEditor loaded
+[17:45:37]  
+[17:45:37]   Loaded 2 filterscripts.
+
+[17:45:37] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[17:45:37] [ADM] Info: MapAndreas successfully init.
+[17:45:37] 
+--------------------------------------------------------------------
+[17:45:37]  		GTA:T Korea Mode On
+[17:45:37]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[17:45:37] --------------------------------------------------------------------
+
+[17:45:37] Number of vehicle models: 0
+[17:45:38] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[17:46:06] [connection] 127.0.0.1:52785 requests connection cookie.
+[17:46:07] [connection] incoming connection: 127.0.0.1:52785 id: 0
+[17:46:07] [join] Cada has joined the server (0:127.0.0.1)
+[17:46:09] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+Console input: gmx
+[17:51:10] [ADM] Info: Unload 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[17:51:22] [ADM] Info: Load 3DTryg v4.5.2 for SA:MP 0.3.7 by Abyss Morgan
+[17:51:22] 
+--------------------------------------------------------------------
+[17:51:22]  		GTA:T Korea Mode On
+[17:51:22]  			이 모드의 저작권은 'Cada'에게 있습니다.
+[17:51:22] --------------------------------------------------------------------
+
+[17:51:22] Number of vehicle models: 0
+[17:51:23] 
+(1:302) 인증에 실패하여 서버를 닫습니다.
+
+[17:51:25] [part] Cada has left the server (0:2)
+[17:51:49] [connection] 127.0.0.1:62834 requests connection cookie.
+[17:51:50] [connection] incoming connection: 127.0.0.1:62834 id: 0
+[17:51:50] [join] Cada has joined the server (0:127.0.0.1)
+[17:51:54] [System] Cada(id:0) 로그인 [IP:127.0.0.1]
+[17:55:43] [part] Cada has left the server (0:1)

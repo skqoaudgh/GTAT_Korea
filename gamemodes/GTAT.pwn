@@ -1,11 +1,7 @@
 /*
 
-* 관리자가 다이얼로그로 팀 생성 가능
-* 팀 해체 추가
-* 팀 목록 확인 기능 추가
-* 개인설정 저장
-* 지정한 무기만 획득 가능
-* 저장 오류 수정
+* 스탯 오류 수정
+* 디싱크 기능 추가
 
 */
 
@@ -21,7 +17,7 @@
 
 #pragma unused ret_memcpy
 
-#define MODE_VERSION "1.5.0"
+#define MODE_VERSION "1.5.5"
 #define MODE_LANGUAGE "KOREAN"
 #define MODE_MAPNAME "GTA:T Korea"
 #define MODE_URL "cafe.daum.net/sampkor"
@@ -76,7 +72,7 @@ enum tInfo
 	Used,
     Color,
     Kill,
-	Name[20],
+	Name[56],
 	Leader[MAX_PLAYER_NAME]
 }
 new TeamInfo[MAX_TEAM][tInfo];
@@ -104,11 +100,13 @@ enum pInfo
 	pHits,
 	LastDamage,
 	IJustLost,
-	Bar:LevelBar
+	Bar:LevelBar,
+	bool:pCanSync,
+	bool:pSynced
 };
 new PlayerInfo[M_P][pInfo];
 new bool:gPlayerLogged[M_P];
-new bool:gPlayerSpanwed[M_P];
+new bool:gPlayerSpawned[M_P];
 new PlayerIP[64];
 
 enum wInfo
@@ -431,6 +429,9 @@ enum sconfig
 };
 new ServerVariable[sconfig];
 
+forward SpawnPlayerEx(playerid);
+forward EnableSync(playerid);
+forward SyncPlayer(playerid);
 forward SaveZoneInfo(Zoneid,owner);
 forward BasicTimer();
 forward SetPlayerSpawn(playerid);
@@ -537,6 +538,8 @@ stock ResetPlayerVariable(playerid)
 	new Temp[pInfo];
     PlayerInfo[playerid] = Temp;
     
+    PlayerInfo[playerid][pCanSync] = true;
+    PlayerInfo[playerid][pSynced] = false;
 	PlayerInfo[playerid][pWeapons][0] = WeaponInfo[6][wID];
 	PlayerInfo[playerid][pAmmo][0] = WeaponInfo[6][wAmount];
 	PlayerInfo[playerid][pWeaponID][0] = 6;
@@ -548,7 +551,7 @@ stock ResetPlayerVariable(playerid)
 	PlayerInfo[playerid][pWeaponID][2] = 10;
 	
 	gPlayerLogged[playerid] = false;
-	gPlayerSpanwed[playerid] = false;
+	gPlayerSpawned[playerid] = false;
 	Kills[playerid] = 0;
 	KillStat[playerid] = 0;
  	SpawnType[playerid] = true;
@@ -745,7 +748,7 @@ stock ShowStats(showid, playerid)
 	TextDrawSetString(TD_Stat[playerid], string);
 	TextDrawShowForPlayer(showid, TD_Stat[playerid]);
 	KillTimer(StatTimer[showid]);
-	StatTimer[showid] = SetTimerEx("HideStats", PlayerVariable[playerid][StatTime], 0, "i", showid, playerid);
+	StatTimer[showid] = SetTimerEx("HideStats", PlayerVariable[playerid][StatTime]*1000, 0, "i", showid, playerid);
 	return 1;
 }
 
@@ -753,7 +756,7 @@ stock GetMostWeaponStr(playerid)
 {
 	new str[128];
 	new MAX = PlayerInfo[playerid][pWeaponKill][0], id;
-	for(new i=1; i<13; i++)
+	for(new i=1; i<12; i++)
 	{
 	    if(MAX < PlayerInfo[playerid][pWeaponKill][i])
 	    {
@@ -831,6 +834,8 @@ public OnGameModeInit()
 	    GangZone[i] = GangZoneCreate(gSANZones[i][SAZONE_AREA][0],gSANZones[i][SAZONE_AREA][1],gSANZones[i][SAZONE_AREA][2],gSANZones[i][SAZONE_AREA][3]);
         LoadZoneInfo(i);
 	}
+	format(TeamInfo[0][Name],56,"NO-ONE TEAM");
+	
 	for(new i=1; i<MAX_TEAM; i++)
 		OnTeamLoad(i);
 	
@@ -1076,7 +1081,7 @@ public OnGameModeExit()
 
 public OnPlayerRequestClass(playerid, classid)
 {
-	gPlayerSpanwed[playerid] = false;
+	gPlayerSpawned[playerid] = false;
 	
 	SetPlayerPos(playerid, -2384.8484,-584.4088,132.1172);
 	SetPlayerFacingAngle(playerid, 272.7505);
@@ -1120,6 +1125,7 @@ public OnPlayerConnect(playerid)
     	GangZoneShowForPlayer(playerid, GangZone[i], TeamInfo[ZoneOwner[i]][Color]);
 		
 	EnableStuntBonusForPlayer(playerid, 0);
+    ResetPlayerVariable(playerid);
     
 	pITERATION[NUM_PLAYERS] = playerid;
 	pITER_INDEX[playerid] = NUM_PLAYERS;
@@ -1369,24 +1375,19 @@ public OnPlayerCommandText(playerid, cmdtext[])
  	
 		if(strcmp("/test",cmd,true) == 0)
 		{
-			for(new i=0; i<4; i++)
-	        {
-	            format(string, 64, "Weapons[%d]=%d\n",i,PlayerInfo[playerid][pWeapons][i]);
-	            SCM(playerid,COLOR_SYSTEM,string);
-	            format(string, 64, "WeaponID[%d]=%d\n",i,PlayerInfo[playerid][pWeaponID][i]);
-	            SCM(playerid,COLOR_SYSTEM,string);
-	        }
+			format(string,sizeof(string)," %d",PlayerVariable[playerid][StatTime]);
+			SCM(playerid,COLOR_SYSTEM,string);
+	        
 		    return 1;
 		}
 		
-		if(strcmp("/testt",cmd,true) == 0)
+		if(strcmp("/test2",cmd,true) == 0)
 		{
-	        SetPlayerPos(0, -342.9893,1509.2260,75.5625);
-	        ToggleWar[0] = false;
+			TextDrawShowForPlayer(playerid, TD_Stat[playerid]);
 		    return 1;
 		}
 
-		if(strcmp("/test2",cmd,true) == 0)  // 로비
+		if(strcmp("/testt",cmd,true) == 0)  // 로비
 		{
 			format(string,sizeof(string)," %d",GetBattlePlayer(playerid));
 			SCM(playerid,COLOR_SYSTEM,string);
@@ -1426,7 +1427,7 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	{
         SCM(playerid, COLOR_PASTEL_GREEN,"		Server User Commands");
 		SCM(playerid, COLOR_WHITE,"[!] User - /config /kill /stat (/re)spawn (/l)obby");
-	    SCM(playerid, COLOR_WHITE,"[!] User - /spec /dual");
+	    SCM(playerid, COLOR_WHITE,"[!] User - /spec /dual (/s)ync");
 	    SCM(playerid, COLOR_WHITE,"[!] Team - /팀목록 /팀접속 /팀초대 /팀추방");
 	    SCM(playerid, COLOR_WHITE,"[!] Chat - /pm (/t)eam");
 	    return 1;
@@ -1437,7 +1438,14 @@ public OnPlayerCommandText(playerid, cmdtext[])
 	    ShowPlayerConfigDialog(playerid);
 		return 1;
 	}
-	
+
+	if(strcmp(cmd, "/s", true)==0 || strcmp(cmd, "/sync", true)==0)
+	{
+	    SyncPlayer(playerid);
+	    return 1;
+	}
+
+
 	if(strcmp(cmd, "/kill", true)==0 || strcmp(cmd, "/자살", true)==0)
 	{
 	    SetPlayerHealth(playerid,-999);
@@ -1595,6 +1603,8 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		new targetid = strval(tmp);
 		if(!IsPlayerConnected(targetid))
 			return SCM(playerid,COLOR_GREY,"[!] 접속하지 않은 플레이어 입니다.");
+		if(targetid == playerid)
+			return SCM(playerid,COLOR_GREY,"[!] 자기 자신에게 듀얼 신청을 할 수 없습니다.");
 		if(Dualed[targetid] != 0)
 		    return SCM(playerid,COLOR_GREY,"[!] 상대방은 이미 듀얼 신청을 받았거나 듀얼을 진행 중 입니다.");
 		if(PlayerInfo[targetid][pHP] < 80)
@@ -1633,7 +1643,6 @@ public OnPlayerCommandText(playerid, cmdtext[])
 		Dualed[DualID[playerid]] = 2;
 		PlayerInfo[DualID[playerid]][pInterior] = GetPlayerInterior(DualID[playerid]);
 		PlayerInfo[DualID[playerid]][pVirtualWorld] = GetPlayerVirtualWorld(DualID[playerid]);
-		
 	    return 1;
 	}
 
@@ -1730,6 +1739,12 @@ public OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 		    } while(!IsPlayerConnected(SpecTarget[playerid]) || ToggleWar[SpecTarget[playerid]] == false || SpecTarget[playerid] == playerid);
             Spectating(playerid, SpecTarget[playerid], false);
 		}
+	}
+	
+	if(newkeys == 160 && (!GetPlayerWeapon(playerid) || GetPlayerWeapon(playerid) == 1) && !IsPlayerInAnyVehicle(playerid) && gPlayerSpawned[playerid])
+	{
+	    SyncPlayer(playerid);
+	    return 1;
 	}
 	
 	return 1;
@@ -2325,50 +2340,54 @@ public SetPlayerSpawn(playerid)
 
 	CancelSelectTextDraw(playerid);
 
-	if(ToggleWar[playerid] == true)
+	if(PlayerInfo[playerid][pSynced] == false)
 	{
-	    if(SpawnType[playerid] == false || GetBattlePlayer(playerid) == 0 || ChangeMap == false)
-	    {
-	        RandomSpawn(playerid);
+		if(ToggleWar[playerid] == true)
+		{
+		    if(SpawnType[playerid] == false || GetBattlePlayer(playerid) == 0 || ChangeMap == false)
+		    {
+		        RandomSpawn(playerid);
+			}
+			else
+			{
+			    new Float:randX,Float:randY,Float:randZ;
+			    new Float:CurX,Float:CurY;
+				new randP = -1, Bad_Count = -1;
+				new randRadius = random(20) + 5;
+				new randAngle = random(360);
+				do
+				{
+					randP = random(GetMaxPlayers());
+					if(++Bad_Count > 200)
+					{
+					    RandomSpawn(playerid);
+					    gPlayerSpawned[playerid] = true;
+				        return 1;
+					}
+				}
+				while(!IsPlayerConnected(randP) || !ToggleWar[randP] || randP == playerid || !gPlayerSpawned[randP]);
+
+				GetPlayerPos(randP, CurX, CurY, randZ);
+				GetPointInFront2D(CurX, CurY, randAngle, randRadius, randX, randY);
+		        MapAndreas_FindZ_For2DCoord(randX, randY, randZ);
+		        SetPlayerPos(playerid, randX, randY, randZ+0.5);
+			}
+			SetPlayerInterior(playerid, 0);
+			SetPlayerVirtualWorld(playerid, 0);
+			SpawnPlayerProtection(playerid, 1);
+			Protection[playerid] = true;
 		}
 		else
 		{
-		    new Float:randX,Float:randY,Float:randZ;
-		    new Float:CurX,Float:CurY;
-			new randP = -1, Bad_Count = -1;
-			new randRadius = random(20) + 5;
-			new randAngle = random(360);
-			do
-			{
-				randP = random(GetMaxPlayers());
-				if(++Bad_Count > 200)
-				{
-				    RandomSpawn(playerid);
-				    gPlayerSpanwed[playerid] = true;
-			        return 1;
-				}
-			}
-			while(!IsPlayerConnected(randP) || !ToggleWar[randP] || randP == playerid || !gPlayerSpanwed[randP]);
-
-			GetPlayerPos(randP, CurX, CurY, randZ);
-			GetPointInFront2D(CurX, CurY, randAngle, randRadius, randX, randY);
-	        MapAndreas_FindZ_For2DCoord(randX, randY, randZ);
-	        SetPlayerPos(playerid, randX, randY, randZ+0.5);
+	        SetPlayerPos(playerid, -795.0203,490.3264,1376.1953);
+	        SetPlayerInterior(playerid, 1);
+	        SetPlayerVirtualWorld(playerid, 0);
+			SetPlayerHealth(playerid, 100);
+			ResetPlayerWeapons(playerid);
 		}
-		SetPlayerInterior(playerid, 0);
-		SetPlayerVirtualWorld(playerid, 0);
-		SpawnPlayerProtection(playerid, 1);
-		Protection[playerid] = true;
 	}
-	else
-	{
-        SetPlayerPos(playerid, -795.0203,490.3264,1376.1953);
-        SetPlayerInterior(playerid, 1);
-        SetPlayerVirtualWorld(playerid, 0);
-		SetPlayerHealth(playerid, 100);
-		ResetPlayerWeapons(playerid);
-	}
-	gPlayerSpanwed[playerid] = true;
+	gPlayerSpawned[playerid] = true;
+	PlayerInfo[playerid][pSynced] = false;
 	return 1;
 }
 
@@ -2628,6 +2647,8 @@ public BasicTimer()
 		{
         	if(IsPlayerInZone(j,g) && EnterZone[j] != g)
         	{
+        	    format(string,sizeof(string),"ZoneOwner[g]:%d",ZoneOwner[g]);
+        	    SCMToAll(0xffffffff,string);
 				format(string,sizeof(string),"~w~Welcome to Zone~n~of ~r~%s!",TeamInfo[ZoneOwner[g]][Name]);
         	    GameTextForPlayer(j,string,5000,1);
         	    EnterZone[j] = g;
@@ -2826,7 +2847,6 @@ public Spectating(playerid, targetid, bool: toogle)
 
 public CreatePingLabels()
 {
-
 	for(new i = 0; i < GetMaxPlayers(); i++)
 	{
 		PingLabels[i] = Create3DTextLabel("-", COLOR_RED, 0.0, 0.0, 0.0, 30.0, 0, true);
@@ -3030,3 +3050,95 @@ public HideStats(showid, playerid)
 {
     TextDrawHideForPlayer(showid, TD_Stat[playerid]);
 }
+
+public EnableSync(playerid)
+{
+	PlayerInfo[playerid][pCanSync] = true;
+	PlayerInfo[playerid][pSynced] = false;
+}
+
+public SyncPlayer(playerid)
+{
+	if(PlayerInfo[playerid][pCanSync] == false || IsPlayerInAnyVehicle(playerid))
+		return SCM(playerid, COLOR_GREY, "[!] 지금은 사용할 수 없습니다.");
+
+    PlayerInfo[playerid][pSynced] = true;
+	PlayerInfo[playerid][pCanSync] = false;
+	SetTimerEx("EnableSync",10000,false,"i",playerid);
+
+	if(Spectate[playerid])
+	    return 0;
+
+	new bool:IsPlayerSpecing[M_P];
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
+	    if(GetPlayerState(j) == PLAYER_STATE_SPECTATING && SpecTarget[j] == playerid) {
+			IsPlayerSpecing[j] = true;
+		}
+		#undef j
+	}
+
+	new PlayerWeapons[2][13];
+	for(new i = 0; i < 13; i++)
+	{
+	    if(i == 0 || i == 1) {
+	   		GetPlayerWeaponData(playerid,i,PlayerWeapons[0][i],PlayerWeapons[1][i]);
+	   		if(PlayerWeapons[1][i] > 1) { PlayerWeapons[1][i] = 1; }
+	    }	else {
+	   		GetPlayerWeaponData(playerid,i,PlayerWeapons[0][i],PlayerWeapons[1][i]);
+		}
+	}
+
+	new Float:Velocity[3];
+	GetPlayerVelocity(playerid, Velocity[0], Velocity[1], Velocity[2]);
+
+	ClearAnimations(playerid);
+
+	new Float:PlayerPos[3];
+	GetPlayerPos(playerid,PlayerPos[0],PlayerPos[1],PlayerPos[2]);
+	new Float:health = 0;
+	GetPlayerHealth(playerid,health);
+	new TheInterior, VirtualWorld;
+	new Float:Angle;
+	GetPlayerFacingAngle(playerid, Angle);
+	TheInterior = GetPlayerInterior(playerid);
+	VirtualWorld = GetPlayerVirtualWorld(playerid);
+
+	SpawnPlayerEx(playerid);
+	
+	SetPlayerTeam(playerid, NO_TEAM);
+	SetPlayerHealth(playerid,health);
+	SetPlayerInterior(playerid,TheInterior);
+	SetPlayerVirtualWorld(playerid,VirtualWorld);
+	SetPlayerVelocity(playerid, Velocity[0], Velocity[1], Velocity[2]);
+	SetPlayerPos(playerid,PlayerPos[0],PlayerPos[1],PlayerPos[2]);
+	SetPlayerFacingAngle(playerid,Angle);
+	for(new i = 0; i < 13; i++)
+	{
+	    if(PlayerWeapons[0][i] > 0){
+		    GivePlayerWeapon(playerid,PlayerWeapons[0][i],PlayerWeapons[1][i]);
+		}
+	}
+	for(new i=0; i<NUM_PLAYERS; i++)
+	{
+	    #define j pITERATION[i]
+	    if(IsPlayerSpecing[j] == true) {
+			SetTimerEx("Spectating",250,false,"ii",j,playerid,false);
+		}
+		#undef j
+	}
+
+	if(ToggleWar[playerid] == false)
+		TogglePlayerControllable(playerid, false);
+	return 1;
+}
+
+public SpawnPlayerEx(playerid) {
+	RemovePlayerFromVehicle(playerid);
+	if(GetPlayerState(playerid) == PLAYER_STATE_SPECTATING) { Spectating(playerid, playerid, true); TogglePlayerSpectating(playerid, false); }
+
+	SpawnPlayer(playerid);
+	return 1;
+}
+
